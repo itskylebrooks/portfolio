@@ -1,0 +1,14 @@
+/* These directives require Tailwind CSS processing via PostCSS. 
+   Make sure your build setup includes Tailwind CSS and PostCSS. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.prose pre { background-color: rgba(0,0,0,0.5); padding: 0.75rem; border-radius: 0.5rem; overflow: auto; }
+.prose code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
