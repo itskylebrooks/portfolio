@@ -1,5 +1,3 @@
-/* These directives require Tailwind CSS processing via PostCSS. 
-   Make sure your build setup includes Tailwind CSS and PostCSS. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

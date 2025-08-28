@@ -1,16 +1,17 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
-const prefersReducedMotion = () =>
-  typeof window !== "undefined" &&
-  window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+function prefersReducedMotion(): boolean {
+  if (typeof window === 'undefined') return false
+  return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+}
 
 export function useScrollToHash() {
-  const { hash, pathname } = useLocation();
+  const { hash, pathname } = useLocation()
   useEffect(() => {
-    if (!hash) return;
-    const id = hash.slice(1);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "start" });
-  }, [hash, pathname]);
+    if (!hash) return
+    const id = hash.replace('#','')
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' })
+  }, [hash, pathname])
 }
