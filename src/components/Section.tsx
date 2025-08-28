@@ -1,6 +1,5 @@
-import React from "react";
-export function Section({ id, title, children }:
-  { id: string; title: string; children: React.ReactNode }) {
+import React from 'react'
+export function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
       <div className="mx-auto max-w-[820px] px-4 py-12">
@@ -8,5 +7,5 @@ export function Section({ id, title, children }:
         <div>{children}</div>
       </div>
     </section>
-  );
+  )
 }
