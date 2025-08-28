@@ -43,11 +43,11 @@ export function HomePage() {
       </Section>
       <Section id="contact" title="Contact">
         <p className="text-white/90">
-          Feel free to reach out at <a className="underline" href="mailto:hello@kylebrooks.dev">hello@kylebrooks.dev</a>.
+          Feel free to reach out at <a className="underline" href="mailto:itskylebrooks@icloud.com">itskylebrooks@icloud.com</a>.
         </p>
         <div className="mt-4 flex gap-2">
-          <IconLink href="https://github.com/" label="GitHub" Icon={GithubIcon} />
-          <IconLink href="https://linkedin.com/" label="LinkedIn" Icon={LinkedinIcon} />
+          <IconLink href="https://github.com/itskylebrooks" label="GitHub" Icon={GithubIcon} />
+          <IconLink href="https://linkedin.com/in/itskylebrooks" label="LinkedIn" Icon={LinkedinIcon} />
         </div>
       </Section>
     </main>
