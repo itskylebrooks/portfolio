@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRightIcon } from './icons/ChevronRightIcon'
-import type { Project, Accent } from '../data/projects'
+import type { ProjectIndex as Project, Accent } from '../content/projects'
 import { cn } from '../utils/cn'
 
 const ACCENT: Record<Accent, { border: string; bg: string; text: string }> = {
@@ -9,6 +9,7 @@ const ACCENT: Record<Accent, { border: string; bg: string; text: string }> = {
   green: { border: 'hover:border-green-500/60', bg: 'hover:bg-green-500/5', text: 'text-green-400' },
   blue:  { border: 'hover:border-blue-500/60',  bg: 'hover:bg-blue-500/5',  text: 'text-blue-400' },
   lilac: { border: 'hover:border-purple-400/60',bg: 'hover:bg-purple-400/5',text: 'text-purple-300' },
+  orange:{ border: 'hover:border-orange-500/60',bg: 'hover:bg-orange-500/5',text: 'text-orange-400' },
 }
 
 export function ProjectCard({ p }: { p: Project }) {

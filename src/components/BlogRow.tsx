@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRightIcon } from './icons/ChevronRightIcon'
-import type { Post } from '../data/posts'
+import type { PostIndex as Post } from '../content/posts'
 
 export function BlogRow({ post }: { post: Post }) {
   return (

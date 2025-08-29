@@ -1,0 +1,76 @@
+export const meta = {
+  title: 'Flowday',
+  date: '2025-08-23',
+  summary:
+    "A 20‑second ritual that turns feelings into flowing visuals worth keeping and sharing.",
+  tech: ['React', 'TypeScript', 'Tailwind', 'Vite', 'Supabase', 'Telegram'],
+  accent: 'orange',
+  links: {repo: 'https://github.com/itskylebrooks/flowday', live: 'https://flowdays.vercel.app'},
+}
+
+## Flowday — my first “real” project
+
+I’ve started and abandoned plenty of side projects. Flowday is the first one that stuck — the first thing I use every day and ship for other people to use too. Building it didn’t just give me an app; it flipped a switch. This is where I actually started learning web dev for real, shipping features, breaking things, fixing them, and caring about the product more than the code golf.
+
+### What it is (in one breath)
+
+Flowday is a 20-second mood ritual: pick up to three emojis, slide a color, optionally add a song. From that tiny input it generates visuals you can look back on — weekly “flowing” ribbons, a monthly color mix that feels like a weather map of your month, emoji constellations, and cassette-style “song of the day” cards.
+
+It’s Telegram-first (Mini App) with optional cloud sync using your Telegram ID. Web build exists too, with export/import for people who don’t want accounts.
+
+### Why I built it
+
+Most mood apps are either essays or sliders from “bad → good.” Feelings don’t fit on a ruler. I wanted something quick, playful, and visual — closer to leaving a brushstroke than filling a form. Also, I’m lazy: if it takes longer than replying to a text, I won’t do it.
+
+### What it does today
+
+- Three emojis + a color — your “vibe” for the day in seconds
+- Week Flow — 7 blended bands; a soft timeline you can actually feel
+- Month Mix — a continuous ribbon showing which hues dominated
+- Constellations — recurring emojis become “stars,” with subtle motion
+- Song Echoes — cassette cards for days you add music
+- Reminders — optional daily ping (Telegram, server-side cron)
+- Sync — Telegram accounts only; anonymous local mode still works
+- Export/Import — keep your data portable (especially on the web build)
+
+### Decisions I’m happy with
+
+- Local-first by default. Your entries live on your device unless you opt in.
+- No email logins. I tried. It slowed me down and didn’t help the experience. Telegram sign-in keeps it simple.
+- Ship the feeling. I prioritized the visuals and flow over chasing every edge case on day one.
+
+### Behind the build
+
+Flowday is where I stopped “studying web dev” and started using it. I leaned on AI as a pair-programmer, but the product decisions, iterations, and stubbornness were mine. I fought with sync, redesigned settings three times, and learned that good UX often means deleting code.
+
+Stack: React + TypeScript + Vite, Tailwind, Vercel serverless (API + cron), Supabase (Postgres + RLS), Telegram Mini Apps SDK, Telegram Analytics (anonymous).
+
+Notable bits:
+
+- Telegram-only sync keyed by telegram_id (no email, no password).
+- Serverless cron that fans out reminder batches (and won’t explode at small scale).
+- Export format that’s human-readable JSON so future-me can migrate it anywhere.
+
+### What I learned
+
+- Shipping beats polishing. A working 1.0 with a few dents > a perfect repo nobody runs.
+- Design is a feature. The visuals are the value here; people react to how it feels.
+- Scope is a weapon. Saying “Telegram first” unlocked momentum. Web can wait.
+- AI is a tool, not a crutch. It accelerates, but you still have to choose.
+
+### What’s next
+
+- Blends with friends. Lightweight social — see a friend’s flow, react with one emoji, invite from Telegram.
+- Month Mix v2. Better color weighting and a calmer, richer ribbon.
+- Reminder time picker. Let people choose their hour (not just “evening”).
+- Localization. RU/DE/ES to start.
+- Telegram sharing. Stories and one-tap share of today’s card.
+- TON exploration. Collectible monthly posters and/or blockchain-backed proofs (hashes, not raw data) if it adds real value.
+
+### Try it
+
+- Telegram: open the Mini App via the Flowday bot (DM me if you need the link).
+- Code: GitHub — [itskylebrooks/flowday](https://github.com/itskylebrooks/flowday).
+- Web build: a lightweight version with export/import.
+
+If you try Flowday, I’d love to hear what you notice after a week. Did your month feel like its colors? Did the constellations surprise you? Ping me on Telegram @itskylebrooks.

@@ -1,13 +1,15 @@
-import React, { useMemo } from 'react'
+import React, { Suspense, useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { PROJECTS } from '../data/projects'
+import { PROJECTS } from '../content/projects'
 import { cn } from '../utils/cn'
+import { Prose } from '../components/Prose'
 
 const ACCENT = {
-  red: { text: 'text-red-400' },
-  green: { text: 'text-green-400' },
-  blue: { text: 'text-blue-400' },
-  lilac: { text: 'text-purple-300' },
+  red:   { text: 'text-red-400',    heading: 'prose-headings:text-red-400' },
+  green: { text: 'text-green-400',  heading: 'prose-headings:text-green-400' },
+  blue:  { text: 'text-blue-400',   heading: 'prose-headings:text-blue-400' },
+  lilac: { text: 'text-purple-300', heading: 'prose-headings:text-purple-300' },
+  orange:{ text: 'text-orange-400', heading: 'prose-headings:text-orange-400' },
 } as const
 
 export function ProjectPage() {
@@ -34,19 +36,10 @@ export function ProjectPage() {
         ))}
       </div>
 
-      <div className="mt-8 grid gap-6">
-        <article className="border border-white/10 rounded-xl p-4">
-          <h2 className={cn('text-xl font-medium mb-2', accent.text)}>What I built</h2>
-          <p className="text-white/80">A focused, minimal interface with a clear information hierarchy and fast interactions.</p>
-        </article>
-        <article className="border border-white/10 rounded-xl p-4">
-          <h2 className={cn('text-xl font-medium mb-2', accent.text)}>Challenges</h2>
-          <p className="text-white/80">Balancing simplicity with flexibility; keeping bundle size small while maintaining clarity.</p>
-        </article>
-        <article className="border border-white/10 rounded-xl p-4">
-          <h2 className={cn('text-xl font-medium mb-2', accent.text)}>Outcome</h2>
-          <p className="text-white/80">A lean codebase that’s easy to extend and a UI that stays out of the user’s way.</p>
-        </article>
+      <div className="mt-6">
+        <Prose className={accent.heading}>
+          <ProjectContent slug={project.slug} />
+        </Prose>
       </div>
 
       <div className="mt-8 flex gap-3">
@@ -62,5 +55,17 @@ export function ProjectPage() {
         <Link to="/" className="text-white/80 underline">← Back to home</Link>
       </div>
     </main>
+  )
+}
+
+function ProjectContent({ slug }: { slug: string }) {
+  const modules = import.meta.glob('/content/projects/*.mdx') as Record<string, any>
+  const key = `/content/projects/${slug}.mdx`
+  const LazyProject = (modules[key] ? (React.lazy(modules[key] as any) as React.ComponentType) : null)
+  if (!LazyProject) return <p className="text-white/60">Project content not found.</p>
+  return (
+    <Suspense fallback={<p className="text-white/60">Loading…</p>}>
+      <LazyProject />
+    </Suspense>
   )
 }

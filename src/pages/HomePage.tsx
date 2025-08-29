@@ -6,8 +6,8 @@ import { BlogRow } from '../components/BlogRow'
 import { IconLink } from '../components/IconLink'
 import { GithubIcon } from '../components/icons/GithubIcon'
 import { LinkedinIcon } from '../components/icons/LinkedinIcon'
-import { PROJECTS } from '../data/projects'
-import { POSTS } from '../data/posts'
+import { PROJECTS } from '../content/projects'
+import { POSTS } from '../content/posts'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 function prefersReducedMotion(): boolean {

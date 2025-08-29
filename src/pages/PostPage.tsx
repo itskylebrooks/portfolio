@@ -1,6 +1,6 @@
 import React, { Suspense, useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { POSTS } from '../data/posts'
+import { POSTS } from '../content/posts'
 import { Prose } from '../components/Prose'
 
 export function PostPage() {
@@ -13,7 +13,7 @@ export function PostPage() {
       </main>
     )
   }
-  const modules = import.meta.glob('/content/posts/*.mdx')
+  const modules = import.meta.glob('/content/posts/*.mdx') as Record<string, any>
   const key = `/content/posts/${post.slug}.mdx`
   const LazyPost = (modules[key] ? React.lazy(modules[key] as any) : null) as React.ComponentType | null
 
