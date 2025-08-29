@@ -1,5 +1,5 @@
 export const meta = {
-  title: 'Portfolio',
+  title: 'Portfolio — Dark Minimal',
   date: '2025-08-18',
   summary: 'This very site: a dark-only portfolio with tasteful motion, strong a11y, and a lean React codebase.',
   tech: ['React','TS','Tailwind','Router'],
@@ -7,7 +7,56 @@ export const meta = {
   links: {repo: 'https://github.com/itskylebrooks/portfolio'},
 }
 
-## Build
+## A simple, dark-only portfolio I actually like using
 
-Built with Vite, React, TypeScript, Tailwind, and React Router. Typography is tuned for legibility on dark backgrounds, with motion reduced by respecting user preferences.
+I wanted a site that loads fast, reads clearly, and doesn’t get in the way. This is a dark-only, typography-first layout with small, deliberate motion and strong keyboard/focus states.
 
+### What it is
+
+- A single-page app with a calm header and three sections on home: Projects, Blog, Contact.  
+- Project and blog entries live as MDX files with typed `meta` and are rendered lazily per page.  
+- Accent-aware project pages — headings tint to the project color for subtle personality.
+
+### Why I built it this way
+
+I prefer content-forward sites that don’t fight me when writing. Moving projects/blog to MDX lets me write long-form entries with structure (headings, lists, code) and keep metadata close to content without another CMS.
+
+### What it does today
+
+- Home lists projects and posts by reading metadata from MDX.  
+- Project page renders header (date, title, summary, tech chips, links) + the project MDX body via a shared Prose renderer.  
+- Blog page does the same for posts (MDX), with a clean list view and detail view.  
+- Sticky header supports “About” scroll and respects `prefers-reduced-motion` when animating scroll.
+
+### Decisions I’m happy with
+
+- MDX-first content. No duplicated JSON; metadata lives beside the writing.  
+- `import.meta.glob` collectors: eager for meta indexing, lazy for per-page content — simple and fast.  
+- Accent-aware typography: `prose-headings:` classes apply the project color without custom CSS.  
+- A11y defaults: clear focus-visible rings, underlined links, readable contrast.
+
+### Behind the build
+
+- Vite + React + TypeScript + Tailwind + React Router.  
+- MDX via `@mdx-js/rollup` with a tiny `*.mdx` typing that exposes `export const meta`.  
+- Content loaders in `src/content/*` that derive slugs from filenames and sort by date.  
+- Small components: `Section`, `ProjectCard`, `BlogRow`, `IconLink`, and a `Prose` wrapper with `prose-invert`.
+
+Notable bits:
+
+- Accent-aware project pages: headings adopt the project’s accent color.  
+- Smooth anchor scroll that degrades to instant when users prefer reduced motion.  
+- Clean, clickable cards with tiny hover shifts and no gimmicks.
+
+### What I learned
+
+- Keep content in files you like editing; you’ll write more.  
+- MDX + eager meta + lazy content is a sweet spot for small sites.  
+- Small, named components make it easy to keep the UI tidy without a design system.
+
+### What’s next
+
+- RSS for blog posts.  
+- OG tags and per-entry SEO helpers.  
+- Light image handling for post/project screenshots.  
+- Simple archive pages by year.
