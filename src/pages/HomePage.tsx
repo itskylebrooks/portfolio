@@ -18,7 +18,7 @@ function prefersReducedMotion(): boolean {
 export function HomePage() {
   const location = useLocation()
   const navigate = useNavigate()
-  useDocumentTitle('Kyle Brooks — Portfolio')
+  useDocumentTitle('Kyle Brooks')
 
   useEffect(() => {
     if ((location.state as any)?.scrollTo === 'about') {
@@ -60,9 +60,9 @@ function Hero() {
       <div className="mx-auto max-w-[820px] px-4 pt-12 pb-10">
         <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Kyle Brooks</h1>
         <p className="mt-3 text-white/80 text-lg">
-          Full-stack developer & Software Systems Development student (University of Hamburg).
+          Emerging leader & builder of minimal web experiences.
         </p>
-        <p className="mt-2 text-white/70">I build minimal, reliable web experiences.</p>
+        <p className="mt-2 text-white/70">Build useful things. Keep moving forward.</p>
         <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
           <a href="#projects" className="underline underline-offset-4">View my work → Projects</a>
           <span className="text-white/30">•</span>
