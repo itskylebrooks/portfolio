@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { IconLink } from './IconLink'
 import { GithubIcon } from './icons/GithubIcon'
 import { LinkedinIcon } from './icons/LinkedinIcon'
+import { MailIcon } from './icons/MailIcon'
 
 function prefersReducedMotion(): boolean {
   if (typeof window === 'undefined') return false
@@ -37,6 +38,7 @@ export function Header() {
         <div className="ml-auto flex items-center gap-2">
           <IconLink href="https://github.com/itskylebrooks" label="GitHub" Icon={GithubIcon} />
           <IconLink href="https://linkedin.com/in/itskylebrooks" label="LinkedIn" Icon={LinkedinIcon} />
+          <IconLink href="mailto:itskylebrooks@icloud.com" label="Email" Icon={MailIcon} />
         </div>
       </div>
     </header>
