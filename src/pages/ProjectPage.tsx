@@ -24,7 +24,7 @@ export function ProjectPage() {
   }
   const accent = (ACCENT as any)[project.accent] || ACCENT.blue
   return (
-    <main className="mx-auto max-w-[820px] px-4 py-10">
+    <main className="animate-page-in mx-auto max-w-[820px] px-4 py-10">
       <p className="text-sm text-white/60">
         {new Date(project.date).toLocaleDateString()} {project.version ? `— v${project.version}` : ''}
       </p>
