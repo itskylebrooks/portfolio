@@ -16,7 +16,7 @@ export function ProjectCard({ p }: { p: Project }) {
   const accent = ACCENT[p.accent] || ACCENT.blue
   return (
     <Link
-      to={`/projects/${p.slug}`}
+      to={`/work/${p.slug}`}
       className={cn(
         'group block border border-white/10 rounded-xl p-4 transition-transform duration-150',
         'hover:-translate-y-0.5',

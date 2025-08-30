@@ -18,7 +18,11 @@ export function Header() {
     e.preventDefault()
     if (pathname === '/') {
       const el = document.getElementById('about')
-      if (el) el.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' })
+      if (el) {
+        const offset = 24 // scroll a little higher than the section top
+        const top = el.getBoundingClientRect().top + window.scrollY - offset
+        window.scrollTo({ top, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
+      }
     } else {
       navigate('/', { state: { scrollTo: 'about' } })
     }

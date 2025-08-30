@@ -14,7 +14,7 @@ function Shell() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/projects/:slug" element={<ProjectPage />} />
+        <Route path="/work/:slug" element={<ProjectPage />} />
         <Route path="/blog/:slug" element={<PostPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
