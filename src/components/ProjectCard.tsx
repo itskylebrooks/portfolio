@@ -26,7 +26,9 @@ export function ProjectCard({ p }: { p: Project }) {
     >
       <div className="flex items-start justify-between gap-4">
         <div>
-          <div className={cn('text-sm text-white/60','mb-1')}>{new Date(p.date).toLocaleDateString()}</div>
+          <div className={cn('text-sm text-white/60','mb-1')}>
+            {new Date(p.date).toLocaleDateString()}{p.version ? ` — v${p.version}` : ''}
+          </div>
           <h3 className="text-lg text-white font-medium mb-1 group-hover:underline underline-offset-4">{p.title}</h3>
           <p className="text-white/80 mb-3">{p.summary}</p>
           <ul className="flex flex-wrap gap-2">
