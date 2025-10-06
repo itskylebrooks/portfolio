@@ -3,8 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/icon.png" />
-    <link rel="apple-touch-icon" href="/icon.png" />
+    <!-- Prefer media-aware favicons so the browser picks the correct one for light/dark UI -->
+    <link rel="icon" type="image/png" href="/icon-black.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" href="/icon-white.png" media="(prefers-color-scheme: dark)" />
+    <!-- Apple touch icon (fallback and will be swapped by the script on theme changes) -->
+    <link rel="apple-touch-icon" href="/icon-black.png" id="apple-touch-icon" />
+
+    <!-- Fallback script for browsers that don't support media on link rel=icon or to handle runtime theme changes -->
+    <script>
+      (function () {
+        const lightHref = '/icon-black.png';
+        const darkHref = '/icon-white.png';
+
+        function setFavicon(href) {
+          // rel icons
+          const rels = ['icon', 'shortcut icon'];
+          rels.forEach(rel => {
+            let el = document.querySelector('link[rel="' + rel + '"]');
+            if (!el) {
+              el = document.createElement('link');
+              el.rel = rel;
+              document.head.appendChild(el);
+            }
+            el.type = 'image/png';
+            el.href = href;
+          });
+
+          // apple touch icon
+          const apple = document.getElementById('apple-touch-icon') || document.createElement('link');
+          apple.rel = 'apple-touch-icon';
+          apple.href = href;
+          apple.id = 'apple-touch-icon';
+          if (!document.getElementById('apple-touch-icon')) document.head.appendChild(apple);
+        }
+
+        const mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function applyScheme(e) {
+          const isDark = e && typeof e.matches === 'boolean' ? e.matches : mq.matches;
+          setFavicon(isDark ? darkHref : lightHref);
+        }
+
+        // Initial set
+        applyScheme();
+
+        // Listen for changes
+        if (mq.addEventListener) {
+          mq.addEventListener('change', applyScheme);
+        } else if (mq.addListener) {
+          mq.addListener(applyScheme);
+        }
+      })();
+    </script>
     <title>Kyle Brooks — Portfolio</title>
   </head>
   <body class="min-h-screen bg-[#0B0B0B] text-[#F5F5F5]">
