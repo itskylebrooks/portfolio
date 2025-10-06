@@ -92,13 +92,21 @@ function Hero() {
           Emerging leader & builder of minimal web experiences.
         </p>
         <p className="mt-2 text-white/70">Build useful things. Keep moving forward.</p>
-        <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
-          <a href="#work" className="underline underline-offset-4">View my projects → Work</a>
-          <span className="text-white/30">•</span>
-          <a href="#blog" className="underline underline-offset-4">Read my thoughts → Blog</a>
-          <span className="text-white/30">•</span>
-          <a href="#experience" className="underline underline-offset-4">Explore my background → Experience</a>
-        </div>
+        <ul className="mt-6 text-sm md:flex md:flex-wrap md:items-center md:gap-3">
+          <li className="list-disc ml-5 mb-2 md:mb-0 md:list-none md:ml-0 md:inline-flex md:items-center">
+            <a href="#work" className="underline underline-offset-4">View my projects → Work</a>
+            <span className="hidden md:inline-block text-white/30 ml-3">•</span>
+          </li>
+
+          <li className="list-disc ml-5 mb-2 md:mb-0 md:list-none md:ml-0 md:inline-flex md:items-center">
+            <a href="#blog" className="underline underline-offset-4">Read my thoughts → Blog</a>
+            <span className="hidden md:inline-block text-white/30 ml-3">•</span>
+          </li>
+
+          <li className="list-disc ml-5 md:list-none md:ml-0 md:inline-flex md:items-center">
+            <a href="#experience" className="underline underline-offset-4">Explore my background → Experience</a>
+          </li>
+        </ul>
       </div>
     </section>
   )
