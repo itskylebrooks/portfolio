@@ -6,7 +6,8 @@ Modular Vite + React + TypeScript + Tailwind + React Router.
 - `src/app` – Router and shell
 - `src/pages` – Page-level components
 - `src/components` – Reusable UI + icons
-- `src/data` – Static content
+- `src/content` – Typed MDX indexes
+- `content/` – MDX project + post sources
 - `src/hooks` – Reusable hooks
 - `src/utils` – Helpers
 - `src/styles` – Tailwind entry

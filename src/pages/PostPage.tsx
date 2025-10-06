@@ -3,9 +3,17 @@ import { Link, useParams } from 'react-router-dom'
 import { POSTS } from '../content/posts'
 import { Prose } from '../components/Prose'
 
+const postModules = import.meta.glob('/content/posts/*.mdx') as Record<string, () => Promise<{ default: React.ComponentType }>>
+
 export function PostPage() {
   const { slug } = useParams()
-  const post = useMemo(() => POSTS.find(p => p.slug === slug), [slug])
+  const post = POSTS.find((p) => p.slug === slug)
+  const LazyPost = useMemo(() => {
+    if (!post) return null
+    const loader = postModules[`/content/posts/${post.slug}.mdx`]
+    return loader ? React.lazy(loader) : null
+  }, [post?.slug])
+
   if (!post) {
     return (
       <main className="mx-auto max-w-[820px] px-4 py-20">
@@ -13,9 +21,6 @@ export function PostPage() {
       </main>
     )
   }
-  const modules = import.meta.glob('/content/posts/*.mdx') as Record<string, any>
-  const key = `/content/posts/${post.slug}.mdx`
-  const LazyPost = (modules[key] ? React.lazy(modules[key] as any) : null) as React.ComponentType | null
 
   return (
     <main className="animate-page-in mx-auto max-w-[820px] px-4 py-10">

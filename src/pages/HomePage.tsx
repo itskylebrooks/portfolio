@@ -9,11 +9,7 @@ import { LinkedinIcon } from '../components/icons/LinkedinIcon'
 import { PROJECTS } from '../content/projects'
 import { POSTS } from '../content/posts'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
-
-function prefersReducedMotion(): boolean {
-  if (typeof window === 'undefined') return false
-  return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-}
+import { prefersReducedMotion } from '../utils/prefersReducedMotion'
 
 export function HomePage() {
   const location = useLocation()

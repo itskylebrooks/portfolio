@@ -1,20 +1,21 @@
 import React, { Suspense, useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { PROJECTS } from '../content/projects'
-import { cn } from '../utils/cn'
+import { PROJECTS, type Accent } from '../content/projects'
 import { Prose } from '../components/Prose'
 
-const ACCENT = {
+const projectModules = import.meta.glob('/content/projects/*.mdx') as Record<string, () => Promise<{ default: React.ComponentType }>>
+
+const ACCENT: Record<Accent, { text: string; heading: string }> = {
   red:   { text: 'text-red-400',    heading: 'prose-headings:text-red-400' },
   green: { text: 'text-green-400',  heading: 'prose-headings:text-green-400' },
   blue:  { text: 'text-blue-400',   heading: 'prose-headings:text-blue-400' },
   lilac: { text: 'text-purple-300', heading: 'prose-headings:text-purple-300' },
   orange:{ text: 'text-orange-400', heading: 'prose-headings:text-orange-400' },
-} as const
+}
 
 export function ProjectPage() {
   const { slug } = useParams()
-  const project = useMemo(() => PROJECTS.find(p => p.slug === slug), [slug])
+  const project = PROJECTS.find((p) => p.slug === slug)
   if (!project) {
     return (
       <main className="mx-auto max-w-[820px] px-4 py-20">
@@ -22,7 +23,7 @@ export function ProjectPage() {
       </main>
     )
   }
-  const accent = (ACCENT as any)[project.accent] || ACCENT.blue
+  const accent = ACCENT[project.accent] ?? ACCENT.blue
   return (
     <main className="animate-page-in mx-auto max-w-[820px] px-4 py-10">
       <p className="text-sm text-white/60">
@@ -61,9 +62,10 @@ export function ProjectPage() {
 }
 
 function ProjectContent({ slug }: { slug: string }) {
-  const modules = import.meta.glob('/content/projects/*.mdx') as Record<string, any>
-  const key = `/content/projects/${slug}.mdx`
-  const LazyProject = (modules[key] ? (React.lazy(modules[key] as any) as React.ComponentType) : null)
+  const LazyProject = useMemo(() => {
+    const loader = projectModules[`/content/projects/${slug}.mdx`]
+    return loader ? React.lazy(loader) : null
+  }, [slug])
   if (!LazyProject) return <p className="text-white/60">Project content not found.</p>
   return (
     <Suspense fallback={<p className="text-white/60">Loading…</p>}>

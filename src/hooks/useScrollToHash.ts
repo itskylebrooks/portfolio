@@ -1,10 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-
-function prefersReducedMotion(): boolean {
-  if (typeof window === 'undefined') return false
-  return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-}
+import { prefersReducedMotion } from '../utils/prefersReducedMotion'
 
 export function useScrollToHash() {
   const { hash, pathname } = useLocation()

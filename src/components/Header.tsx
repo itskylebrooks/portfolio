@@ -4,11 +4,7 @@ import { IconLink } from './IconLink'
 import { GithubIcon } from './icons/GithubIcon'
 import { LinkedinIcon } from './icons/LinkedinIcon'
 import { MailIcon } from './icons/MailIcon'
-
-function prefersReducedMotion(): boolean {
-  if (typeof window === 'undefined') return false
-  return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-}
+import { prefersReducedMotion } from '../utils/prefersReducedMotion'
 
 export function Header() {
   const { pathname } = useLocation()
