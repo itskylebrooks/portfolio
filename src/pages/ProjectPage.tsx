@@ -55,7 +55,7 @@ export function ProjectPage() {
       </div>
 
       <div className="mt-10">
-        <Link to="/" className="text-white/80 underline">← Back to home</Link>
+        <Link to={{ pathname: '/', hash: '#work' }} className="text-white/80 underline">← Back to home</Link>
       </div>
     </main>
   )
