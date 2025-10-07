@@ -87,7 +87,7 @@ function Hero() {
   return (
     <section id="about" className="relative">
       <div className="mx-auto max-w-[820px] px-4 pt-12 pb-10">
-  <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">Emerging leader & designerE of minimal web experiences</h1>
+  <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">Emerging leader & designer of minimal web experiences</h1>
         <p className="mt-2 text-white/70">Build useful things. Keep moving forward.</p>
         <ul className="mt-6 text-sm md:flex md:flex-wrap md:items-center md:gap-3">
           <li className="list-disc ml-5 mb-2 md:mb-0 md:list-none md:ml-0 md:inline-flex md:items-center">
