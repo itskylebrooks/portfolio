@@ -20,7 +20,7 @@ export function ProjectCard({ p }: { p: Project }) {
     <motion.div
       whileHover={shouldReduceMotion ? undefined : { y: -4 }}
       whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      transition={{ type: 'spring', stiffness: 700, damping: 30, mass: 0.6 }}
     >
       <Link
         to={`/work/${p.slug}`}
