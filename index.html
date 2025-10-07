@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,18 +56,65 @@
       })();
     </script>
     <title>Kyle Brooks — Portfolio</title>
-    <!-- Inline background to avoid white flash before CSS loads. Matches app dark/light themes. -->
+    <!-- Inline background to avoid white/gray flash before CSS and JS load.
+         We set CSS vars as early as possible so the overlay and root are
+         painted immediately. We also include theme meta tags for mobile.
+    -->
+  <!-- Force dark theme for all users (ignore system light/dark). -->
+  <meta name="theme-color" content="#0B0B0B">
+  <meta name="color-scheme" content="dark">
+    <!-- iOS Safari: make status bar match background when saved to home screen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <script>
+      // Immediately set CSS variables for the initial background/color so
+      // any inline elements (overlay, body, root) render correctly before
+      // external CSS or JS runs. Uses prefers-color-scheme to pick values.
+      (function () {
+        // Force a dark background regardless of system settings.
+        const darkBg = '#0B0B0B';
+        const darkColor = '#F5F5F5';
+        document.documentElement.style.setProperty('--initial-bg', darkBg);
+        document.documentElement.style.setProperty('--initial-color', darkColor);
+        // Ensure any theme-color meta uses dark background.
+        try {
+          var metas = document.querySelectorAll('meta[name="theme-color"]');
+          metas.forEach(function (m) { m.setAttribute('content', darkBg); });
+        } catch (e) { /* ignore */ }
+      })();
+    </script>
+
     <style>
-      /* Reduce initial white flash by painting a matching background/color
-         before Tailwind CSS and JS bundle load. Keeps favicons and a11y intact. */
-      html, body { background: #0B0B0B; color: #F5F5F5; }
-      @media (prefers-color-scheme: light) {
-        html, body { background: #FFFFFF; color: #0B0B0B; }
-      }
+      /* Reduce initial white/gray flash by painting a matching background/color
+         before Tailwind CSS and JS bundle load. Uses the variables set above. */
+      :root { --initial-bg: #0B0B0B; --initial-color: #F5F5F5; }
+      html, body, #root { background: var(--initial-bg); color: var(--initial-color); }
     </style>
   </head>
   <body class="min-h-screen bg-[#0B0B0B] text-[#F5F5F5]">
+    <!-- Initial full-viewport overlay to hide any brief gray/white flash on reload.
+         Uses CSS variable --initial-bg which is set in the head script above so
+         it paints immediately even before external CSS loads. pointer-events:none
+         keeps it from blocking interactions if the page is already interactive. -->
+    <div id="initial-bg" style="position:fixed;inset:0;z-index:9999;background:var(--initial-bg);pointer-events:none;transition:opacity .25s linear;"> </div>
+
+    <!-- #root is painted above in the head style to avoid iOS gray flash on reload -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Fade out and remove the initial overlay once the page has loaded.
+      (function () {
+        function removeOverlay() {
+          var o = document.getElementById('initial-bg');
+          if (!o) return;
+          o.style.opacity = '0';
+          setTimeout(function () { try { o.remove(); } catch (e) {} }, 300);
+        }
+        if (document.readyState === 'complete') removeOverlay();
+        else window.addEventListener('load', removeOverlay, { once: true });
+        // As a fallback, also remove after ~1s in case 'load' doesn't fire quickly.
+        setTimeout(removeOverlay, 1000);
+      })();
+    </script>
   </body>
 </html>
