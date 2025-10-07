@@ -53,28 +53,28 @@ export function HomePage() {
           <div>
             <h3 className="text-white font-medium">University of Hamburg — B.Sc. Software Systems Development (2024–present)</h3>
             <p className="mt-2 text-white/90">
-              I am building a strong foundation in computer science with practical coursework in distributed systems, software engineering, databases, and computer vision, while gradually moving toward a specialization in Artificial Intelligence and Machine Learning.
+              At university, I’m grounding myself deeply in computer science, with a special focus on artificial intelligence, machine learning, distributed systems, and thoughtful software design. This journey is shaping how I approach complex problems and build meaningful solutions.
             </p>
           </div>
 
           <div>
             <h3 className="text-white font-medium">Walddörfer Gymnasium — Abitur (2024, grade 1.4)</h3>
             <p className="mt-2 text-white/90">
-              My focus was on mathematics, computer science, and embedded systems. Beyond academics, this was also a time of integration into Western society: learning German, adapting to a new environment, and finishing school in my adopted country.
+              Moving to a new country, I embraced the challenge of adapting and learning, driven by curiosity and a desire to belong. My studies centered on mathematics, computer science, and embedded systems, all while finding my place in a new culture and community.
             </p>
           </div>
 
           <div>
             <h3 className="text-white font-medium">Skills</h3>
             <p className="mt-2 text-white/90">
-              My technical profile combines programming in Java, Python, and JavaScript/TypeScript with modern frameworks such as React, Next.js, and Tailwind. I have practical experience with databases and developer tools including Supabase, MongoDB, Git, Vercel, Netlify, and LaTeX. Conceptually, I am most drawn to algorithms, data structures, distributed systems, and computer vision.
+              I enjoy building practical projects that span front-end and back-end, focusing on clean, minimal software that just works. My experience covers a range of tools and frameworks, but what drives me most is creating thoughtful, efficient solutions from start to finish.
             </p>
           </div>
 
           <div>
             <h3 className="text-white font-medium">Languages</h3>
             <p className="mt-2 text-white/90">
-              My mother tongue is Russian, the language of my everyday environment is German, and the language I most enjoy thinking, writing, and building in is English. Together they give me a broad cultural and communicative range.
+              Russian is my mother tongue, German is the language of my daily life, and English is where I feel most at home thinking, writing, and creating. Together, they enrich my perspective and communication.
             </p>
           </div>
 
