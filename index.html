@@ -56,6 +56,15 @@
       })();
     </script>
     <title>Kyle Brooks — Portfolio</title>
+    <!-- Inline background to avoid white flash before CSS loads. Matches app dark/light themes. -->
+    <style>
+      /* Reduce initial white flash by painting a matching background/color
+         before Tailwind CSS and JS bundle load. Keeps favicons and a11y intact. */
+      html, body { background: #0B0B0B; color: #F5F5F5; }
+      @media (prefers-color-scheme: light) {
+        html, body { background: #FFFFFF; color: #0B0B0B; }
+      }
+    </style>
   </head>
   <body class="min-h-screen bg-[#0B0B0B] text-[#F5F5F5]">
     <div id="root"></div>
