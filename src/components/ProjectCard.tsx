@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { motion, useReducedMotion } from 'framer-motion'
 import { ChevronRightIcon } from './icons/ChevronRightIcon'
 import type { ProjectIndex as Project, Accent } from '../content/projects'
 import { cn } from '../utils/cn'
@@ -14,33 +15,39 @@ const ACCENT: Record<Accent, { border: string; bg: string; text: string }> = {
 
 export function ProjectCard({ p }: { p: Project }) {
   const accent = ACCENT[p.accent] || ACCENT.blue
+  const shouldReduceMotion = useReducedMotion()
   return (
-    <Link
-      to={`/work/${p.slug}`}
-      className={cn(
-        'group block border border-white/10 rounded-xl p-4 transition-transform duration-150',
-        'hover:-translate-y-0.5',
-        accent.border,
-        accent.bg,
-      )}
+    <motion.div
+      whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+      whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <div className={cn('text-sm text-white/60','mb-1')}>
-            {new Date(p.date).toLocaleDateString()}{p.version ? ` — v${p.version}` : ''}
+      <Link
+        to={`/work/${p.slug}`}
+        className={cn(
+          'group block border border-white/10 rounded-xl p-4',
+          accent.border,
+          accent.bg,
+        )}
+      >
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <div className={cn('text-sm text-white/60','mb-1')}>
+              {new Date(p.date).toLocaleDateString()}{p.version ? ` — v${p.version}` : ''}
+            </div>
+            <h3 className="text-lg text-white font-medium mb-1 group-hover:underline underline-offset-4">{p.title}</h3>
+            <p className="text-white/80 mb-3">{p.summary}</p>
+            <ul className="flex flex-wrap gap-2">
+              {p.tech.map((t) => (
+                <li key={t} className="text-xs px-2 py-1 rounded-full bg-white/5 text-white/80 border border-white/10">
+                  {t}
+                </li>
+              ))}
+            </ul>
           </div>
-          <h3 className="text-lg text-white font-medium mb-1 group-hover:underline underline-offset-4">{p.title}</h3>
-          <p className="text-white/80 mb-3">{p.summary}</p>
-          <ul className="flex flex-wrap gap-2">
-            {p.tech.map((t) => (
-              <li key={t} className="text-xs px-2 py-1 rounded-full bg-white/5 text-white/80 border border-white/10">
-                {t}
-              </li>
-            ))}
-          </ul>
+          <ChevronRightIcon className={cn('h-5 w-5 mt-1 shrink-0', accent.text)} />
         </div>
-        <ChevronRightIcon className={cn('h-5 w-5 mt-1 shrink-0', accent.text)} />
-      </div>
-    </Link>
+      </Link>
+    </motion.div>
   )
 }

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Section } from '../components/Section'
 import { ProjectCard } from '../components/ProjectCard'
@@ -28,14 +29,20 @@ export function HomePage() {
     }
   }, [location.state, navigate])
 
+  const shouldReduceMotion = useReducedMotion()
+  const pageVariants = {
+    initial: { opacity: 0, y: 8 },
+    enter: { opacity: 1, y: 0, transition: { duration: 0.22 } },
+  }
+
   return (
-    <main className="animate-page-in">
+    <motion.main initial={shouldReduceMotion ? undefined : 'initial'} animate={shouldReduceMotion ? undefined : 'enter'} variants={pageVariants}>
       <Hero />
       <Section id="work" title="Work">
         <div className="grid gap-4">
           {PROJECTS.map((p) => <ProjectCard key={p.slug} p={p} />)}
         </div>
-      </Section>
+  </Section>
       <Section id="blog" title="Blog">
         <div className="divide-y divide-white/10 rounded-xl border border-white/10">
           {POSTS.map((post) => <BlogRow key={post.slug} post={post} />)}
@@ -79,7 +86,7 @@ export function HomePage() {
           </div>
         </div>
       </Section>
-    </main>
+    </motion.main>
   )
 }
 

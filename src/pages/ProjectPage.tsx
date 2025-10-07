@@ -1,4 +1,5 @@
 import React, { Suspense, useMemo } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Link, useParams } from 'react-router-dom'
 import { PROJECTS, type Accent } from '../content/projects'
 import { Prose } from '../components/Prose'
@@ -24,8 +25,14 @@ export function ProjectPage() {
     )
   }
   const accent = ACCENT[project.accent] ?? ACCENT.blue
+  const shouldReduceMotion = useReducedMotion()
   return (
-    <main className="animate-page-in mx-auto max-w-[820px] px-4 py-10">
+    <motion.main
+      className="mx-auto max-w-[820px] px-4 py-10"
+      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }}
+      animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+      transition={{ duration: 0.22 }}
+    >
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-sm text-white/60">
@@ -74,7 +81,7 @@ export function ProjectPage() {
       <div className="mt-10">
         <Link to={{ pathname: '/', hash: '#work' }} className="text-white/80 underline">← Back to home</Link>
       </div>
-    </main>
+      </motion.main>
   )
 }
 
