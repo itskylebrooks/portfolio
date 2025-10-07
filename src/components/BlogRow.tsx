@@ -8,7 +8,7 @@ export function BlogRow({ post }: { post: Post }) {
   const shouldReduceMotion = useReducedMotion()
   return (
     <motion.div
-      whileHover={shouldReduceMotion ? undefined : { y: -2 }}
+      whileHover={shouldReduceMotion ? undefined : {}}
       whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
       className="rounded-lg"
     >
