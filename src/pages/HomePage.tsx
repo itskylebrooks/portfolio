@@ -29,7 +29,7 @@ export function HomePage() {
   }, [location.state, navigate])
 
   return (
-    <main>
+    <main className="animate-page-in">
       <Hero />
       <Section id="work" title="Work">
         <div className="grid gap-4">
