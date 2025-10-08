@@ -11,11 +11,11 @@ export const meta = {
 
 ### Flowday — my first “real” project
 
-I’ve started and abandoned plenty of side projects, but Flowday is the first one that truly stuck. It’s the first thing I use every day and have shared with others. Building it didn’t just give me an app; it flipped a switch in how I think about web development. This was the moment I stopped just learning and started shipping—breaking things, fixing them, and caring more about the product than the code itself.
+For a long time, my learning cycles looked the same: dive into syntax, grind through exercises, hit burnout, and then start over. It felt like spinning my wheels—never quite building anything real. I wanted to break that pattern. Instead of waiting to be “ready,” I decided to just start prototyping, making something tangible that I could use and share. Flowday is that project. It’s the first thing I’ve stuck with, the first app I open every day, and the first I’ve shared with others. More than just code, it flipped a switch in how I approach building—shipping imperfect work, learning fast, and caring more about the experience than the lines of code.
 
 ### What it is (in one breath)
 
-At its core, Flowday is a quick 20-second mood ritual. You pick up to three emojis, slide a color, and optionally add a song. From that simple input, the app generates visuals you can revisit later: weekly “flowing” ribbons that feel like a soft timeline, a monthly color mix resembling a weather map of your emotions, emoji constellations that subtly move, and cassette-style “song of the day” cards. It’s built primarily as a Telegram Mini App with optional cloud sync tied to your Telegram ID, but there’s also a web version with export/import features for those who prefer not to create accounts.
+Flowday is a quick 20-second mood ritual. You pick up to three emojis, slide a color, and optionally add a song. From that simple input, the app creates visuals you can revisit later: weekly “flowing” ribbons that feel like a soft timeline, a monthly color mix resembling a weather map of your emotions, emoji constellations that subtly move, and cassette-style “song of the day” cards. It has both a web version and a Telegram-optimized Mini App with optional cloud sync tied to your Telegram ID, but you can also keep your data local if you prefer.
 
 ### Why I built it
 
@@ -23,35 +23,19 @@ Most mood tracking apps felt either like essays or sliders from “bad to good,�
 
 ### What it does today
 
-- Three emojis + a color — your “vibe” for the day in seconds
-- Week Flow — 7 blended bands; a soft timeline you can actually feel
-- Month Mix — a continuous ribbon showing which hues dominated
-- Constellations — recurring emojis become “stars,” with subtle motion
-- Song Echoes — cassette cards for days you add music
-- Reminders — optional daily ping (Telegram, server-side cron)
-- Sync — Telegram accounts only; anonymous local mode still works
-- Export/Import — keep your data portable (especially on the web build)
+- Three emojis + a color — your “vibe” for the day in seconds  
+- Week Flow — 7 blended bands; a soft timeline you can actually feel  
+- Month Mix — a continuous ribbon showing which hues dominated  
+- Constellations — recurring emojis become “stars,” with subtle motion  
+- Song Echoes — cassette cards for days you add music  
+- Reminders — optional daily ping (Telegram, server-side cron)  
+- Sync — Telegram accounts only; anonymous local mode still works  
+- Export/Import — keep your data portable (especially on the web build)  
 
-### Decisions I’m happy with
+### Reflections on the journey
 
-I chose a local-first approach by default so your entries live on your device unless you opt in to sync. I tried email logins but found they slowed things down and didn’t improve the experience; sticking with Telegram sign-in keeps it simple and seamless. More than anything, I prioritized the feeling and flow of the visuals over chasing every edge case early on. Sometimes good UX means deleting code and letting the product breathe.
+Building Flowday taught me that shipping beats polishing every time. I learned to embrace rough edges and focus on the feeling the app creates rather than chasing every edge case or perfect line of code. Choosing a local-first approach with optional Telegram sync kept things simple and respectful of privacy. The tech stack—React, TypeScript, Tailwind, Vercel, Supabase, and Telegram Mini Apps—gave me the tools to iterate quickly. AI helped speed up some parts, but the hard decisions and product soul came from me. Simplifying relentlessly turned out to be the best user experience.
 
-### Behind the build
+### What’s next?
 
-Flowday marks the moment I stopped “studying web dev” and started truly using it. I leaned on AI as a pair programmer, but every product decision, iteration, and stubborn fix came from me. Syncing was a battle, settings got redesigned three times, and I learned that the best user experience often requires ruthless simplification. The stack is React with TypeScript and Vite, styled with Tailwind, deployed on Vercel serverless functions handling API and cron jobs, and backed by Supabase Postgres with Row-Level Security. The Telegram Mini Apps SDK and anonymous Telegram Analytics round out the setup. Key technical choices include Telegram-only sync keyed by telegram_id, a serverless cron that efficiently handles reminder batches without breaking a sweat, and a human-readable JSON export format that future me can migrate anywhere.
-
-### What I learned
-
-Shipping beats polishing every time. A working 1.0 with some rough edges is better than a perfect repo nobody uses. Design isn’t just decoration; it’s a core feature—people respond to how the app feels more than its raw functionality. Choosing to focus on Telegram first unlocked momentum and kept the scope manageable. AI helped speed things up, but it’s a tool, not a crutch—you still have to make the hard choices.
-
-### What’s next
-
-- Blends with friends. Lightweight social — see a friend’s flow, react with one emoji, invite from Telegram.
-- Month Mix v2. Better color weighting and a calmer, richer ribbon.
-- Reminder time picker. Let people choose their hour (not just “evening”).
-- Localization. RU/DE/ES to start.
-- Telegram sharing. Stories and one-tap share of today’s card.
-- TON exploration. Collectible monthly posters and/or blockchain-backed proofs (hashes, not raw data) if it adds real value.
-
-
-If you give Flowday a try, I’d love to hear what you notice after a week. Did your month feel like its colors? Did the constellations surprise you? Ping me on Telegram @itskylebrooks.
+The next step for Flowday is evolution, not expansion. I want to redesign the desktop experience — right now it’s still mostly a stretched mobile layout — and make the entire interface smoother, faster, and more adaptive across devices. Performance and stability come first; Flowday should feel light and reliable no matter where it runs. From there, I’ll start exploring new features and visualizations that deepen the sense of reflection and beauty behind each day’s entry, keeping the app simple in intent but richer in expression.
