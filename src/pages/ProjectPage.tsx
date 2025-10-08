@@ -24,6 +24,11 @@ export function ProjectPage() {
       </main>
     )
   }
+  // When arriving at a project page, set a session flag so HomePage knows
+  // to scroll to the Work section when the user returns.
+  if (typeof window !== 'undefined') {
+    try { sessionStorage.setItem('scrollTo', 'work') } catch (_) {}
+  }
   const accent = ACCENT[project.accent] ?? ACCENT.blue
   const shouldReduceMotion = useReducedMotion()
   return (

@@ -29,6 +29,25 @@ export function HomePage() {
     }
   }, [location.state, navigate])
 
+  // Also support scrolling back from other pages via sessionStorage flag.
+  useEffect(() => {
+    try {
+      const target = sessionStorage.getItem('scrollTo')
+      if (target) {
+        const id = target === 'work' ? 'work' : target === 'blog' ? 'blog' : null
+        if (id) {
+          const el = document.getElementById(id)
+          if (el) {
+            const offset = 24
+            const top = el.getBoundingClientRect().top + window.scrollY - offset
+            window.scrollTo({ top, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
+          }
+        }
+        sessionStorage.removeItem('scrollTo')
+      }
+    } catch (_) {}
+  }, [])
+
   const shouldReduceMotion = useReducedMotion()
   const pageVariants = {
     initial: { opacity: 0, y: 8 },
