@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
-import { ChevronRightIcon } from './icons/ChevronRightIcon'
+import { ChevronRight } from './icons'
 import type { PostIndex as Post } from '../content/posts'
 
 export function BlogRow({ post }: { post: Post }) {
@@ -22,7 +22,7 @@ export function BlogRow({ post }: { post: Post }) {
             <h3 className="text-white font-medium group-hover:text-white">{post.title}</h3>
             <p className="text-white/80 text-sm mt-1">{post.summary}</p>
           </div>
-          <ChevronRightIcon className="h-5 w-5 text-white/60 group-hover:text-white" />
+          <ChevronRight className="h-5 w-5 text-white/60 group-hover:text-white" />
         </div>
       </Link>
     </motion.div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
-import { ChevronRightIcon } from './icons/ChevronRightIcon'
+import { ChevronRight } from './icons'
 import type { ProjectIndex as Project, Accent } from '../content/projects'
 import { cn } from '../utils/cn'
 
@@ -45,7 +45,7 @@ export function ProjectCard({ p }: { p: Project }) {
               ))}
             </ul>
           </div>
-          <ChevronRightIcon className={cn('h-5 w-5 mt-1 shrink-0', accent.text)} />
+          <ChevronRight className={cn('h-5 w-5 mt-1 shrink-0', accent.text)} />
         </div>
       </Link>
     </motion.div>

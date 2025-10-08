@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { IconLink } from './IconLink'
-import { GithubIcon } from './icons/GithubIcon'
-import { LinkedinIcon } from './icons/LinkedinIcon'
-import { MailIcon } from './icons/MailIcon'
-import { BlueskyIcon } from './icons/BlueskyIcon'
+import { Github, Linkedin, Mail } from './icons'
+import { BlueskyIcon } from './BlueskyIcon'
 import { prefersReducedMotion } from '../utils/prefersReducedMotion'
 
 export function Header() {
@@ -38,9 +36,9 @@ export function Header() {
         </Link>
         <div className="ml-auto flex items-center gap-2">
           <IconLink href="https://bsky.app/profile/itskylebrooks.bsky.social" label="Bluesky" Icon={BlueskyIcon} />
-          <IconLink href="https://github.com/itskylebrooks" label="GitHub" Icon={GithubIcon} />
-          <IconLink href="https://linkedin.com/in/itskylebrooks" label="LinkedIn" Icon={LinkedinIcon} />
-          <IconLink href="mailto:itskylebrooks@icloud.com" label="Email" Icon={MailIcon} />
+          <IconLink href="https://github.com/itskylebrooks" label="GitHub" Icon={Github} />
+          <IconLink href="https://linkedin.com/in/itskylebrooks" label="LinkedIn" Icon={Linkedin} />
+          <IconLink href="mailto:itskylebrooks@icloud.com" label="Email" Icon={Mail} />
         </div>
       </div>
     </header>
