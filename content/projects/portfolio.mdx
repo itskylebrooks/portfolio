@@ -10,19 +10,12 @@ export const meta = {
 
 ## A dark-only portfolio focused on content and clarity
 
-I wanted a site that loads fast, reads clearly, and doesn’t get in the way. This portfolio is a single-page React app with a calm header and three main sections: Projects, Blog, and Contact. Content is written in MDX, with typed metadata living alongside each entry, making writing and managing posts straightforward and enjoyable without a CMS. Projects and blog posts are listed by reading metadata from MDX files, and each page uses a shared Prose renderer for consistent, accent-aware dark mode typography. Smooth scrolling, subtle motion, and strong keyboard/focus states make the site accessible and pleasant to use.
+I wanted a site that loads fast, reads clearly, and doesn’t get in the way. This portfolio is a single-page React app with a calm header and three main sections: Projects, Blog, and Experience. Content is written in MDX, with typed metadata living alongside each entry, making writing and managing posts straightforward and enjoyable without a CMS. Projects and blog posts are listed by reading metadata from MDX files, and each page uses a shared Prose renderer for consistent, accent-aware dark mode typography. Smooth scrolling, subtle motion, and strong keyboard/focus states make the site accessible and pleasant to use.
 
 ## Build highlights
 
 The MDX-first content approach keeps metadata and writing together, eliminates duplication, and makes editing enjoyable. Accent-aware typography is handled with `prose-headings:` classes for clean, maintainable color. Accessibility is prioritized with clear focus rings, readable contrast, and underlined links. The stack is modern but lean: Vite, React, TypeScript, Tailwind, React Router, and MDX via `@mdx-js/rollup`, with content loaders for slugs and sorting. Small, reusable components keep the UI tidy and maintainable.
 
-## What I learned
+## Decisions I'm happy with
 
-Keeping content in MDX files makes writing easy and sustainable. Eager metadata loading with lazy content fetching is a sweet spot for small sites, and small, named components help maintain a clean UI without overcomplicating the design.
-
-## What’s next
-
-- Add RSS for blog posts
-- Improve SEO with OG tags and helpers
-- Add image handling for posts/projects
-- Simple archive pages by year
+Keeping everything on a single page turned out to be the best choice — it keeps the experience grounded and fast, like a personal workspace instead of a product site. The minimalist layout lets the content breathe, and small Motion transitions give just enough life without demanding attention. I like how the color system works too: each project subtly carries its own hue through cards, buttons, and headings, hinting at personality within uniformity. Even the header — just my name and four icons — feels right: simple, confident, and quiet in the best way.
