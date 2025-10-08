@@ -5,6 +5,9 @@ import { HomePage } from '../pages/HomePage'
 import { ProjectPage } from '../pages/ProjectPage'
 import { PostPage } from '../pages/PostPage'
 import { NotFoundPage } from '../pages/NotFoundPage'
+import { ImprintPage } from '../pages/ImprintPage'
+import { PrivacyPage } from '../pages/PrivacyPage'
+import { LicensePage } from '../pages/LicensePage'
 import { useScrollToHash } from '../hooks/useScrollToHash'
 
 function Shell() {
@@ -16,11 +19,21 @@ function Shell() {
         <Route path="/" element={<HomePage />} />
         <Route path="/work/:slug" element={<ProjectPage />} />
         <Route path="/blog/:slug" element={<PostPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+  <Route path="/imprint" element={<ImprintPage />} />
+  <Route path="/privacy" element={<PrivacyPage />} />
+  <Route path="/license" element={<LicensePage />} />
+  <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <footer className="mx-auto max-w-[820px] px-4 py-10 text-white/50 text-sm">
-        © {new Date().getFullYear()} Kyle Brooks — Hamburg, DE. Icons by{' '}
-        <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Lucide</a>.
+      <footer className="mx-auto max-w-[820px] px-4 py-10 text-white/50 text-sm flex items-center justify-between">
+        <div>
+          © {new Date().getFullYear()} Kyle Brooks — Hamburg, DE. Icons by{' '}
+          <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Lucide</a>.
+        </div>
+        <div className="flex items-center gap-3">
+          <a href="/imprint" className="underline hover:text-white">Imprint</a>
+          <a href="/privacy" className="underline hover:text-white">Privacy Policy</a>
+          <a href="/license" className="underline hover:text-white">License</a>
+        </div>
       </footer>
     </div>
   )
