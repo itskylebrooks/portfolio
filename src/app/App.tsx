@@ -24,15 +24,22 @@ function Shell() {
   <Route path="/license" element={<LicensePage />} />
   <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <footer className="mx-auto max-w-[820px] px-4 py-10 text-white/50 text-sm flex items-center justify-between">
-        <div>
-          © {new Date().getFullYear()} Kyle Brooks — Hamburg, DE. Icons by{' '}
-          <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Lucide</a>.
+      <footer className="mx-auto max-w-[820px] px-4 py-10 text-white/50 text-sm flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-4">
+        {/* Buttons row (on mobile: first line, centered) */}
+        <div className="w-full flex justify-center sm:justify-start">
+          <div className="flex items-center gap-3">
+            <a href="/imprint" className="underline hover:text-white">Imprint</a>
+            <a href="/privacy" className="underline hover:text-white">Privacy Policy</a>
+            <a href="/license" className="underline hover:text-white">License</a>
+          </div>
         </div>
-        <div className="flex items-center gap-3">
-          <a href="/imprint" className="underline hover:text-white">Imprint</a>
-          <a href="/privacy" className="underline hover:text-white">Privacy Policy</a>
-          <a href="/license" className="underline hover:text-white">License</a>
+
+        {/* Copyright row (on mobile: second line, centered) */}
+        <div className="w-full flex justify-center sm:justify-end text-center sm:text-left">
+          <div>
+            © {new Date().getFullYear()} Kyle Brooks — Hamburg, DE. Icons by{' '}
+            <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Lucide</a>.
+          </div>
         </div>
       </footer>
     </div>
