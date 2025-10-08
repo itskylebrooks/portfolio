@@ -19,7 +19,10 @@ function Shell() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <footer className="mx-auto max-w-[820px] px-4 py-10 text-white/50 text-sm">
-        © {new Date().getFullYear()} Kyle Brooks — Hamburg, DE. Icons by Lucide.
+        © {new Date().getFullYear()} Kyle Brooks — Hamburg, DE. Icons by{' '}
+        <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Lucide</a>
+        {' '}and{' '}
+        <a href="https://tabler.io/icons" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Tabler</a>.
       </footer>
     </div>
   )
