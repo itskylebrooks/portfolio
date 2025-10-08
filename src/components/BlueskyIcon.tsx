@@ -1,5 +1,8 @@
 import React from 'react'
 
+// Note: the original icon had antennae and a center vertical line; these
+// elements were intentionally removed to simplify the shape and match the
+// Bluesky logo.
 export function BlueskyIcon({ className = '' }: { className?: string }) {
   return (
     <svg
