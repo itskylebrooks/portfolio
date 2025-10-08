@@ -4,7 +4,7 @@ import { IconLink } from './IconLink'
 import { GithubIcon } from './icons/GithubIcon'
 import { LinkedinIcon } from './icons/LinkedinIcon'
 import { MailIcon } from './icons/MailIcon'
-import { TwitterIcon } from './icons/TwitterIcon'
+import { BlueskyIcon } from './icons/BlueskyIcon'
 import { prefersReducedMotion } from '../utils/prefersReducedMotion'
 
 export function Header() {
@@ -37,7 +37,7 @@ export function Header() {
           Kyle Brooks
         </Link>
         <div className="ml-auto flex items-center gap-2">
-          <IconLink href="https://x.com/itiskylebrooks" label="X (Twitter)" Icon={TwitterIcon} />
+          <IconLink href="https://bsky.app/profile/itskylebrooks.bsky.social" label="Bluesky" Icon={BlueskyIcon} />
           <IconLink href="https://github.com/itskylebrooks" label="GitHub" Icon={GithubIcon} />
           <IconLink href="https://linkedin.com/in/itskylebrooks" label="LinkedIn" Icon={LinkedinIcon} />
           <IconLink href="mailto:itskylebrooks@icloud.com" label="Email" Icon={MailIcon} />
