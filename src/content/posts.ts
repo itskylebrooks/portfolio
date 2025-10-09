@@ -17,5 +17,11 @@ function pathToSlug(path: string): string {
 export const POSTS: PostIndex[] = Object.entries(postModules)
   .map(([path, mod]) => ({ slug: pathToSlug(path), ...(mod.meta || {}) }))
   .filter((p) => p && p.title && p.date)
-  .sort((a, b) => (a.date < b.date ? 1 : -1))
+  .sort((a, b) => {
+    const da = new Date(a.date).getTime() || 0
+    const db = new Date(b.date).getTime() || 0
+    // newest first
+    if (da === db) return 0
+    return db - da
+  })
 
