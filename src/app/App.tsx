@@ -12,6 +12,21 @@ import { useScrollToHash } from '../hooks/useScrollToHash'
 
 function Shell() {
   useScrollToHash()
+
+  // Prevent browser native scroll restoration (especially mobile WebKit) from
+  // automatically restoring scroll positions which can cause a double-jump.
+  React.useEffect(() => {
+    if (typeof window === 'undefined' || !('history' in window)) return
+    const prev = (window.history as any).scrollRestoration
+    try {
+      ;(window.history as any).scrollRestoration = 'manual'
+    } catch (_) {}
+    return () => {
+      try {
+        ;(window.history as any).scrollRestoration = prev
+      } catch (_) {}
+    }
+  }, [])
   return (
     <div className="min-h-screen bg-[#0B0B0B] text-[#F5F5F5] selection:bg-white/20">
       <Header />
