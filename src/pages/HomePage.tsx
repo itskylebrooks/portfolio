@@ -196,18 +196,22 @@ function PaginatedProjects({ projects, page, perPage }: { projects: typeof PROJE
   const slice = projects.slice(start, start + perPage)
 
   return (
-    <div className="grid gap-4">
-      <motion.div
-        key={page}
-        initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }}
-        animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-        transition={{ duration: 0.25 }}
-      >
-        {slice.map((p) => <ProjectCard key={p.slug} p={p} />)}
-      </motion.div>
+    // make each ProjectCard a direct child of the grid so Tailwind gap applies correctly
+    <motion.div
+      key={page}
+      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }}
+      animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+      transition={{ duration: 0.25 }}
+      className="grid gap-3"
+    >
+      {slice.map((p) => (
+        <div key={p.slug}>
+          <ProjectCard p={p} />
+        </div>
+      ))}
 
       {/* Controls are rendered in the Section header */}
-    </div>
+    </motion.div>
   )
 }
 
