@@ -1,9 +1,9 @@
 export const meta = {
   title: 'Enso',
-  date: '2025-10-06',
-  version: '0.9.0',
+  date: '2025-10-09',
+  version: '1.0.2',
   summary:
-    'An Aikidō knowledge base: searchable techniques, exam guides, and a contributor flow that turns feedback into GitHub issues + clean JSON.',
+    'A calm Aikidō study companion: searchable techniques, clear variants, exam guides, and a contributor flow that turns feedback into GitHub issues + tidy JSON.',
   tech: ['Knowledge Base', 'Aikido', 'Search', 'Localization', 'Contributions'],
   accent: 'lilac',
   links: {
@@ -14,76 +14,54 @@ export const meta = {
 
 ### Enso — a calm place to learn (and keep) Aikidō
 
-I’ve always loved how Aikidō is taught: quietly, patiently, one detail at a time. Most websites don’t feel like that. They’re either stacks of YouTube links or dense PDFs that are impossible to search on your phone while you’re tying your belt.
+I’m a visual learner. If I can *see* it, I can remember it. In the last months I started studying Aikidō theory at home and noticed the pattern: lots of small, scattered pieces, very few structured, searchable resources—especially on a phone before class. Many sites feel cluttered or dated; even large official portals get heavy, with multiple nav bars and information tucked into far-apart pages. Useful, yes—but hard to *navigate*.
 
-Enso is my answer: a minimal, fast knowledge base for techniques, exam programs, and terminology — with a contributor flow that lets teachers and students add what they know without wrestling a CMS.
+Enso is my answer: a minimal, fast knowledge base for techniques, programs, and terms—built to read clearly and to *feel* calm. It’s also a path for the community to contribute without wrestling with a CMS or Markdown.
 
-It started small (eight techniques!) and then I fell down the rabbit hole of making the foundation feel right: the card rhythm, the search, the taxonomy, the bilingual copy, and a way for other people to help without breaking anything.
+### How it started (and kept growing)
 
-### What Enso Is (in one exhale)
+My first idea was simple: collect the techniques I need for exams—something better than a long Apple Notes doc. Then I fell down the rabbit hole: card rhythm, search behavior, taxonomy, bilingual copy, tiny motions that make the UI breathe. I’ve never taken a design or web-dev course; I just care about look + flow and I’ve spent years creating things (drawing, music, writing). This project became the place where craft and code met. I polished every detail that touched the experience—sometimes a blessing, sometimes a trap—and learned fast by shipping.
 
-- A search‑first library of techniques with short, clear summaries and badges (entry, hanmi, belt level).
-- A Guide for the DAB exam path (5th Kyū → 1st Dan), plus a Dan Overview and an Advanced page for things like Saya no Uchi, Jō and Tantō programs.
-- A lightweight glossary for the vocabulary that secretly holds the whole art together.
-- A feedback/contribution flow that creates structured GitHub issues and JSON diffs from a friendly form — no accounts, no markdown knowledge required.
-- Bookmarks, dark mode, gentle motion — designed to feel quiet, not shouty.
+Enso grew with me. I re-thought how to model variants, how to keep performance snappy on low-end devices, how to make the heavy parts of Aikidō feel light on screen. Now my older projects look rough by comparison—and that’s the point. Progress.
 
-### Why I Built It
+### What Enso is (in one breath)
 
-I wanted a reference I could actually use between classes: quick wording checks, the correct attack name, a reminder of uke’s role, or the common mistakes I always repeat. I also want to keep Aikidō knowledge portable — not trapped in a video description or a closed platform. Text first, links second, then media when it genuinely clarifies.
+Not an encyclopedia of dry text. Not a toy demo to “prove websites can be pretty.”  
+It’s a **practical study companion**: a searchable, bilingual library with structure, not noise—filters, fast search, and bookmarks you’ll actually use.
 
-### What’s in v0.9
+### What it does today
 
-- Library with cards for techniques, versions, and level hints
-- Keyboard‑first search (↑/↓ to navigate, Enter to open) with smart result layout
-- Technique layout: steps, uke guidance, common mistakes, context, and media embeds (YouTube no‑cookie)
-- Guide pages
-- Exam program (5th Kyū → 1st Dan)
-- Dan Overview (2nd–5th) in human words, not legalese
-- Advanced tables: Saya‑no‑Uchi, Jō basics, Tantō responses
-- Glossary with category filters
-- Feedback & Contributions (Beta)
-  - Improve an existing technique
-  - Add a new variation/version
-  - Propose a new technique (bilingual form, taxonomy builder, slug preview, duplicate detector)
-  - App feedback & bug reports
-  - Download JSON report (for the contributor)
-- GitHub Bridge: serverless POST → labeled issue with structured Markdown + the exact JSON diff I need to merge
+- **Search-first library.** Short, clear summaries; badges for entry/hanmi/level; keyboard navigation.
+- **Technique layout.** Sections that map to how people learn: **Steps**, **Uke**, **Common Mistakes**, **Context**, **Media**.
+- **Variants without chaos.** Each technique has a **Base** form; **Versions** sit beside it (different entries, hanmi, dojo/trainer differences) so nothing forks into separate pages.
+- **Exam guides.** A Guide for the DAB path (5th Kyū → 1st Dan), **Dan Overview (2nd–5th)** in human words, plus an **Advanced** page (Saya-no-Uchi, Jō basics, Tantō responses).
+- **Glossary.** Clean terms with filters; helpful for newcomers and for sanity checks.
+- **Contributions.** A friendly form that turns suggestions into labeled **GitHub Issues** with a structured **JSON diff** (places I need to fill are marked `"EMPTY"`). No accounts, no uploads—**links only** for media.
+- **Local-first.** Bookmarks and preferences stay on your device. Export/Import is there if you switch devices.
+- **Design that stays out of the way.** Subtle elevation on hover, clear spacing, and a micro “breathing dot” while loading that fades before you notice it.
 
+### Decisions I’m proud of
 
-### Product Choices I’m Happy With
+- **Tight, useful sections.** *Steps* for clarity, *Uke* for safety and cooperation, *Common Mistakes* for real life, *Context* for when/why, and *Media* only when it actually helps.
+- **A sane taxonomy.** Techniques carry **attack, weapon, entry, hanmi, level**, plus versions. This lets me represent dojo/trainer differences **without** arguing which one is “standard.”
+- **Contributor-first forms.** Steps are typed step-by-step; uke notes, key points, and mistakes are structured; the taxonomy is picked—not typed. That consistency makes reviewing faster and keeps the JSON clean.
+- **Animations with a purpose.** A gentle focus track glides behind search results; transitions feel liquid, not flashy. Motion supports orientation.
+- **Navigation you don’t have to learn.** Clear panels, predictable routes, obvious back/forward state. Cards show tags and descriptions so you can scan at speed.
+- **Powerful search.** It understands tags and descriptions and lets you **bookmark** straight from results. Fewer clicks, more flow.
 
-- Text is the feature. Videos are linked (with timestamps later), but the core is clean writing, not pausing frames.
-- Bilingual from day one. English + German in the UI and content, with optional Japanese names/kanji where it helps recognition.
-- Base vs. Version. Each technique has a base form; variations live beside it (teacher/dojo differences), which keeps search sane and avoids forked pages.
-- “Contributor first” forms. Steps are discrete items, uke guidance is structured, taxonomy is picked — not typed — which makes the generated JSON consistent and easy to review.
-- No uploads for third‑party media. Links only. Simpler legally, lighter technically.
+### Under the hood
 
-### Under the Hood
+- **Stack.** React + TypeScript + Vite; Tailwind for styling; Lucide icons; framer-motion used sparingly. Deployed on Vercel.
+- **Data.** Plain JSON per technique (EN/DE), with base + versions, taxonomy, steps, uke notes, mistakes, context, media.
+- **GitHub bridge.** A small Vercel Function (`/api/feedback`) validates payloads (Zod), assigns a request ID, and opens labeled Issues with a readable summary **plus** a machine-friendly `diffJson`. Secrets live server-side.
+- **Safety.** Origin allow-list, a honeypot, and tiny timing guards to discourage bot spam while keeping the form instant for humans.
 
-- Front‑end: React + TypeScript + Vite, Tailwind for styling, Lucide icons, framer‑motion used sparingly.
-- Data model: plain JSON files per technique. Each holds localized names/summaries, taxonomy (attack, weapon, entry, hanmi, level), versions, steps, uke notes, common mistakes, and context.
-- Search: client‑side, optimized lists, keyboard navigation, immediate feedback.
-- Contributions: a single `/api/feedback` Vercel Function validates a payload with Zod, assigns a request ID, and creates a labeled GitHub Issue:
-  - Labels like `cat:technique`, `ent:variation`, `loc:en`, etc.
-  - A readable Markdown summary plus a machine‑friendly `diffJson` block (with explicit "EMPTY" where the reviewer should fill in).
-  - Secrets are only on the server: `GITHUB_TOKEN`, `GITHUB_OWNER`, `GITHUB_REPO`.
-- Safety: basic origin allow‑list, a honeypot, and a very short TTL window to discourage automated spam without punishing humans.
-- Design: densified spacing that still breathes, subtle elevation on hover (no glow disco), and micro‑delays tuned to “feels fast.”
+### Why this exists
 
-### Little UX Details That Make Me Smile
+Between classes I want quick checks that *actually help*: the correct attack name, the angle for entry, what uke should feel, and the three mistakes I always repeat. I also want Aikidō knowledge to remain portable—**text first, links second**—so it isn’t trapped in a video timeline or a closed platform.
 
-- Result chips (“Irimi”, “3rd Kyū”, “Glossary”) align to titles so your eyes scan in one pass.
-- Uke section reads like an instruction your partner could actually follow.
-- Common mistakes are up‑right, not scolding — exactly the kind of note your teacher whispers after class.
-- Loading is a gentle breathing dot — not because animations are fancy, but because it feels alive for a moment and then quietly fades away before you even think about it.
+### What’s next
 
-### What I Learned (Again)
+Enso will keep growing in the only direction that matters: **useful clarity**. More techniques and kata pages, better visualizations (e.g., footprints/body lines on glossary pages), and careful features that respect the “calm” of the app. As the system expands, the structure will tighten—so power never costs friendliness.
 
-- The fastest way to get real feedback is to invite it — so I built the bridge to GitHub early.
-- Good names and a stable JSON schema are worth more than clever code.
-- When you write both languages yourself, you design better because you feel where the copy strains.
-- “Ship the calm part first.” Fancy pages (maps, studio directories) can wait; the library and guide had to feel solid.
-
-If you practice Aikidō — or you just enjoy calm interfaces — try Enso for a minute. Search a technique you know, skim the uke notes, and tell me what’s missing. I’m building this the way I train: small corrections, every week, until it feels natural.
-
+Harmony stays the goal. And Aikidō.
