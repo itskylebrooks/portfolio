@@ -18,7 +18,8 @@ export function Header() {
         window.scrollTo({ top, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
       }
     } else {
-      navigate('/', { state: { scrollTo: 'about' } })
+      // Navigate to home; do not request any scroll state. Home will open at the top.
+      navigate('/')
     }
   }
 

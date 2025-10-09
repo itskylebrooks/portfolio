@@ -5,9 +5,8 @@ import { prefersReducedMotion } from '../utils/prefersReducedMotion'
 export function useScrollToHash() {
   const { hash, pathname } = useLocation()
   useEffect(() => {
-    if (!hash) return
-    const id = hash.replace('#','')
-    const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' })
+    // Always ensure navigation opens pages at the top.
+    // No smooth scrolling and no anchor jumps — pages must open at top with no exceptions.
+    window.scrollTo({ top: 0, behavior: 'auto' })
   }, [hash, pathname])
 }

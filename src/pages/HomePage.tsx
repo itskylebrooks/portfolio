@@ -25,36 +25,12 @@ export function HomePage() {
   const navigate = useNavigate()
   useDocumentTitle('Kyle Brooks')
 
-  useEffect(() => {
-    if ((location.state as any)?.scrollTo === 'about') {
-      const el = document.getElementById('about')
-      if (el) {
-        const offset = 24 // keep consistent with header click
-        const top = el.getBoundingClientRect().top + window.scrollY - offset
-        window.scrollTo({ top, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
-      }
-      navigate('.', { replace: true, state: null })
-    }
-  }, [location.state, navigate])
+  // No automatic scrolling on navigation — pages must always open at the top.
+  // Smooth scrolling is only performed for explicit clicks on the home page.
+  useEffect(() => {}, [location.state, navigate])
 
-  // Also support scrolling back from other pages via sessionStorage flag.
-  useEffect(() => {
-    try {
-      const target = sessionStorage.getItem('scrollTo')
-      if (target) {
-        const id = target === 'work' ? 'work' : target === 'blog' ? 'blog' : null
-        if (id) {
-          const el = document.getElementById(id)
-          if (el) {
-            const offset = 24
-            const top = el.getBoundingClientRect().top + window.scrollY - offset
-            window.scrollTo({ top, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
-          }
-        }
-        sessionStorage.removeItem('scrollTo')
-      }
-    } catch (_) {}
-  }, [])
+  // no-op: sessionStorage-driven scrolls removed so pages open at top
+  useEffect(() => {}, [])
 
   const shouldReduceMotion = useReducedMotion()
   const pageVariants = {
@@ -169,17 +145,59 @@ function Hero() {
         <p className="mt-2 text-white/70">Build useful things. Keep moving forward.</p>
         <ul className="mt-6 text-sm md:flex md:flex-wrap md:items-center md:gap-3">
           <li className="list-disc ml-5 mb-2 md:mb-0 md:list-none md:ml-0 md:inline-flex md:items-center">
-            <a href="#work" className="underline underline-offset-4">View my projects → Work</a>
+            <a
+              href="#work"
+              onClick={(e) => {
+                e.preventDefault()
+                const el = document.getElementById('work')
+                if (el) {
+                  const offset = 24
+                  const top = el.getBoundingClientRect().top + window.scrollY - offset
+                  window.scrollTo({ top, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
+                }
+              }}
+              className="underline underline-offset-4"
+            >
+              View my projects → Work
+            </a>
             <span className="hidden md:inline-block text-white/30 ml-3">•</span>
           </li>
 
           <li className="list-disc ml-5 mb-2 md:mb-0 md:list-none md:ml-0 md:inline-flex md:items-center">
-            <a href="#blog" className="underline underline-offset-4">Read my thoughts → Blog</a>
+            <a
+              href="#blog"
+              onClick={(e) => {
+                e.preventDefault()
+                const el = document.getElementById('blog')
+                if (el) {
+                  const offset = 24
+                  const top = el.getBoundingClientRect().top + window.scrollY - offset
+                  window.scrollTo({ top, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
+                }
+              }}
+              className="underline underline-offset-4"
+            >
+              Read my thoughts → Blog
+            </a>
             <span className="hidden md:inline-block text-white/30 ml-3">•</span>
           </li>
 
           <li className="list-disc ml-5 md:list-none md:ml-0 md:inline-flex md:items-center">
-            <a href="#experience" className="underline underline-offset-4">Explore my background → Experience</a>
+            <a
+              href="#experience"
+              onClick={(e) => {
+                e.preventDefault()
+                const el = document.getElementById('experience')
+                if (el) {
+                  const offset = 24
+                  const top = el.getBoundingClientRect().top + window.scrollY - offset
+                  window.scrollTo({ top, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
+                }
+              }}
+              className="underline underline-offset-4"
+            >
+              Explore my background → Experience
+            </a>
           </li>
         </ul>
       </div>

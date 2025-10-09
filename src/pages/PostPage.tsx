@@ -23,11 +23,7 @@ export function PostPage() {
     )
   }
 
-  // When arriving at a post page, set a session flag so HomePage knows
-  // to scroll to the Blog section when the user returns.
-  if (typeof window !== 'undefined') {
-    try { sessionStorage.setItem('scrollTo', 'blog') } catch (_) {}
-  }
+  // No sessionStorage scroll markers — Home page will not auto-scroll on return.
 
   const shouldReduceMotion = useReducedMotion()
 
