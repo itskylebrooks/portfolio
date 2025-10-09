@@ -1,0 +1,19 @@
+**Personal Portfolio — itskylebrooks.vercel.app**
+Copyright © 2025 Kyle Brooks
+
+This website’s **source code** is licensed under the MIT License.
+All **non-code content** — including text, articles, designs, and images — is licensed under the [Creative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/).
+
+**Attribution:**
+This portfolio was designed and developed by Kyle Brooks.
+Website: [https://itskylebrooks.vercel.app](https://itskylebrooks.vercel.app)
+Repository: [https://github.com/itskylebrooks/portfolio](https://github.com/itskylebrooks/portfolio)
+
+**Acknowledgments:**
+
+* Built with [React](https://react.dev), [TypeScript](https://www.typescriptlang.org), [Tailwind CSS](https://tailwindcss.com), and [Vite](https://vitejs.dev)
+* Hosted on [Vercel](https://vercel.com)
+* Icons from [Lucide](https://lucide.dev)
+
+This NOTICE file provides attribution and credit information for the personal portfolio of Kyle Brooks.
+It does not modify the license terms of the MIT License.
