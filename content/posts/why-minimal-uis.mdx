@@ -4,125 +4,29 @@ export const meta = {
   summary: 'Notes on clarity, speed, and the art of removing unnecessary weight.',
 }
 
-### Intro
+### Why minimal
 
-I like software that doesn’t ask for attention. Tools should greet you with intent, not ceremony. When the interface disappears, the work remains. That idea—simple in form, strong in intent—is the north star for everything I ship.
+I like software that doesn’t ask for attention. When the interface disappears, intent remains. Minimal isn’t an aesthetic veneer; it’s a method of subtraction. Remove what doesn’t move the user forward, and the product gets faster, clearer, and calmer.
 
-Minimalism here is not an aesthetic layer applied at the end. It’s a method: weight training for products. Remove what doesn’t help the user move forward and the core muscles reveal themselves. The result is an app that feels honest, fast, and inevitable.
+### The method in practice
 
-### Less is guidance
-
-Every control, color, or clever micro-pattern is a tiny tax on attention. Choices are expensive—even the ones a user never names. A minimal UI is an act of guidance: it reduces the tax and points the user toward progress.
-
-What guidance looks like in practice:
-
-* One clear verb per screen: Read. Log. Add. Edit. Not "Explore + Try + Maybe Later." 
-* Sensible defaults that behave like you already configured the app yesterday.
-* Progressive disclosure: details exist, but they arrive exactly when asked for.
-* Clean states: an empty state is a first step, not a void.
-
-Clarity is not a loss of power. It concentrates power. When the interface stops begging for attention, the user finishes the work faster—and with less mental drag.
-
-### Speed is respect
-
-Performance is part of the user experience. The first 100–200ms decide whether an app feels alive or groggy. "Fast enough" on a spec sheet can still feel slow to a human.
-
-Speed is respect for the user's time. It’s also broader than network perf:
-
-* Fewer DOM nodes and fewer moving parts.
-* Fewer decisions per screen so the user's mental cache stays warm.
-* Clear copy, meaningful motion, and errors that teach instead of confuse.
-
-When you remove UI weight, velocity increases. The codebase becomes simpler, the mental model crisper, and iterations come faster. Speed compounds into better product decisions.
-
-### Practical recipe
-
-I treat features like candidates interviewing for a job. Most don’t get hired. The filter is intentionally boring:
+Fewer decisions per screen, fewer moving parts, fewer milliseconds. Motion only when it explains causality (“this came from here”). Words carry weight—labels that read like answers, errors that teach, empty states that invite a first step.
 
 ```ts
 const keep = features.filter(f => value(f) > weight(f))
+// value = frequency × impact × learning
+// weight = complexity × attention × failure surface
 ```
 
-Where value(f) is frequency × depth of impact × learning effect. Weight(f) is added complexity × attention cost × failure surface.
-
-If a feature loses, it’s deferred—not dead. The backlog is a quarantine where features earn their way in later, when the core proves stronger with them than without.
-
-Design is subtraction: ship the core, iterate, then subtract again.
-
-### What the core looks like
-
-The core is the smallest loop that produces real progress for a user. Not a demo, not a promise—a loop.
-
-For examples:
-
-* Reading tracker: add a book → update progress → see momentum.
-* Habit app: create a habit → mark today → feel continuity.
-* Notes tool: write → find → reuse.
-
-If you can describe the loop in a single breath, the UI should fit in a single glance.
-
-### Defaults carry the room
-
-Good defaults are silent mentors. They compress decisions into trust. I try to:
-
-* Prefill sensible values from context (time, last choice, platform).
-* Use labels that read like answers, not riddles.
-* Place the primary action where the thumb—or cursor—naturally lands.
-
-If a user changes a default once and never again, that was a win. If they always change it, my default was a miss.
-
-### Motion is meaning
-
-Animation isn’t confetti; it’s sentence structure. A small, purposeful movement can say "this came from here" or "this will return there," saving a paragraph of explanation. Keep motion short, calm, and causal—if it doesn’t reinforce causality or state changes, it’s decoration.
-
-### Copy is part of the interface
-
-Words are UI. Vague or cute copy is fog. Write like a coach beside the user: specific, human, brief. Strong labels and microcopy can delete whole components. A great empty state can replace a tutorial. A precise error can replace a help page.
-
-### Constraints make the shape
-
-Constraints—local-first storage, small bundles, no tracking, offline-friendly designs—aren’t obstacles; they’re the mold that shapes the product. Accepting constraints early helps decisions fall into place:
-
-* Lean data models.
-* Fewer screens.
-* A portable mental model for users.
-
-The result feels honest. People notice it even if they can’t name why.
+Defaults are silent mentors: if a user changes one once and never again, that’s a win. Speed is respect—the first 100–200 ms decide whether an app feels alive.
 
 ### The subtraction pass
 
-Before shipping, I run a subtraction pass:
+Before shipping, I do one quiet sweep: delete a field we can infer, merge two screens, demote an option behind “Advanced,” remove a setting a good default makes irrelevant. If behavior improves—or doesn’t change—the deletion stays.
 
-* Remove a field. Can we infer it?
-* Merge screens. Can both actions live in one place?
-* Demote an option. Can it sit behind "Advanced" without harm?
-* Delete a setting. Can a good default and a reset button replace it?
+### Why it matters
 
-When in doubt I measure. If behavior improves—or doesn’t change—the thing stays deleted.
-
-### Accessibility is clarity by another name
-
-Minimal and accessible UI align naturally: high contrast, bigger targets, predictable focus, keyboard support, and reduced motion options. Accessibility isn’t a checklist; it’s making the screen’s intention unmissable. When intent is obvious, assistive tech works better—and so does everyone else.
-
-### Iterate without ceremony
-
-Ship the core loop, then watch. Logs, feedback, and daily use reveal friction. Tweak copy. Nudge spacing. Collapse a choice. Move an action. The product gets simultaneously lighter and stronger.
-
-That’s the paradox of subtraction: remove the right thing and everything else feels stronger.
-
-### When minimal goes wrong
-
-Minimal is not starving the interface. It fails when:
-
-* Necessary information is hidden in the name of "clean." 
-* Structure is replaced with mysterious icons. 
-* First-time delight is favored over long-term fluency.
-
-Minimalism must increase comprehension, not just remove pixels.
-
-### Why this matters
-
-Software shapes behavior. Heavy interfaces create heavy habits. Lightweight, honest interfaces encourage consistent, confident action. The work feels doable, and people return tomorrow. That matters more than any launch-day sparkle.
+Software shapes habits. Heavy UIs create heavy workflows; light, honest interfaces build momentum. The tool is the stagehand; the user is the protagonist. Ship the core. Watch. Subtract again.
 
 I build minimal UIs so the user can be the protagonist. The interface is the stagehand—present, competent, nearly invisible. The tool gets out of the way so the person can get on with their life.
 
