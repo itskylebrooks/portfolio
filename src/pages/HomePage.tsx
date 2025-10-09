@@ -6,12 +6,21 @@ import { ProjectCard } from '../components/ProjectCard'
 import { BlogRow } from '../components/BlogRow'
 import { IconLink } from '../components/IconLink'
 import { Github, Linkedin } from '../components/icons'
+import { ArrowBigLeft, ArrowBigRight } from '../components/icons'
 import { PROJECTS } from '../content/projects'
 import { POSTS } from '../content/posts'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import { prefersReducedMotion } from '../utils/prefersReducedMotion'
 
 export function HomePage() {
+  const [projectsPage, setProjectsPage] = React.useState(0)
+  const projectsPerPage = 3
+  const projectsPages = Math.max(1, Math.ceil(PROJECTS.length / projectsPerPage))
+
+  const [postsPage, setPostsPage] = React.useState(0)
+  const postsPerPage = 5
+  const postsPages = Math.max(1, Math.ceil(POSTS.length / postsPerPage))
+
   const location = useLocation()
   const navigate = useNavigate()
   useDocumentTitle('Kyle Brooks')
@@ -56,15 +65,59 @@ export function HomePage() {
   return (
     <motion.main initial={shouldReduceMotion ? undefined : 'initial'} animate={shouldReduceMotion ? undefined : 'enter'} variants={pageVariants}>
       <Hero />
-      <Section id="work" title="Work">
-        <div className="grid gap-4">
-          {PROJECTS.map((p) => <ProjectCard key={p.slug} p={p} />)}
-        </div>
-  </Section>
-      <Section id="blog" title="Blog">
-        <div className="divide-y divide-white/10 rounded-xl border border-white/10">
-          {POSTS.map((post) => <BlogRow key={post.slug} post={post} />)}
-        </div>
+      <Section
+        id="work"
+        title="Work"
+        headerRight={
+          PROJECTS.length > projectsPerPage ? (
+            <div className="flex items-center justify-center gap-4">
+              <button
+                aria-label="Previous projects"
+                onClick={() => setProjectsPage((s) => Math.max(0, s - 1))}
+                className={`inline-flex items-center justify-center ${projectsPage === 0 ? 'text-white/30 pointer-events-none' : 'text-white/90 hover:text-white'} focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20`}
+              >
+                <ArrowBigLeft size={18} />
+              </button>
+              <div className="text-sm text-white/60">{projectsPage + 1} / {projectsPages}</div>
+              <button
+                aria-label="Next projects"
+                onClick={() => setProjectsPage((s) => Math.min(projectsPages - 1, s + 1))}
+                className={`inline-flex items-center justify-center ${projectsPage === projectsPages - 1 ? 'text-white/30 pointer-events-none' : 'text-white/90 hover:text-white'} focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20`}
+              >
+                <ArrowBigRight size={18} />
+              </button>
+            </div>
+          ) : null
+        }
+      >
+        <PaginatedProjects projects={PROJECTS} page={projectsPage} perPage={projectsPerPage} />
+      </Section>
+      <Section
+        id="blog"
+        title="Blog"
+        headerRight={
+          POSTS.length > postsPerPage ? (
+            <div className="flex items-center justify-center gap-4">
+              <button
+                aria-label="Previous posts"
+                onClick={() => setPostsPage((s) => Math.max(0, s - 1))}
+                className={`inline-flex items-center justify-center ${postsPage === 0 ? 'text-white/30 pointer-events-none' : 'text-white/90 hover:text-white'} focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20`}
+              >
+                <ArrowBigLeft size={18} />
+              </button>
+              <div className="text-sm text-white/60">{postsPage + 1} / {postsPages}</div>
+              <button
+                aria-label="Next posts"
+                onClick={() => setPostsPage((s) => Math.min(postsPages - 1, s + 1))}
+                className={`inline-flex items-center justify-center ${postsPage === postsPages - 1 ? 'text-white/30 pointer-events-none' : 'text-white/90 hover:text-white'} focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20`}
+              >
+                <ArrowBigRight size={18} />
+              </button>
+            </div>
+          ) : null
+        }
+      >
+        <PaginatedPosts posts={POSTS} page={postsPage} perPage={postsPerPage} />
       </Section>
       <Section id="experience" title="Experience">
         <div className="space-y-6">
@@ -131,5 +184,55 @@ function Hero() {
         </ul>
       </div>
     </section>
+  )
+}
+
+// Paginated projects: show max 3 per page with prev/next buttons
+function PaginatedProjects({ projects, page, perPage }: { projects: typeof PROJECTS; page: number; perPage: number }) {
+  const pages = Math.max(1, Math.ceil(projects.length / perPage))
+  const shouldReduceMotion = useReducedMotion()
+
+  const start = page * perPage
+  const slice = projects.slice(start, start + perPage)
+
+  return (
+    <div className="grid gap-4">
+      <motion.div
+        key={page}
+        initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }}
+        animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.25 }}
+      >
+        {slice.map((p) => <ProjectCard key={p.slug} p={p} />)}
+      </motion.div>
+
+      {/* Controls are rendered in the Section header */}
+    </div>
+  )
+}
+
+// Paginated posts: show max 5 per page with prev/next buttons
+function PaginatedPosts({ posts, page, perPage }: { posts: typeof POSTS; page: number; perPage: number }) {
+  const pages = Math.max(1, Math.ceil(posts.length / perPage))
+  const shouldReduceMotion = useReducedMotion()
+
+  const start = page * perPage
+  const slice = posts.slice(start, start + perPage)
+
+  return (
+    <>
+      <div className="divide-y divide-white/10 rounded-xl border border-white/10">
+        <motion.div
+          key={page}
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }}
+          animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          {slice.map((post) => <BlogRow key={post.slug} post={post} />)}
+        </motion.div>
+      </div>
+
+      {/* Controls are rendered in the Section header */}
+    </>
   )
 }
