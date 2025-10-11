@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Header } from '../components/Header'
 import { HomePage } from '../pages/HomePage'
 import { ProjectPage } from '../pages/ProjectPage'
@@ -51,9 +51,9 @@ function Shell() {
         {/* Links row: visually first on mobile (order-1) and second on desktop (sm:order-2) */}
         <div className="w-full flex justify-center sm:justify-end order-1 sm:order-2">
           <div className="flex items-center gap-3">
-            <a href="/imprint" className="underline hover:text-white">Imprint</a>
-            <a href="/privacy" className="underline hover:text-white">Privacy Policy</a>
-            <a href="/license" className="underline hover:text-white">License</a>
+            <Link to="/imprint" className="underline hover:text-white">Imprint</Link>
+            <Link to="/privacy" className="underline hover:text-white">Privacy Policy</Link>
+            <Link to="/license" className="underline hover:text-white">License</Link>
           </div>
         </div>
       </footer>
