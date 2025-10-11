@@ -78,8 +78,8 @@ SOFTWARE.`
       <motion.div key={lang} initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }} animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.22 }}>
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-white text-2xl">Lizenz</h1>
-            <p className="mt-2 text-white/80 italic">(zentral für Hauptseite & alle verlinkten Projekte)</p>
+            <h1 className="text-white text-2xl">{lang === 'de' ? 'Lizenz' : 'License'}</h1>
+            <p className="mt-2 text-white/80 italic">{lang === 'de' ? '(zentral für Hauptseite & alle verlinkten Projekte)' : '(central for main site & all linked projects)'}</p>
           </div>
           <div className="flex items-center gap-3">
             <button
