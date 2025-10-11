@@ -31,7 +31,7 @@ SOFTWARE.`
 
   const mitBlock = (
     <div className="mt-2">
-      <div className="relative max-w-[680px] mx-auto">
+      <div className="relative w-full">
         <div className="absolute right-3 top-3 z-10">
           <button
             type="button"
@@ -41,7 +41,7 @@ SOFTWARE.`
             className="inline-flex items-center justify-center w-8 h-8 rounded bg-white/3 hover:bg-white/6 text-white/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
           >
             {copied ? (
-              <Check className="h-4 w-4 text-green-400" />
+              <Check className="h-4 w-4" />
             ) : (
               <Copy className="h-4 w-4" />
             )}
