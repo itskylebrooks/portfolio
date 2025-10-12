@@ -38,7 +38,7 @@ export function ProjectCard({ p }: { p: Project }) {
             <h3 className="text-lg text-white font-medium mb-1 group-hover:underline underline-offset-4">{p.title}</h3>
             <p className="text-white/80 mb-3">{p.summary}</p>
             <ul className="flex flex-wrap gap-2">
-              {p.tech.map((t) => (
+              {p.tags.map((t) => (
                 <li
                   key={t}
                   className={

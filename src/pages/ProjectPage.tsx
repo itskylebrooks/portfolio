@@ -66,7 +66,7 @@ export function ProjectPage() {
       </div>
       <p className="text-white/80 mt-3">{project.summary}</p>
       <div className="mt-4 flex flex-wrap gap-2">
-        {project.tech.map((t) => (
+        {project.tags.map((t) => (
           <span
             key={t}
             className={

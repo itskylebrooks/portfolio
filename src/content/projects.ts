@@ -4,7 +4,7 @@ export type ProjectMeta = {
   title: string
   date: string
   summary: string
-  tech: string[]
+  tags: string[]
   accent: Accent
   links?: { live?: string; repo?: string }
   version?: string // optional semantic version MAJOR.MINOR.PATCH
