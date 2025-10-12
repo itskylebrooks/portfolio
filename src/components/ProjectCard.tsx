@@ -39,7 +39,14 @@ export function ProjectCard({ p }: { p: Project }) {
             <p className="text-white/80 mb-3">{p.summary}</p>
             <ul className="flex flex-wrap gap-2">
               {p.tech.map((t) => (
-                <li key={t} className="text-xs px-2 py-1 rounded-full bg-white/5 text-white/80 border border-white/10">
+                <li
+                  key={t}
+                  className={
+                    t === 'Labs'
+                      ? 'text-xs px-2 py-1 rounded-full labs-badge'
+                      : 'text-xs px-2 py-1 rounded-full bg-white/5 text-white/80 border border-white/10'
+                  }
+                >
                   {t}
                 </li>
               ))}

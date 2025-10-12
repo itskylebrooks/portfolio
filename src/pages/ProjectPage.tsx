@@ -67,7 +67,14 @@ export function ProjectPage() {
       <p className="text-white/80 mt-3">{project.summary}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {project.tech.map((t) => (
-          <span key={t} className="text-xs px-2 py-1 rounded-full bg-white/5 text-white/80 border border-white/10">
+          <span
+            key={t}
+            className={
+              t === 'Labs'
+                ? 'text-xs px-2 py-1 rounded-full labs-badge'
+                : 'text-xs px-2 py-1 rounded-full bg-white/5 text-white/80 border border-white/10'
+            }
+          >
             {t}
           </span>
         ))}
