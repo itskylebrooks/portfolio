@@ -8,4 +8,4 @@ export { ArrowBigLeft } from 'lucide-react'
 export { ArrowBigRight } from 'lucide-react'
 
 // Social icons
-export { Twitter } from 'lucide-react'
+// Twitter removed
