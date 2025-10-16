@@ -12,6 +12,11 @@ const ACCENT: Record<Accent, { text: string; heading: string; hoverBorder: strin
   blue:  { text: 'text-blue-400',   heading: 'prose-headings:text-blue-400',   hoverBorder: 'hover:border-blue-500/60', hoverBg: 'hover:bg-blue-500/5', hoverText: 'hover:text-blue-400' },
   lilac: { text: 'text-purple-300', heading: 'prose-headings:text-purple-300', hoverBorder: 'hover:border-purple-400/60',hoverBg: 'hover:bg-purple-400/5',hoverText: 'hover:text-purple-300' },
   orange:{ text: 'text-orange-400', heading: 'prose-headings:text-orange-400', hoverBorder: 'hover:border-orange-500/60',hoverBg: 'hover:bg-orange-500/5',hoverText: 'hover:text-orange-400' },
+  amber: { text: 'text-amber-400',  heading: 'prose-headings:text-amber-400',  hoverBorder: 'hover:border-amber-500/60', hoverBg: 'hover:bg-amber-500/5', hoverText: 'hover:text-amber-400' },
+  teal:  { text: 'text-teal-300',   heading: 'prose-headings:text-teal-300',   hoverBorder: 'hover:border-teal-400/60',  hoverBg: 'hover:bg-teal-400/5',  hoverText: 'hover:text-teal-300' },
+  pink:  { text: 'text-pink-400',   heading: 'prose-headings:text-pink-400',   hoverBorder: 'hover:border-pink-500/60',  hoverBg: 'hover:bg-pink-500/5',  hoverText: 'hover:text-pink-400' },
+  cyan:  { text: 'text-cyan-300',   heading: 'prose-headings:text-cyan-300',   hoverBorder: 'hover:border-cyan-400/60',  hoverBg: 'hover:bg-cyan-400/5',  hoverText: 'hover:text-cyan-300' },
+  violet:{ text: 'text-violet-400', heading: 'prose-headings:text-violet-400', hoverBorder: 'hover:border-violet-500/60',hoverBg: 'hover:bg-violet-500/5',hoverText: 'hover:text-violet-400' },
 }
 
 export function ProjectPage() {

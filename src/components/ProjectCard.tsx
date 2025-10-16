@@ -11,6 +11,11 @@ const ACCENT: Record<Accent, { border: string; bg: string; text: string }> = {
   blue:  { border: 'hover:border-blue-500/60',  bg: 'hover:bg-blue-500/5',  text: 'text-blue-400' },
   lilac: { border: 'hover:border-purple-400/60',bg: 'hover:bg-purple-400/5',text: 'text-purple-300' },
   orange:{ border: 'hover:border-orange-500/60',bg: 'hover:bg-orange-500/5',text: 'text-orange-400' },
+  amber: { border: 'hover:border-amber-500/60', bg: 'hover:bg-amber-500/5', text: 'text-amber-400' },
+  teal:  { border: 'hover:border-teal-400/60',  bg: 'hover:bg-teal-400/5',  text: 'text-teal-300' },
+  pink:  { border: 'hover:border-pink-500/60',  bg: 'hover:bg-pink-500/5',  text: 'text-pink-400' },
+  cyan:  { border: 'hover:border-cyan-400/60',  bg: 'hover:bg-cyan-400/5',  text: 'text-cyan-300' },
+  violet:{ border: 'hover:border-violet-500/60',bg: 'hover:bg-violet-500/5',text: 'text-violet-400' },
 }
 
 export function ProjectCard({ p }: { p: Project }) {
