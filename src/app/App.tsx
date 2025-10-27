@@ -28,7 +28,7 @@ function Shell() {
     }
   }, [])
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-[#F5F5F5] selection:bg-white/20">
+    <div className="min-h-screen text-[#F5F5F5] selection:bg-white/20">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

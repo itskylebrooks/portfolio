@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root { height: 100%; }
+html, body, #root { height: 100%; background-color: #000000; }
 * { box-sizing: border-box; }
 
 /* Remove global smooth scrolling so pages always open at the top instantly.
@@ -26,7 +26,7 @@ html { scroll-behavior: auto; }
 	font-display: swap;
 }
 
-html, body, #root { font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+html, body, #root { font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #000000; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 .prose pre { background-color: rgba(0,0,0,0.5); padding: 0.75rem; border-radius: 0.5rem; overflow: auto; }
