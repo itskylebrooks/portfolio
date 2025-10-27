@@ -1,18 +1,11 @@
 import React, { useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { Page, MotionDiv } from '../utils/transitions'
 
 export function ImprintPage() {
   const [lang, setLang] = useState<'de' | 'en'>('en')
-  const shouldReduceMotion = useReducedMotion()
-
   return (
-    <motion.main
-      className="mx-auto max-w-[820px] px-4 py-20"
-      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }}
-      animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      transition={{ duration: 0.22 }}
-    >
-      <motion.div key={lang} initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }} animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.22 }}>
+    <Page className="mx-auto max-w-[820px] px-4 py-20">
+      <MotionDiv animateKey={lang}>
         <div className="flex items-start justify-between gap-4">
           <div>
             <h1 className="text-white text-2xl">{lang === 'de' ? 'Impressum' : 'Imprint'}</h1>
@@ -167,8 +160,8 @@ export function ImprintPage() {
             </section>
           </>
         )}
-      </motion.div>
-    </motion.main>
+      </MotionDiv>
+    </Page>
   )
 }
 

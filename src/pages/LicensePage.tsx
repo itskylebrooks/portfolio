@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { Page, MotionDiv } from '../utils/transitions'
 import { Copy, Check } from 'lucide-react'
 
 export function LicensePage() {
@@ -66,16 +66,9 @@ SOFTWARE.`
     }
   }
 
-  const shouldReduceMotion = useReducedMotion()
-
   return (
-    <motion.main
-      className="mx-auto max-w-[820px] px-4 py-20"
-      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }}
-      animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      transition={{ duration: 0.22 }}
-    >
-      <motion.div key={lang} initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }} animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.22 }}>
+    <Page className="mx-auto max-w-[820px] px-4 py-20">
+      <MotionDiv animateKey={lang}>
         <div className="flex items-start justify-between gap-4">
           <div>
             <h1 className="text-white text-2xl">{lang === 'de' ? 'Lizenz' : 'License'}</h1>
@@ -274,8 +267,8 @@ SOFTWARE.`
             <p className="mt-6 text-white/80"><strong>Last updated:</strong> October 2025<br /><strong>Scope:</strong> Main website and all projects or demos that link to this page in their footer.</p>
           </>
         )}
-      </motion.div>
-    </motion.main>
+      </MotionDiv>
+    </Page>
   )
 }
 

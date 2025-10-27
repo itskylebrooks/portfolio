@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
+import { tapScale } from '../utils/transitions'
 import { ChevronRight } from './icons'
 import type { PostIndex as Post } from '../content/posts'
 
@@ -8,8 +9,7 @@ export function BlogRow({ post }: { post: Post }) {
   const shouldReduceMotion = useReducedMotion()
   return (
     <motion.div
-      whileHover={shouldReduceMotion ? undefined : {}}
-      whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
+      whileTap={shouldReduceMotion ? undefined : tapScale}
       className="rounded-lg"
     >
       <Link

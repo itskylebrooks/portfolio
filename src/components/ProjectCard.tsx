@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
+import { hoverSpring, tapScale, projectHover } from '../utils/transitions'
 import { ChevronRight } from './icons'
 import type { ProjectIndex as Project, Accent } from '../content/projects'
 import { cn } from '../utils/cn'
@@ -23,9 +24,9 @@ export function ProjectCard({ p }: { p: Project }) {
   const shouldReduceMotion = useReducedMotion()
   return (
     <motion.div
-      whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-      whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
-      transition={{ type: 'spring', stiffness: 700, damping: 30, mass: 0.6 }}
+      whileHover={shouldReduceMotion ? undefined : projectHover}
+      whileTap={shouldReduceMotion ? undefined : tapScale}
+      transition={hoverSpring}
     >
       <Link
         to={`/work/${p.slug}`}

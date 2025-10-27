@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { Page, MotionDiv } from '../utils/transitions'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Section } from '../components/Section'
 import { ProjectCard } from '../components/ProjectCard'
@@ -32,14 +32,8 @@ export function HomePage() {
   // no-op: sessionStorage-driven scrolls removed so pages open at top
   useEffect(() => {}, [])
 
-  const shouldReduceMotion = useReducedMotion()
-  const pageVariants = {
-    initial: { opacity: 0, y: 8 },
-    enter: { opacity: 1, y: 0, transition: { duration: 0.22 } },
-  }
-
   return (
-    <motion.main initial={shouldReduceMotion ? undefined : 'initial'} animate={shouldReduceMotion ? undefined : 'enter'} variants={pageVariants}>
+    <Page>
       <Hero />
       <Section
         id="work"
@@ -133,7 +127,7 @@ export function HomePage() {
           </div>
         </div>
       </Section>
-    </motion.main>
+    </Page>
   )
 }
 
@@ -208,20 +202,13 @@ function Hero() {
 // Paginated projects: show max 3 per page with prev/next buttons
 function PaginatedProjects({ projects, page, perPage }: { projects: typeof PROJECTS; page: number; perPage: number }) {
   const pages = Math.max(1, Math.ceil(projects.length / perPage))
-  const shouldReduceMotion = useReducedMotion()
-
+  
   const start = page * perPage
   const slice = projects.slice(start, start + perPage)
 
   return (
     // make each ProjectCard a direct child of the grid so Tailwind gap applies correctly
-    <motion.div
-      key={page}
-      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }}
-      animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      transition={{ duration: 0.25 }}
-      className="grid gap-3"
-    >
+    <MotionDiv animateKey={page} className="grid gap-3" duration={0.25}>
       {slice.map((p) => (
         <div key={p.slug}>
           <ProjectCard p={p} />
@@ -229,29 +216,23 @@ function PaginatedProjects({ projects, page, perPage }: { projects: typeof PROJE
       ))}
 
       {/* Controls are rendered in the Section header */}
-    </motion.div>
+    </MotionDiv>
   )
 }
 
 // Paginated posts: show max 5 per page with prev/next buttons
 function PaginatedPosts({ posts, page, perPage }: { posts: typeof POSTS; page: number; perPage: number }) {
   const pages = Math.max(1, Math.ceil(posts.length / perPage))
-  const shouldReduceMotion = useReducedMotion()
-
+  
   const start = page * perPage
   const slice = posts.slice(start, start + perPage)
 
   return (
     <>
       <div className="divide-y divide-white/10 rounded-xl border border-white/10">
-        <motion.div
-          key={page}
-          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }}
-          animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.25 }}
-        >
+        <MotionDiv animateKey={page} duration={0.25}>
           {slice.map((post) => <BlogRow key={post.slug} post={post} />)}
-        </motion.div>
+        </MotionDiv>
       </div>
 
       {/* Controls are rendered in the Section header */}
