@@ -1,8 +1,8 @@
 import React, { Suspense, useMemo } from 'react'
-import { Page } from '../utils/transitions'
 import { Link, useParams } from 'react-router-dom'
-import { POSTS } from '../content/posts'
-import { Prose } from '../components/Prose'
+import { Page } from '@/shared/components/Page'
+import { Prose } from '@/shared/components/Prose'
+import { POSTS } from '@/shared/data/posts'
 
 const postModules = import.meta.glob('/content/posts/*.mdx') as Record<string, () => Promise<{ default: React.ComponentType }>>
 
@@ -18,7 +18,7 @@ export function PostPage() {
   if (!post) {
     return (
       <main className="mx-auto max-w-[820px] px-4 py-20">
-        <h1 className="text-white text-2xl">Not found</h1>
+        <h1 className="text-2xl text-[color:var(--color-text-primary)]">Not found</h1>
       </main>
     )
   }
@@ -27,22 +27,24 @@ export function PostPage() {
 
   return (
     <Page className="mx-auto max-w-[820px] px-4 py-10">
-      <p className="text-sm text-white/60">{new Date(post.date).toLocaleDateString()}</p>
-      <h1 className="text-3xl font-semibold text-white mt-2">{post.title}</h1>
-      <p className="text-white/80 mt-3">{post.summary}</p>
+      <p className="text-sm text-[color:var(--color-text-muted)]">{new Date(post.date).toLocaleDateString()}</p>
+      <h1 className="text-3xl font-semibold text-[color:var(--color-text-primary)] mt-2">{post.title}</h1>
+      <p className="text-[color:var(--color-text-secondary)] mt-3">{post.summary}</p>
       <div className="mt-6">
         <Prose>
           {LazyPost ? (
-            <Suspense fallback={<p className="text-white/60">Loading…</p>}>
+            <Suspense fallback={<p className="text-[color:var(--color-text-muted)]">Loading…</p>}>
               <LazyPost />
             </Suspense>
           ) : (
-            <p className="text-white/60">Post content not found.</p>
+            <p className="text-[color:var(--color-text-muted)]">Post content not found.</p>
           )}
         </Prose>
       </div>
       <div className="mt-10">
-        <Link to={{ pathname: '/', hash: '#blog' }} className="text-white/80 underline">← Back to home</Link>
+        <Link to={{ pathname: '/', hash: '#blog' }} className="underline text-[color:var(--color-link)] hover:text-[color:var(--color-link-hover)]">
+          ← Back to home
+        </Link>
       </div>
     </Page>
   )

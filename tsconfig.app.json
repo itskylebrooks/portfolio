@@ -5,6 +5,12 @@
     "useDefineForClassFields": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "@/shared/*": ["shared/*"],
+      "@/features/*": ["features/*"]
+    },
     "skipLibCheck": true,
 
     /* Bundler mode */

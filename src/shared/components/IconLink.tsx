@@ -6,7 +6,7 @@ export function IconLink({ href, label, Icon }: { href: string; label: string; I
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="p-2 rounded-lg text-white/80 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ring-offset-2 ring-offset-black"
+      className="p-2 rounded-lg text-[color:var(--color-icon-muted)] hover:text-[color:var(--color-icon-strong)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]"
     >
       <Icon className="h-5 w-5" />
     </a>

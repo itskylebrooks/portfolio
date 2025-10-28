@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { prefersReducedMotion } from '../utils/prefersReducedMotion'
 
 export function useScrollToHash() {
   const { hash, pathname } = useLocation()

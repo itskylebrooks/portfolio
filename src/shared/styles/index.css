@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		color-scheme: dark;
+		--color-bg: #000000;
+		--color-surface: rgba(18, 18, 18, 0.92);
+		--color-surface-hover: rgba(255, 255, 255, 0.04);
+		--color-surface-active: rgba(255, 255, 255, 0.06);
+		--color-border-muted: rgba(255, 255, 255, 0.1);
+		--color-border-subtle: rgba(255, 255, 255, 0.06);
+		--color-border-strong: rgba(255, 255, 255, 0.16);
+		--color-card-border: rgba(255, 255, 255, 0.1);
+		--color-card-hover-border: rgba(255, 255, 255, 0.4);
+		--color-card-hover-bg: rgba(255, 255, 255, 0.05);
+		--color-tag-bg: rgba(255, 255, 255, 0.06);
+		--color-tag-border: rgba(255, 255, 255, 0.12);
+		--color-text-strong: rgba(245, 245, 245, 0.98);
+        --color-text-primary: rgba(245, 245, 245, 0.94);
+        --color-text-secondary: rgba(245, 245, 245, 0.82);
+        --color-text-tertiary: rgba(245, 245, 245, 0.7);
+        --color-text-muted: rgba(245, 245, 245, 0.6);
+        --color-text-subtle: rgba(245, 245, 245, 0.5);
+        --color-text-faint: rgba(245, 245, 245, 0.35);
+        --color-link: rgba(255, 255, 255, 0.92);
+        --color-link-hover: rgba(255, 255, 255, 1);
+        --color-icon-muted: rgba(255, 255, 255, 0.55);
+        --color-icon-strong: rgba(255, 255, 255, 0.95);
+        --color-selection-bg: rgba(255, 255, 255, 0.2);
+        --color-selection-text: rgba(12, 12, 12, 1);
+        --color-focus-ring: rgba(255, 255, 255, 0.7);
+        --color-header-bg: rgba(11, 11, 11, 0.65);
+        --color-header-backdrop: rgba(11, 11, 11, 0.4);
+        --color-header-border: rgba(255, 255, 255, 0.1);
+        --color-ring-offset: var(--color-bg);
+        --accent-red-text: #f87171;
+        --accent-red-border: rgba(239, 68, 68, 0.6);
+        --accent-red-bg: rgba(239, 68, 68, 0.05);
+        --accent-green-text: #4ade80;
+        --accent-green-border: rgba(34, 197, 94, 0.6);
+        --accent-green-bg: rgba(34, 197, 94, 0.05);
+        --accent-blue-text: #60a5fa;
+        --accent-blue-border: rgba(59, 130, 246, 0.6);
+        --accent-blue-bg: rgba(59, 130, 246, 0.05);
+        --accent-lilac-text: #c084fc;
+        --accent-lilac-border: rgba(168, 85, 247, 0.6);
+        --accent-lilac-bg: rgba(168, 85, 247, 0.05);
+        --accent-orange-text: #fb923c;
+        --accent-orange-border: rgba(249, 115, 22, 0.6);
+        --accent-orange-bg: rgba(249, 115, 22, 0.05);
+        --accent-amber-text: #fbbf24;
+        --accent-amber-border: rgba(245, 158, 11, 0.6);
+        --accent-amber-bg: rgba(245, 158, 11, 0.05);
+        --accent-teal-text: #5eead4;
+        --accent-teal-border: rgba(45, 212, 191, 0.6);
+        --accent-teal-bg: rgba(45, 212, 191, 0.05);
+        --accent-pink-text: #f472b6;
+        --accent-pink-border: rgba(236, 72, 153, 0.6);
+        --accent-pink-bg: rgba(236, 72, 153, 0.05);
+        --accent-cyan-text: #67e8f9;
+        --accent-cyan-border: rgba(34, 211, 238, 0.6);
+        --accent-cyan-bg: rgba(34, 211, 238, 0.05);
+        --accent-violet-text: #a78bfa;
+        --accent-violet-border: rgba(139, 92, 246, 0.6);
+        --accent-violet-bg: rgba(139, 92, 246, 0.05);
+        --labs-gradient-start: rgba(147, 51, 234, 0.18);
+        --labs-gradient-mid: rgba(34, 197, 94, 0.14);
+        --labs-gradient-end: rgba(249, 115, 22, 0.14);
+        --labs-border: rgba(255, 255, 255, 0.08);
+        --labs-shadow: rgba(255, 255, 255, 0.02);
+	}
+
+	html,
+	body,
+	#root {
+		height: 100%;
+		background-color: var(--color-bg);
+		color: var(--color-text-primary);
+		font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: auto;
+	}
+
+	::selection {
+		background-color: var(--color-selection-bg);
+		color: var(--color-selection-text);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+
+	/* Load IBM Plex Sans from local files in public/fonts. */
+	@font-face {
+		font-family: 'IBM Plex Sans';
+		src: url('/fonts/IBMPlexSans-VariableFont_wdth,wght.woff2') format('woff2');
+		font-weight: 100 900;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'IBM Plex Sans';
+		src: url('/fonts/IBMPlexSans-Italic-VariableFont_wdth,wght.woff2') format('woff2');
+		font-weight: 100 900;
+		font-style: italic;
+		font-display: swap;
+	}
+}
+
+.prose pre {
+	background-color: rgba(12, 12, 12, 0.6);
+	padding: 0.75rem;
+	border-radius: 0.5rem;
+	overflow: auto;
+}
+
+.prose code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.labs-badge {
+	background-image: linear-gradient(90deg, var(--labs-gradient-start), var(--labs-gradient-mid), var(--labs-gradient-end));
+	border: 1px solid var(--labs-border);
+	color: var(--color-text-primary);
+	box-shadow: inset 0 1px 0 var(--labs-shadow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.labs-badge {
+		transition: none;
+	}
+}

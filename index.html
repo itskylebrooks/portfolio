@@ -62,7 +62,7 @@
     -->
   <!-- Load IBM Plex Sans locally from /fonts to avoid external requests -->
   <!-- Force dark theme for all users (ignore system light/dark). -->
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#0b0b0b">
   <meta name="color-scheme" content="dark">
     <!-- iOS Safari: make status bar match background when saved to home screen -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -73,7 +73,7 @@
       // external CSS or JS runs. Uses prefers-color-scheme to pick values.
       (function () {
   // Force a dark background regardless of system settings.
-  const darkBg = '#000000';
+  const darkBg = '#0b0b0b';
         const darkColor = '#F5F5F5';
         document.documentElement.style.setProperty('--initial-bg', darkBg);
         document.documentElement.style.setProperty('--initial-color', darkColor);
@@ -88,11 +88,11 @@
     <style>
       /* Reduce initial white/gray flash by painting a matching background/color
          before Tailwind CSS and JS bundle load. Uses the variables set above. */
-  :root { --initial-bg: #000000; --initial-color: #F5F5F5; }
+  :root { --initial-bg: #0b0b0b; --initial-color: #F5F5F5; }
       html, body, #root { background: var(--initial-bg); color: var(--initial-color); }
     </style>
   </head>
-  <body class="min-h-screen text-[#F5F5F5]">
+  <body class="min-h-screen text-[color:var(--color-text-primary)] bg-[color:var(--color-bg)]">
     <!-- Initial full-viewport overlay to hide any brief gray/white flash on reload.
          Uses CSS variable --initial-bg which is set in the head script above so
          it paints immediately even before external CSS loads. pointer-events:none
