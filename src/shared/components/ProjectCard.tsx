@@ -6,21 +6,7 @@ import { ChevronRight } from './icons'
 import type { Accent, ProjectIndex as Project } from '@/shared/data/projects'
 import { cn } from '@/shared/utils/cn'
 
-const ACCENT: Record<Accent, { border: string; bg: string; text: string }> = {
-  red:   { border: 'hover:border-[color:var(--accent-red-border)]',   bg: 'hover:bg-[color:var(--accent-red-bg)]',   text: 'text-[color:var(--accent-red-text)]' },
-  green: { border: 'hover:border-[color:var(--accent-green-border)]', bg: 'hover:bg-[color:var(--accent-green-bg)]', text: 'text-[color:var(--accent-green-text)]' },
-  blue:  { border: 'hover:border-[color:var(--accent-blue-border)]',  bg: 'hover:bg-[color:var(--accent-blue-bg)]',  text: 'text-[color:var(--accent-blue-text)]' },
-  lilac: { border: 'hover:border-[color:var(--accent-lilac-border)]',bg: 'hover:bg-[color:var(--accent-lilac-bg)]',text: 'text-[color:var(--accent-lilac-text)]' },
-  orange:{ border: 'hover:border-[color:var(--accent-orange-border)]',bg: 'hover:bg-[color:var(--accent-orange-bg)]',text: 'text-[color:var(--accent-orange-text)]' },
-  amber: { border: 'hover:border-[color:var(--accent-amber-border)]', bg: 'hover:bg-[color:var(--accent-amber-bg)]', text: 'text-[color:var(--accent-amber-text)]' },
-  teal:  { border: 'hover:border-[color:var(--accent-teal-border)]',  bg: 'hover:bg-[color:var(--accent-teal-bg)]',  text: 'text-[color:var(--accent-teal-text)]' },
-  pink:  { border: 'hover:border-[color:var(--accent-pink-border)]',  bg: 'hover:bg-[color:var(--accent-pink-bg)]',  text: 'text-[color:var(--accent-pink-text)]' },
-  cyan:  { border: 'hover:border-[color:var(--accent-cyan-border)]',  bg: 'hover:bg-[color:var(--accent-cyan-bg)]',  text: 'text-[color:var(--accent-cyan-text)]' },
-  violet:{ border: 'hover:border-[color:var(--accent-violet-border)]',bg: 'hover:bg-[color:var(--accent-violet-bg)]',text: 'text-[color:var(--accent-violet-text)]' },
-}
-
 export function ProjectCard({ p }: { p: Project }) {
-  const accent = ACCENT[p.accent] || ACCENT.blue
   const shouldReduceMotion = useReducedMotion()
   return (
     <motion.div
@@ -32,8 +18,7 @@ export function ProjectCard({ p }: { p: Project }) {
         to={`/work/${p.slug}`}
         className={cn(
           'group block border border-[color:var(--color-card-border)] rounded-xl p-4 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]',
-          accent.border,
-          accent.bg,
+          `project-card-${p.accent}`,
         )}
       >
         <div className="flex items-start justify-between gap-4">
@@ -58,7 +43,7 @@ export function ProjectCard({ p }: { p: Project }) {
               ))}
             </ul>
           </div>
-          <ChevronRight className={cn('h-5 w-5 mt-1 shrink-0 transition-colors', accent.text)} />
+          <ChevronRight className="h-5 w-5 mt-1 shrink-0 transition-colors project-card-icon" />
         </div>
       </Link>
     </motion.div>
