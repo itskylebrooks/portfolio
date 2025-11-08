@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const SITE_URL = 'https://itskylebrooks.vercel.app'
+const SITE_URL = 'https://itskylebrooks.tech'
 
 // Function to extract meta from MDX files
 function extractMetaFromMDX(filePath) {
