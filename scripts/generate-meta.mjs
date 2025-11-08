@@ -4,6 +4,8 @@ import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
+const SITE_URL = 'https://itskylebrooks.vercel.app'
+
 // Function to extract meta from MDX files
 function extractMetaFromMDX(filePath) {
   const content = readFileSync(filePath, 'utf-8')
@@ -49,7 +51,7 @@ console.log(`Found ${POSTS.length} posts and ${PROJECTS.length} projects`)
 const baseHtml = readFileSync(join(__dirname, '../dist/index.html'), 'utf-8')
 
 function generateMetaTags(data) {
-  const { title, description, type, url, image = 'https://kylebrooks.dev/icon-black.png' } = data
+  const { title, description, type, url, image = `${SITE_URL}/icon-black.png` } = data
   
   return baseHtml
     .replace(/<title>.*?<\/title>/, `<title>${title} — Kyle Brooks</title>`)
@@ -77,7 +79,7 @@ POSTS.forEach(post => {
     title: `${post.title} — ${date}`,
     description: post.summary,
     type: 'article',
-    url: `https://kylebrooks.dev/blog/${post.slug}`,
+    url: `${SITE_URL}/blog/${post.slug}`,
   })
   
   const dir = join(__dirname, '../dist/blog', post.slug)
@@ -96,7 +98,7 @@ PROJECTS.forEach(project => {
     title: titleWithVersion,
     description: project.summary,
     type: 'website',
-    url: `https://kylebrooks.dev/work/${project.slug}`,
+    url: `${SITE_URL}/work/${project.slug}`,
   })
   
   const dir = join(__dirname, '../dist/work', project.slug)
