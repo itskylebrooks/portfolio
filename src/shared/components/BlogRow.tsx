@@ -14,7 +14,7 @@ export function BlogRow({ post }: { post: Post }) {
     >
       <Link
         to={`/blog/${post.slug}`}
-        className="group block px-4 py-3 rounded-lg transition-colors hover:bg-[color:var(--color-surface-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]"
+        className="group block px-4 py-3 rounded-lg post-card focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]"
       >
         <div className="flex items-center justify-between gap-4">
           <div>
