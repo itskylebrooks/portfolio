@@ -20,7 +20,7 @@ export function HomePage() {
 
   useMetaTags({
     title: 'Kyle Brooks',
-    description: "Kyle Brooks' portfolio showcasing projects and writings on software development, design, and technology.",
+    description: "Kyle Brooks' personal website showcasing projects and writings on software development, design, and technology.",
     author: 'Kyle Brooks',
     type: 'website',
   })

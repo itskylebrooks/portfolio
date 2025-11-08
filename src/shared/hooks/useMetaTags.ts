@@ -46,7 +46,7 @@ export function useMetaTags(options: MetaTagsOptions) {
     }
 
     // Update document title
-    document.title = fullTitle === 'Kyle Brooks' ? `${fullTitle} — Portfolio` : `${fullTitle} — ${author}`
+    document.title = fullTitle === 'Kyle Brooks' ? fullTitle : `${fullTitle} — Kyle Brooks`
 
     // Helper to set or update a meta tag
     const setMetaTag = (property: string, content: string, isProperty = true) => {
@@ -70,7 +70,7 @@ export function useMetaTags(options: MetaTagsOptions) {
     setMetaTag('og:type', type)
     setMetaTag('og:url', url)
     setMetaTag('og:image', ogImage)
-    setMetaTag('og:site_name', `${author} — Portfolio`)
+    setMetaTag('og:site_name', author)
 
     // Twitter Card tags
     setMetaTag('twitter:card', 'summary_large_image', false)
@@ -87,7 +87,7 @@ export function useMetaTags(options: MetaTagsOptions) {
 
     // Cleanup function to reset to default values
     return () => {
-      document.title = 'Kyle Brooks — Portfolio'
+      document.title = 'Kyle Brooks'
     }
   }, [options])
 }
