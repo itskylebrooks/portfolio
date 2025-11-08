@@ -26,7 +26,7 @@ export function ProjectCard({ p }: { p: Project }) {
             <div className={cn('text-sm text-[color:var(--color-text-muted)]','mb-1')}>
               {new Date(p.date).toLocaleDateString()}{p.version ? ` — v${p.version}` : ''}
             </div>
-            <h3 className="text-lg text-[color:var(--color-text-primary)] font-medium mb-1 group-hover:text-[color:var(--color-text-strong)] group-hover:underline underline-offset-4">{p.title}</h3>
+            <h3 className="text-lg text-[color:var(--color-text-primary)] font-medium mb-1 group-hover:text-[color:var(--color-text-strong)]">{p.title}</h3>
             <p className="text-[color:var(--color-text-secondary)] mb-3">{p.summary}</p>
             <ul className="flex flex-wrap gap-2">
               {p.tags.map((t) => (
