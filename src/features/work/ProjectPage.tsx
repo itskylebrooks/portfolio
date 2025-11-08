@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { Page } from '@/shared/components/Page'
 import { Prose } from '@/shared/components/Prose'
 import { PROJECTS, type Accent } from '@/shared/data/projects'
+import { useMetaTags } from '@/shared/hooks/useMetaTags'
 
 const projectModules = import.meta.glob('/content/projects/*.mdx') as Record<string, () => Promise<{ default: React.ComponentType }>>
 
@@ -22,6 +23,17 @@ const ACCENT: Record<Accent, { text: string; heading: string; hoverBorder: strin
 export function ProjectPage() {
   const { slug } = useParams()
   const project = PROJECTS.find((p) => p.slug === slug)
+  
+  // Set meta tags for link previews
+  useMetaTags({
+    title: project?.title || 'Project Not Found',
+    description: project?.summary || 'This project could not be found.',
+    date: project?.date,
+    version: project?.version,
+    type: 'website',
+    author: 'Kyle Brooks',
+  })
+
   if (!project) {
     return (
       <main className="mx-auto max-w-[820px] px-4 py-20">

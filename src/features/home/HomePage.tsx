@@ -6,7 +6,7 @@ import { BlogRow } from '@/shared/components/BlogRow'
 import { ArrowBigLeft, ArrowBigRight } from '@/shared/components/icons'
 import { POSTS } from '@/shared/data/posts'
 import { PROJECTS } from '@/shared/data/projects'
-import { useDocumentTitle } from '@/shared/hooks/useDocumentTitle'
+import { useMetaTags } from '@/shared/hooks/useMetaTags'
 import { prefersReducedMotion } from '@/shared/utils/prefersReducedMotion'
 
 export function HomePage() {
@@ -18,7 +18,12 @@ export function HomePage() {
   const postsPerPage = 5
   const postsPages = Math.max(1, Math.ceil(POSTS.length / postsPerPage))
 
-  useDocumentTitle('Kyle Brooks')
+  useMetaTags({
+    title: 'Kyle Brooks',
+    description: "Kyle Brooks' portfolio showcasing projects and writings on software development, design, and technology.",
+    author: 'Kyle Brooks',
+    type: 'website',
+  })
 
   return (
     <Page>

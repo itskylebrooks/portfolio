@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { Page } from '@/shared/components/Page'
 import { Prose } from '@/shared/components/Prose'
 import { POSTS } from '@/shared/data/posts'
+import { useMetaTags } from '@/shared/hooks/useMetaTags'
 
 const postModules = import.meta.glob('/content/posts/*.mdx') as Record<string, () => Promise<{ default: React.ComponentType }>>
 
@@ -14,6 +15,15 @@ export function PostPage() {
     const loader = postModules[`/content/posts/${post.slug}.mdx`]
     return loader ? React.lazy(loader) : null
   }, [post?.slug])
+
+  // Set meta tags for link previews
+  useMetaTags({
+    title: post?.title || 'Post Not Found',
+    description: post?.summary || 'This post could not be found.',
+    date: post?.date,
+    type: 'article',
+    author: 'Kyle Brooks',
+  })
 
   if (!post) {
     return (
