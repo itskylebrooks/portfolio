@@ -29,7 +29,7 @@ export function Header() {
         <Link
           to="/"
           onClick={handleNameClick}
-          className="text-lg font-medium text-[color:var(--color-text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]"
+          className="text-lg font-medium text-[color:var(--color-text-primary)] title-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]"
           aria-label="Go to About section"
         >
           Kyle Brooks
