@@ -25,9 +25,10 @@ type MotionDivProps = {
   className?: string
   duration?: number
   offset?: number
+  skipInitialAnimation?: boolean
 }
 
-export function MotionDiv({ children, animateKey, className, duration, offset }: MotionDivProps) {
+export function MotionDiv({ children, animateKey, className, duration, offset, skipInitialAnimation }: MotionDivProps) {
   const shouldReduceMotion = useReducedMotion()
   const variants = React.useMemo(() => fadeInUp(offset, duration), [duration, offset])
 
@@ -35,7 +36,7 @@ export function MotionDiv({ children, animateKey, className, duration, offset }:
     <motion.div
       key={animateKey}
       className={className}
-      initial={shouldReduceMotion ? undefined : 'initial'}
+      initial={shouldReduceMotion ? undefined : skipInitialAnimation ? false : 'initial'}
       animate={shouldReduceMotion ? undefined : 'animate'}
       variants={variants}
     >

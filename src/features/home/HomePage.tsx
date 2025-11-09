@@ -215,10 +215,21 @@ function PaginatedProjects({ projects, page, perPage }: { projects: typeof PROJE
   
   const start = page * perPage
   const slice = projects.slice(start, start + perPage)
+  const hasLoaded = React.useRef(false)
+  const skipInitialAnimation = !hasLoaded.current
+
+  React.useEffect(() => {
+    hasLoaded.current = true
+  }, [])
 
   return (
     // make each ProjectCard a direct child of the grid so Tailwind gap applies correctly
-    <MotionDiv animateKey={page} className="grid gap-3" duration={0.25}>
+    <MotionDiv
+      animateKey={page}
+      className="grid gap-3"
+      duration={0.25}
+      skipInitialAnimation={skipInitialAnimation}
+    >
       {slice.map((p) => (
         <div key={p.slug}>
           <ProjectCard p={p} />
@@ -236,11 +247,17 @@ function PaginatedPosts({ posts, page, perPage }: { posts: typeof POSTS; page: n
   
   const start = page * perPage
   const slice = posts.slice(start, start + perPage)
+  const hasLoaded = React.useRef(false)
+  const skipInitialAnimation = !hasLoaded.current
+
+  React.useEffect(() => {
+    hasLoaded.current = true
+  }, [])
 
   return (
     <>
       <div className="divide-y divide-[color:var(--color-border-muted)] rounded-xl border border-[color:var(--color-card-border)]">
-        <MotionDiv animateKey={page} duration={0.25}>
+        <MotionDiv animateKey={page} duration={0.25} skipInitialAnimation={skipInitialAnimation}>
           {slice.map((post) => <BlogRow key={post.slug} post={post} />)}
         </MotionDiv>
       </div>
