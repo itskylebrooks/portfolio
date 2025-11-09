@@ -247,3 +247,11 @@
 .project-card-violet:hover .project-card-icon {
 	color: var(--accent-violet-text);
 }
+
+/* Reusable title hover effect - bright white */
+.title-hover {
+	transition: color 0.15s ease;
+}
+.title-hover:hover {
+	color: rgba(255, 255, 255, 1) !important;
+}

@@ -61,7 +61,7 @@ export function HomePage() {
         title={
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-[color:var(--color-text-primary)] transition-colors duration-150 hover:text-[color:var(--color-text-strong)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]"
+            className="inline-flex items-center gap-2 text-[color:var(--color-text-primary)] title-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]"
           >
             Blog
             <ArrowUpRight className="h-4 w-4 text-[color:var(--color-text-muted)]" aria-hidden="true" />
