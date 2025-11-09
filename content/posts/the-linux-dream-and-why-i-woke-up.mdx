@@ -1,0 +1,79 @@
+import { SmartImage } from '@/shared/components/SmartImage'
+
+export const meta = {
+  title: 'The Linux Dream (and Why I Woke Up)',
+  date: '2025-11-10',
+  summary: 'Why I wanted to love Linux — and why I couldn’t.',
+}
+
+### Prologue — the promise of freedom
+
+My first contact with Linux was curiosity wearing a cape. Windows was the language of my childhood — menus, drivers, control panels — predictable and heavy. Linux looked like an exit door to something lighter and smarter. I didn’t understand how it worked, how to install it, or why there were so many “distributions,” but the idea was seductive: take an old, wheezing laptop and squeeze real life out of it with a cleaner system and a bit of courage. Freedom through open source. Less bloat, more control. Set it up once and finally get to work — that was the dream.
+
+### First encounters — when curiosity meets reality
+
+Reality started with a USB stick. On Windows there isn’t one obvious, foolproof way to make a bootable drive; sometimes the tool said “done” and the stick was still corrupted, sometimes the installer booted and died halfway through. After a few tries I did get into live systems and finally onto the disk. That’s when the real lessons began.
+
+Drivers were the first wall. The laptop had a Realtek network adapter. On paper it existed; in practice Bluetooth never worked and Wi-Fi worked when it felt like it. Closing the lid didn’t sleep, shutting down sometimes rebooted, and a few times I had the comedy of a machine that refused to stay off. I searched forums, copied scripts I didn’t fully understand, and celebrated when the lid finally behaved. Then something else broke.
+
+Graphics weren’t great either. An older NVIDIA chip and an Intel CPU that felt fine on paper suddenly looked underpowered. Video that played smoothly on Windows stuttered on Linux; fans spun more often; battery life felt shy. I could see the power of the platform — the customization, the speed when it clicked — but the price was constant tinkering. Freedom, yes, but with friction at every turn.
+
+### The second round — hope, optimism, and déjà vu
+
+In 2023 I gave it another honest chance on a newer, very budget laptop. Windows 11 felt fresh for a week and then I hit the ceiling again — 8 GB of RAM, a hungry browser, two monitors, and no room left for anything else. Open source pulled me back. Maybe this time, with newer hardware, Linux would shine.
+
+Some things improved, but the ghosts were still there. Realtek again — this time Bluetooth worked, but Wi-Fi randomly vanished or crawled until a reboot. Using Wi-Fi and Bluetooth together was a gamble. Chromium-based browsers froze the whole system at random; sometimes I’d walk away for five minutes, come back, and everything was stuck. 4K video that Windows handled without drama lagged on Linux. Sleep wasn’t real sleep — more hibernate than suspend — and the battery drained fast enough that closing the lid between classes was a risk. I wanted the “open and continue” rhythm of a normal laptop day; I got “save and shut down” instead.
+
+I don’t hate setup — I like understanding how my tools work — but there’s a line where learning crosses into babysitting. I kept fixing one thing only to meet three new ones. After the third or fourth full system freeze, I stopped pretending this was temporary. I needed a computer that would be a computer, not a project.
+
+### Between love and pain — what Linux does right
+
+It wasn’t all bad. GNOME felt like the desktop I always wanted — clean, calm, quick, with shortcuts that actually made sense and extensions that solved real problems without turning the place into a circus. The terminal on Linux is a real instrument; small scripts and one-liners make you feel close to the machine in a way Windows never does. There’s real joy in shaping your environment — keybindings, themes, tiny utilities that fit your brain.
+
+The cost showed up quietly. Hours disappeared into extensions, dotfiles, and “one last tweak,” while the work I cared about waited. When the system becomes the hobby, momentum dies. Linux gave me a beautiful workbench — and I kept rearranging the drawers. That’s on me, but it’s also the point: I needed a setup that stays out of the way on busy days, not one that invites me back into settings every week.
+
+### The structural problem — drivers, apps, and market reality
+
+The more I used Linux, the clearer the pattern was: the core OS wasn’t the villain — incentives around it were. Hardware vendors treat Linux like a footnote. Realtek is the obvious example: Wi-Fi that drops under load, Bluetooth that works until it doesn’t, chip revisions that depend on out-of-tree drivers you lose after a kernel update. NVIDIA works — until a new quirk appears with a different control stack. Intel is usually safest, yet 4K playback that’s trivial on Windows stutters, and power management feels less efficient. None of these is fatal alone; together they’re a thousand papercuts.
+
+Software has the same gravity. A normal daily suite — mail, calendar, notes, contacts — exists, but not as a quiet whole. Thunderbird is powerful but heavy; many other clients feel dated or try to do too much. You can wire CalDAV/CardDAV, add GNOME Online Accounts, and glue Flatpaks together. On paper it’s fine. In practice you keep tending the garden — keyring prompts, odd OAuth flows, a plugin two releases behind. It works — it just isn’t silent.
+
+Then fragmentation adds overhead. Distro families, package managers, X11 vs Wayland, PulseAudio vs PipeWire, Flatpak vs Snap vs AppImage — each branch is another place something subtle can go wrong. Community effort spreads thin; commercial developers look at market share and pass. Result: fewer first-party apps, more web wrappers, and a lot of “almost good” tools you tune for hours.
+
+Laptops mirror this. Yes, there are Linux-friendly models, but truly polished machines are scarce, often pricier, and not always a design you want to live with. I don’t want to pick one aesthetic just to get suspend and battery right. I want options that behave like appliances when I’m running between lectures. That’s the Catch-22 — fewer users mean less investment; less investment means fewer users.
+
+### The tipping point — choosing sanity over customization
+
+At some point I stopped romanticizing the struggle. University days are not a lab; they’re a sprint with small breaks where your computer must wake instantly, hold a charge, and never surprise you in front of classmates. I needed to open the lid, type, and trust. Not “resume except the Wi-Fi,” not “resume unless you had Bluetooth on,” not “resume if the browser didn’t freeze this time.” Real suspend, predictable battery, zero drama.
+
+So I picked the boring path that lets me live a less boring life — MacBook Air and iPhone. Not because Apple is perfect, but because the baseline is quiet. Sleep works. Battery lasts. The native daily suite — Mail, Calendar, Notes, Reminders, Contacts — is clean and integrated. Handoff and AirDrop feel like utilities, not magic tricks. I don’t drag a charger across campus. I don’t wonder if a kernel update will break the driver I finally coaxed into working. And yes, compared to Google and Microsoft, Apple’s privacy posture is the one I can live with even when I disagree with other choices. It’s the middle ground that lets me work.
+
+People sometimes frame this as “closed vs open.” For me it was “fragile freedom vs durable focus.” I still respect the open path — profoundly — but I was spending my best hours on plumbing. I want to use those hours to build things.
+
+### Reflection — what Linux taught me anyway
+
+Linux taught me how computers actually breathe — processes, services, logs, permissions, the real shape of a filesystem. It gave me habits I still keep: a bias toward the keyboard, small scripts to remove friction, an allergy to bloat. It also held up a mirror to my perfectionism. Customization is fun right up to the moment it becomes an excuse not to ship. Linux made me ask a simple question I now use everywhere: am I improving the tool, or avoiding the work?
+
+It taught me respect for volunteers who keep the planet’s servers upright for free — kernel devs, distro maintainers, the person who writes a tiny udev rule that saves a thousand users a headache. It taught me not to blame the wrong thing. My pain wasn’t “Linux” in the abstract; it was a network of incentives that make vendors ignore a minority platform. Understanding the system makes you less angry at individual bugs and more realistic about outcomes.
+
+Most of all, Linux clarified my taste. I like minimal, fast, honest software that disappears. I like small, sharp tools that do something specific. I like defaults that are sane without being smug. When I say I prefer Apple Notes over a knowledge-graph cathedral, that instinct was trained by Linux — by the satisfaction of simple tools that don’t pretend to be empires.
+
+<figure className="post-figure">
+  <SmartImage
+    src="/media/the-linux-dream-and-why-i-woke-up.jpg"
+    alt="Hand-etched glass lamp with Linux penguin glowing on a desk."
+    width={1280}
+    height={960}
+  />
+  <figcaption className="figure-caption">Photo & artwork: Kyle Brooks — Tux-inspired etched glass lamp.</figcaption>
+</figure>
+
+### Closing — the honest middle ground
+
+I didn’t “lose” the Linux dream. I learned its shape. On the right hardware — Intel Wi-Fi instead of Realtek, a ThinkPad or Framework with friendly drivers, a distro you know by heart — Linux can be fantastic. If you enjoy tuning, if your workflow lives in the terminal and the browser, if you want maximal control and don’t mind learning the plumbing, you’ll be happy. Plenty of people are. Their experience is valid — and often better than mine.
+
+My case is different. I’m moving between rooms, living on battery, opening the lid ten times a day, needing Mail, Calendar, Notes, and a stable browser that never surprises me in front of other people. I don’t want to babysit suspend, power profiles, or kernel modules. For that life, the friction outweighed the freedom. That doesn’t make Linux “bad.” It makes it “not for me right now.”
+
+I still run Linux on servers and in containers; I still admire the craft and the community. If vendor support tightens and the daily suite gets quieter, I’ll try again with an open mind. Until then, I’ll keep the spirit — small tools, boring defaults, attention on the work — while using the platform that interferes the least.
+
+One of next pieces — a companion to this one — will be about the other side of the trade: why I chose the Apple ecosystem, how I set it up to stay quiet, and the small rules that keep it from owning me.
