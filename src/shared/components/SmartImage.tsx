@@ -20,7 +20,7 @@ export const SmartImage = React.forwardRef<HTMLImageElement, SmartImageProps>(fu
     style,
     loading,
     decoding,
-    fetchpriority,
+    fetchPriority,
     onLoad,
     containerClassName,
     containerStyle,
@@ -40,7 +40,7 @@ export const SmartImage = React.forwardRef<HTMLImageElement, SmartImageProps>(fu
 
   const resolvedLoading = priority ? 'eager' : loading ?? 'lazy'
   const resolvedDecoding = decoding ?? 'async'
-  const resolvedFetchPriority = priority ? 'high' : fetchpriority
+  const resolvedFetchPriority = priority ? 'high' : fetchPriority
 
   const backgroundStyles = loaded
     ? {}
@@ -68,7 +68,7 @@ export const SmartImage = React.forwardRef<HTMLImageElement, SmartImageProps>(fu
         height={height}
         loading={resolvedLoading}
         decoding={resolvedDecoding}
-        fetchpriority={resolvedFetchPriority}
+        fetchPriority={resolvedFetchPriority}
         onLoad={handleLoad}
         className={className}
         style={{
