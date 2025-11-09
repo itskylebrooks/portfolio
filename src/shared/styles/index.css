@@ -160,7 +160,7 @@
 
 /* Post card hover effect */
 .post-card {
-	transition: background-color 0.2s ease, border-color 0.2s ease;
+	transition: background-color 0.15s ease, border-color 0s ease;
 }
 .post-card:hover {
 	background-color: var(--color-surface-active);

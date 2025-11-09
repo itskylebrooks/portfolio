@@ -19,10 +19,10 @@ export function BlogRow({ post }: { post: Post }) {
         <div className="flex items-center justify-between gap-4">
           <div>
             <div className="text-sm text-[color:var(--color-text-muted)]">{new Date(post.date).toLocaleDateString()}</div>
-            <h3 className="text-[color:var(--color-text-primary)] font-medium group-hover:text-[color:var(--color-text-strong)]">{post.title}</h3>
+            <h3 className="text-[color:var(--color-text-primary)] font-medium group-hover:text-[color:var(--color-text-strong)] transition-colors duration-150">{post.title}</h3>
             <p className="text-[color:var(--color-text-secondary)] text-sm mt-1">{post.summary}</p>
           </div>
-          <ChevronRight className="h-5 w-5 text-[color:var(--color-icon-muted)] group-hover:text-[color:var(--color-icon-strong)]" />
+          <ChevronRight className="h-5 w-5 text-[color:var(--color-icon-muted)] group-hover:text-[color:var(--color-icon-strong)] transition-colors duration-150" />
         </div>
       </Link>
     </motion.div>
