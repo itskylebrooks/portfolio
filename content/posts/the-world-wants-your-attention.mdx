@@ -1,3 +1,5 @@
+import { SmartImage } from '@/shared/components/SmartImage'
+
 export const meta = {
   title: 'The World Wants Your Attention',
   date: '2025-11-08',
@@ -19,13 +21,11 @@ Second, publishing is almost free. You can push ads into apps, websites, podcast
 ### Posters
 
 <figure className="post-figure">
-  <img
+  <SmartImage
     src="/media/the-world-wants-your-attention.jpg"
     alt="Posters"
-    width="1920"
-    height="800"
-    loading="lazy"
-    decoding="async"
+    width={1920}
+    height={800}
   />
   <figcaption className="figure-caption">Credits: © Coca-Cola Company, © Apple Inc., © Levi Strauss & Co. — used for commentary.</figcaption>
 </figure>
