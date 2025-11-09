@@ -37,7 +37,7 @@ export function BlogIndexPage() {
                 {entries.map((post) => (
                   <article key={post.slug}>
                     <div className="flex gap-3 text-base">
-                      <div className="flex items-center gap-2 text-sm text-[color:var(--color-text-muted)] whitespace-nowrap">
+                      <div className="flex items-center gap-2 text-sm text-[color:var(--color-text-muted)] whitespace-nowrap flex-shrink-0 min-w-[65px]">
                         <span>{dateFormatter.format(new Date(post.date))}</span>
                         <span className="text-[color:var(--color-text-faint)]">&mdash;</span>
                       </div>
