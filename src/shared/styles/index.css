@@ -158,6 +158,11 @@
 	color: var(--color-text-subtle);
 }
 
+.figure-caption a {
+	color: inherit;
+	text-decoration-color: inherit;
+}
+
 /* Post card hover effect */
 .post-card {
 	transition: background-color 0.15s ease, border-color 0s ease;
