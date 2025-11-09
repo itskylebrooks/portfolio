@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Footer } from '@/shared/components/Footer'
 import { Header } from '@/shared/components/Header'
 import { useScrollToHash } from '@/shared/hooks/useScrollToHash'
-import { PostPage } from '@/features/blog'
+import { BlogIndexPage, PostPage } from '@/features/blog'
 import { HomePage } from '@/features/home'
 import { ImprintPage, LicensePage, PrivacyPage } from '@/features/legal'
 import { NotFoundPage } from '@/features/misc'
@@ -32,6 +32,7 @@ function Shell() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/work/:slug" element={<ProjectPage />} />
+        <Route path="/blog" element={<BlogIndexPage />} />
         <Route path="/blog/:slug" element={<PostPage />} />
         <Route path="/imprint" element={<ImprintPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />

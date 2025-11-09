@@ -6,7 +6,7 @@ export function Section({
   headerRight,
 }: {
   id: string
-  title: string
+  title: React.ReactNode
   children: React.ReactNode
   headerRight?: React.ReactNode
 }) {

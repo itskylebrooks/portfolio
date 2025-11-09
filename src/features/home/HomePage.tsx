@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { MotionDiv, Page } from '@/shared/components/Page'
 import { Section } from '@/shared/components/Section'
 import { ProjectCard } from '@/shared/components/ProjectCard'
@@ -57,7 +58,17 @@ export function HomePage() {
       </Section>
       <Section
         id="blog"
-        title="Blog"
+        title={
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-[color:var(--color-text-primary)] transition-colors duration-150 hover:text-[color:var(--color-text-strong)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]"
+          >
+            Blog
+            <span aria-hidden="true" className="text-base text-[color:var(--color-text-muted)]">
+              ↗
+            </span>
+          </Link>
+        }
         headerRight={
           POSTS.length > postsPerPage ? (
             <div className="flex items-center justify-center gap-4">
