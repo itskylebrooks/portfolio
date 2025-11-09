@@ -32,7 +32,7 @@ export function BlogIndexPage() {
           const entries = postsByYear[year] ?? []
           return (
             <section key={year}>
-            <h2 className="text-2xl font-semibold uppercase tracking-[0.35em] text-[color:var(--color-text-primary)]">{year}</h2>
+            <h2 className="text-2xl font-semibold uppercase text-[color:var(--color-text-primary)]">{year}</h2>
               <div className="mt-5 flex flex-col gap-7">
                 {entries.map((post) => (
                   <article key={post.slug}>
