@@ -7,7 +7,7 @@ import { BlogIndexPage, PostPage } from '@/features/blog'
 import { HomePage } from '@/features/home'
 import { ImprintPage, LicensePage, PrivacyPage } from '@/features/legal'
 import { NotFoundPage } from '@/features/misc'
-import { ProjectPage } from '@/features/work'
+import { ProjectPage, WorkPage } from '@/features/work'
 
 function Shell() {
   useScrollToHash()
@@ -31,6 +31,7 @@ function Shell() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/work" element={<WorkPage />} />
         <Route path="/work/:slug" element={<ProjectPage />} />
         <Route path="/blog" element={<BlogIndexPage />} />
         <Route path="/blog/:slug" element={<PostPage />} />

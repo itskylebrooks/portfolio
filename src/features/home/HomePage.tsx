@@ -31,7 +31,15 @@ export function HomePage() {
       <Hero />
       <Section
         id="work"
-        title="Work"
+        title={
+          <Link
+            to="/work"
+            className="inline-flex items-center gap-2 text-[color:var(--color-text-primary)] title-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]"
+          >
+            Work
+            <ArrowUpRight className="h-4 w-4 text-[color:var(--color-text-muted)]" aria-hidden="true" />
+          </Link>
+        }
         headerRight={
           PROJECTS.length > projectsPerPage ? (
             <div className="flex items-center justify-center gap-4">

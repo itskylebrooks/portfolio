@@ -52,7 +52,10 @@ export function PostPage() {
         </Prose>
       </div>
       <div className="mt-10">
-        <Link to={{ pathname: '/', hash: '#blog' }} className="underline text-[color:var(--color-link)] hover:text-[color:var(--color-link-hover)]">
+        <Link
+          to={{ pathname: '/', hash: '#blog' }}
+          className="underline text-[color:var(--color-link)] hover:text-[color:var(--color-link-hover)] transition-colors duration-150 ease-in-out"
+        >
           ← Back to home
         </Link>
       </div>
