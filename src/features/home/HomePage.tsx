@@ -4,7 +4,7 @@ import { MotionDiv, Page } from '@/shared/components/Page'
 import { Section } from '@/shared/components/Section'
 import { ProjectCard } from '@/shared/components/ProjectCard'
 import { BlogRow } from '@/shared/components/BlogRow'
-import { ArrowBigLeft, ArrowBigRight } from '@/shared/components/icons'
+import { ArrowBigLeft, ArrowBigRight, ArrowUpRight } from '@/shared/components/icons'
 import { POSTS } from '@/shared/data/posts'
 import { PROJECTS } from '@/shared/data/projects'
 import { useMetaTags } from '@/shared/hooks/useMetaTags'
@@ -64,9 +64,7 @@ export function HomePage() {
             className="inline-flex items-center gap-2 text-[color:var(--color-text-primary)] transition-colors duration-150 hover:text-[color:var(--color-text-strong)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-ring-offset)]"
           >
             Blog
-            <span aria-hidden="true" className="text-base text-[color:var(--color-text-muted)]">
-              ↗
-            </span>
+            <ArrowUpRight className="h-4 w-4 text-[color:var(--color-text-muted)]" aria-hidden="true" />
           </Link>
         }
         headerRight={
