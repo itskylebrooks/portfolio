@@ -65,7 +65,9 @@ export const SmartImage = React.forwardRef<HTMLImageElement, SmartImageProps>(fu
         className={className}
         style={{
           opacity: loaded ? 1 : 0,
-          transition: 'opacity 0.5s ease-in-out',
+          transform: loaded ? 'scale(1)' : 'scale(1.02)',
+          filter: loaded ? 'blur(0px)' : 'blur(8px)',
+          transition: 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
           ...style,
         }}
         {...imgProps}

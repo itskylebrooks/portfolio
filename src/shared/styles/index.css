@@ -70,8 +70,10 @@
         --labs-gradient-end: rgba(249, 115, 22, 0.14);
         --labs-border: rgba(255, 255, 255, 0.08);
         --labs-shadow: rgba(255, 255, 255, 0.02);
-        --color-image-placeholder: rgba(10, 10, 10, 1);
-        --color-image-placeholder-highlight: rgba(255, 255, 255, 0.06);
+        --color-image-placeholder-bg: rgba(18, 18, 18, 0.8);
+        --color-image-placeholder-glass: rgba(255, 255, 255, 0.015);
+        --color-image-placeholder-glow: rgba(255, 255, 255, 0.03);
+        --color-image-placeholder-border: rgba(255, 255, 255, 0.1);
 	}
 
 	html,
@@ -184,22 +186,45 @@
 	border-radius: 0.375rem;
 	overflow: hidden;
 	display: block;
-	background: linear-gradient(
-		90deg,
-		var(--color-image-placeholder) 0%,
-		var(--color-image-placeholder-highlight) 50%,
-		var(--color-image-placeholder) 100%
-	);
-	background-size: 200% 100%;
-	animation: shimmer 2s infinite;
+	background: #000000;
 }
 
-@keyframes shimmer {
+.smart-image::before {
+	content: '';
+	position: absolute;
+	inset: -50%;
+	z-index: 1;
+	background: 
+		radial-gradient(
+			circle at 50% 50%,
+			rgba(255, 255, 255, 0.5) 0%,
+			rgba(255, 255, 255, 0.3) 15%,
+			transparent 25%
+		);
+	transform: scale(0.5);
+	animation: inkSpill 8s ease-out forwards;
+	opacity: 1;
+	transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+	filter: blur(60px);
+}
+
+.smart-image::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	border-radius: inherit;
+	border: 1px solid var(--color-image-placeholder-border);
+	pointer-events: none;
+}
+
+@keyframes inkSpill {
 	0% {
-		background-position: 200% 0;
+		transform: scale(0.5);
 	}
 	100% {
-		background-position: -200% 0;
+		transform: scale(2.5);
 	}
 }
 
@@ -210,9 +235,17 @@
 	border-radius: inherit;
 }
 
+.smart-image--loaded::before {
+	opacity: 0;
+	animation-play-state: paused;
+}
+
+.smart-image--loaded::after {
+	opacity: 0;
+}
+
 .smart-image--loaded {
 	animation: none;
-	background: none;
 }
 
 img {
