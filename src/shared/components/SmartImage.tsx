@@ -27,9 +27,18 @@ export const SmartImage = React.forwardRef<HTMLImageElement, SmartImageProps>(fu
   ref,
 ) {
   const [loaded, setLoaded] = React.useState(false)
+  const [ratio, setRatio] = React.useState(() => width / height)
+  const resolvedContainerStyle: React.CSSProperties = {
+    aspectRatio: containerStyle?.aspectRatio ?? `${ratio}`,
+    ...containerStyle,
+  }
 
   const handleLoad = React.useCallback(
     (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
+      const img = event.currentTarget
+      if (img.naturalWidth && img.naturalHeight) {
+        setRatio(img.naturalWidth / img.naturalHeight)
+      }
       setLoaded(true)
       onLoad?.(event)
     },
@@ -43,10 +52,7 @@ export const SmartImage = React.forwardRef<HTMLImageElement, SmartImageProps>(fu
   return (
     <div
       className={cn('smart-image', loaded && 'smart-image--loaded', containerClassName)}
-      style={{
-        aspectRatio: `${width} / ${height}`,
-        ...containerStyle,
-      }}
+      style={resolvedContainerStyle}
     >
       <img
         ref={ref}
