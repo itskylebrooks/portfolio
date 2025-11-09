@@ -167,18 +167,24 @@
 .prose img {
 	opacity: 1;
 	transform: translateY(0) scale(1);
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
 .prose img[data-image-animate='true'] {
 	opacity: 0;
-	transform: translateY(0.35rem) scale(0.997);
-	transition: opacity 0.35s ease, transform 0.35s ease;
+	transform: translateY(0.2rem) scale(0.995);
+	transition: opacity 0.25s ease-out, transform 0.25s ease-out;
 	will-change: opacity, transform;
+	background-color: var(--color-surface);
+	min-height: clamp(180px, 45vw, 360px);
 }
 
 .prose img[data-image-animate='true'][data-image-loaded='true'] {
 	opacity: 1;
 	transform: translateY(0) scale(1);
+	min-height: 0;
 }
 
 img {
