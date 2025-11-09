@@ -1,11 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { motion, useReducedMotion } from 'framer-motion'
+import { pageVariants } from '@/shared/animations'
 
 export function Footer() {
   const year = new Date().getFullYear()
+  const shouldReduceMotion = useReducedMotion()
+  const { pathname } = useLocation()
 
   return (
-    <footer className="mx-auto max-w-[820px] px-4 py-10 text-sm text-[color:var(--color-text-tertiary)] flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-4">
+    <motion.footer
+      key={pathname}
+      className="mx-auto max-w-[820px] px-4 py-10 text-sm text-[color:var(--color-text-tertiary)] flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-4"
+      initial={shouldReduceMotion ? undefined : 'initial'}
+      animate={shouldReduceMotion ? undefined : 'enter'}
+      variants={pageVariants}
+    >
       <div className="w-full flex justify-center sm:justify-start text-center sm:text-left order-2 sm:order-1">
         <div>© {year} Kyle Brooks — Hamburg, Germany.</div>
       </div>
@@ -23,6 +33,6 @@ export function Footer() {
           </Link>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
