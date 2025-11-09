@@ -46,7 +46,7 @@ export function useMetaTags(options: MetaTagsOptions) {
     }
 
     // Update document title
-    document.title = fullTitle === 'Kyle Brooks' ? fullTitle : `${fullTitle} — Kyle Brooks`
+    document.title = fullTitle
 
     // Helper to set or update a meta tag
     const setMetaTag = (property: string, content: string, isProperty = true) => {

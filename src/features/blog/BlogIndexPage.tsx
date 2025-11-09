@@ -16,7 +16,7 @@ export function BlogIndexPage() {
   const years = React.useMemo(() => Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a)), [postsByYear])
 
   useMetaTags({
-    title: 'Blog — Kyle Brooks',
+    title: 'Blog',
     description: 'Writing about software, focus, and building calm tools.',
     author: 'Kyle Brooks',
     type: 'website',
