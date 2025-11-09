@@ -164,6 +164,23 @@
 	text-decoration-color: inherit;
 }
 
+.prose img {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
+.prose img[data-image-animate='true'] {
+	opacity: 0;
+	transform: translateY(0.35rem) scale(0.997);
+	transition: opacity 0.35s ease, transform 0.35s ease;
+	will-change: opacity, transform;
+}
+
+.prose img[data-image-animate='true'][data-image-loaded='true'] {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
 img {
 	border-radius: 0.375rem;
 }

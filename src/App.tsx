@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Footer } from '@/shared/components/Footer'
 import { Header } from '@/shared/components/Header'
 import { useScrollToHash } from '@/shared/hooks/useScrollToHash'
+import { useProseImageFadeIn } from '@/shared/hooks/useProseImageFadeIn'
 import { BlogIndexPage, PostPage } from '@/features/blog'
 import { HomePage } from '@/features/home'
 import { ImprintPage, LicensePage, PrivacyPage } from '@/features/legal'
@@ -11,6 +12,7 @@ import { ProjectPage, WorkPage } from '@/features/work'
 
 function Shell() {
   useScrollToHash()
+  useProseImageFadeIn()
 
   // Prevent browser native scroll restoration (especially mobile WebKit) from
   // automatically restoring scroll positions which can cause a double-jump.
