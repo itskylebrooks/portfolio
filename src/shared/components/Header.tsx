@@ -37,7 +37,7 @@ export function Header() {
         <div className="ml-auto flex items-center gap-2">
           <IconLink href="https://github.com/itskylebrooks" label="GitHub" Icon={Github} />
           <IconLink href="https://linkedin.com/in/itskylebrooks" label="LinkedIn" Icon={Linkedin} />
-          <IconLink href="mailto:itskylebrooks@icloud.com" label="Email" Icon={Mail} />
+          <IconLink href="mailto:desk@itskylebrooks.tech" label="Email" Icon={Mail} />
         </div>
       </div>
     </header>
