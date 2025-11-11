@@ -29,7 +29,7 @@ export function useMetaTags(options: MetaTagsOptions) {
     } = options
 
     // Default OG image (you can replace this with a better default image)
-    const defaultImage = `${window.location.origin}/icon-black.png`
+    const defaultImage = `${window.location.origin}/icons/web-app-manifest-512x512.png`
     const ogImage = image || defaultImage
 
     // Construct full title with version/date if provided

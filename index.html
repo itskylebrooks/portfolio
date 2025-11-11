@@ -3,58 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Prefer media-aware favicons so the browser picks the correct one for light/dark UI -->
-    <link rel="icon" type="image/png" href="/icon-black.png" media="(prefers-color-scheme: light)" />
-    <link rel="icon" type="image/png" href="/icon-white.png" media="(prefers-color-scheme: dark)" />
-    <!-- Apple touch icon (fallback and will be swapped by the script on theme changes) -->
-    <link rel="apple-touch-icon" href="/icon-black.png" id="apple-touch-icon" />
+    <!-- Prefer a scalable SVG favicon with a matching manifest for PWA installs -->
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/icons/site.webmanifest" />
 
-    <!-- Fallback script for browsers that don't support media on link rel=icon or to handle runtime theme changes -->
-    <script>
-      (function () {
-        const lightHref = '/icon-black.png';
-        const darkHref = '/icon-white.png';
-
-        function setFavicon(href) {
-          // rel icons
-          const rels = ['icon', 'shortcut icon'];
-          rels.forEach(rel => {
-            let el = document.querySelector('link[rel="' + rel + '"]');
-            if (!el) {
-              el = document.createElement('link');
-              el.rel = rel;
-              document.head.appendChild(el);
-            }
-            el.type = 'image/png';
-            el.href = href;
-          });
-
-          // apple touch icon
-          const apple = document.getElementById('apple-touch-icon') || document.createElement('link');
-          apple.rel = 'apple-touch-icon';
-          apple.href = href;
-          apple.id = 'apple-touch-icon';
-          if (!document.getElementById('apple-touch-icon')) document.head.appendChild(apple);
-        }
-
-        const mq = window.matchMedia('(prefers-color-scheme: dark)');
-
-        function applyScheme(e) {
-          const isDark = e && typeof e.matches === 'boolean' ? e.matches : mq.matches;
-          setFavicon(isDark ? darkHref : lightHref);
-        }
-
-        // Initial set
-        applyScheme();
-
-        // Listen for changes
-        if (mq.addEventListener) {
-          mq.addEventListener('change', applyScheme);
-        } else if (mq.addListener) {
-          mq.addListener(applyScheme);
-        }
-      })();
-    </script>
     <title>Kyle Brooks</title>
     
     <!-- SEO and Social Media Meta Tags -->
@@ -66,7 +19,7 @@
     <meta property="og:url" content="https://itskylebrooks.tech/">
     <meta property="og:title" content="Kyle Brooks">
     <meta property="og:description" content="Personal website showcasing projects and writings on software development, design, and technology.">
-    <meta property="og:image" content="https://itskylebrooks.tech/icon-black.png">
+    <meta property="og:image" content="https://itskylebrooks.tech/icons/web-app-manifest-512x512.png">
     <meta property="og:site_name" content="Kyle Brooks">
     
     <!-- Twitter -->
@@ -74,7 +27,7 @@
     <meta name="twitter:url" content="https://itskylebrooks.tech/">
     <meta name="twitter:title" content="Kyle Brooks">
     <meta name="twitter:description" content="Personal website showcasing projects and writings on software development, design, and technology.">
-    <meta name="twitter:image" content="https://itskylebrooks.tech/icon-black.png">
+    <meta name="twitter:image" content="https://itskylebrooks.tech/icons/web-app-manifest-512x512.png">
     <meta name="twitter:creator" content="@KyleBrooks">
     
     <!-- Inline background to avoid white/gray flash before CSS and JS load.

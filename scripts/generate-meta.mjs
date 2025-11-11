@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const SITE_URL = 'https://itskylebrooks.tech'
+const DEFAULT_OG_IMAGE = `${SITE_URL}/icons/web-app-manifest-512x512.png`
 
 // Function to extract meta from MDX files
 function extractMetaFromMDX(filePath) {
@@ -51,7 +52,7 @@ console.log(`Found ${POSTS.length} posts and ${PROJECTS.length} projects`)
 const baseHtml = readFileSync(join(__dirname, '../dist/index.html'), 'utf-8')
 
 function generateMetaTags(data) {
-  const { title, description, type, url, image = `${SITE_URL}/icon-black.png` } = data
+  const { title, description, type, url, image = DEFAULT_OG_IMAGE } = data
   
   return baseHtml
     .replace(/<title>.*?<\/title>/, `<title>${title} — Kyle Brooks</title>`)
