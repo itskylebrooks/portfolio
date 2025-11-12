@@ -211,6 +211,19 @@ export function NewsletterForm() {
         .formkit-powered-by-convertkit-container {
           display: none !important;
         }
+
+        /* Prevent iOS zoom on focus by ensuring >=16px font size */
+        .formkit-form[data-uid="b123898ec9"] .formkit-input {
+          font-size: 16px; /* iOS no-zoom threshold */
+          -webkit-text-size-adjust: 100%;
+        }
+
+        /* Center placeholder on small screens only */
+        @media (max-width: 639px) {
+          .formkit-form[data-uid="b123898ec9"] .formkit-input::placeholder {
+            text-align: center;
+          }
+        }
       `}</style>
     </motion.div>
   )
