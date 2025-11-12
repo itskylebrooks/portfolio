@@ -1,10 +1,12 @@
 import React from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion, AnimatePresence } from 'framer-motion'
 import { pageVariants } from '@/shared/animations'
 
 export function NewsletterForm() {
   const shouldReduceMotion = useReducedMotion()
   const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const [error, setError] = React.useState<string | null>(null)
+  const inputRef = React.useRef<HTMLInputElement | null>(null)
 
   React.useEffect(() => {
     // Load ConvertKit script
@@ -21,6 +23,56 @@ export function NewsletterForm() {
     }
   }, [])
 
+  // Advanced email validation with multiple heuristics
+  const validateEmail = React.useCallback((value: string) => {
+    const email = value.trim()
+    if (!email) return { valid: false, reason: 'Email is required.' }
+
+    // No spaces or control chars
+    if (/\s/.test(email)) return { valid: false, reason: 'Email cannot contain spaces.' }
+
+    const atIndex = email.indexOf('@')
+    if (atIndex === -1 || atIndex !== email.lastIndexOf('@')) {
+      return { valid: false, reason: 'Enter a valid email address.' }
+    }
+
+    const local = email.slice(0, atIndex)
+    const domain = email.slice(atIndex + 1)
+
+    if (!local || !domain) return { valid: false, reason: 'Enter a valid email address.' }
+
+    // Local part rules
+    if (local.length > 64) return { valid: false, reason: 'Local part is too long.' }
+    if (local.startsWith('.') || local.endsWith('.')) return { valid: false, reason: 'Dots cannot start or end local part.' }
+    if (local.includes('..')) return { valid: false, reason: 'Consecutive dots are not allowed.' }
+    if (!/^[A-Za-z0-9!#$%&'*+\/=?^_`{|}~.-]+$/.test(local)) {
+      return { valid: false, reason: 'Invalid characters in email.' }
+    }
+
+    // Domain rules
+    if (domain.length > 255) return { valid: false, reason: 'Domain is too long.' }
+    if (domain.startsWith('-') || domain.endsWith('-')) return { valid: false, reason: 'Invalid domain.' }
+    if (domain.includes('..')) return { valid: false, reason: 'Invalid domain.' }
+    const labels = domain.split('.')
+    if (labels.length < 2) return { valid: false, reason: 'Domain must include a TLD.' }
+    for (const label of labels) {
+      if (!label) return { valid: false, reason: 'Invalid domain.' }
+      if (!/^[A-Za-z0-9-]+$/.test(label)) return { valid: false, reason: 'Invalid domain.' }
+      if (label.startsWith('-') || label.endsWith('-')) return { valid: false, reason: 'Invalid domain.' }
+    }
+    const tld = labels[labels.length - 1]
+    if (tld.length < 2 || !/^[A-Za-z]{2,63}$/.test(tld)) return { valid: false, reason: 'Invalid top-level domain.' }
+
+    return { valid: true }
+  }, [])
+
+  // Auto-hide error after a short delay
+  React.useEffect(() => {
+    if (!error) return
+    const id = setTimeout(() => setError(null), 4000)
+    return () => clearTimeout(id)
+  }, [error])
+
   return (
     <motion.div
       className="mx-auto max-w-[820px] px-4 pt-10 pb-6"
@@ -28,6 +80,7 @@ export function NewsletterForm() {
       animate={shouldReduceMotion ? undefined : 'enter'}
       variants={pageVariants}
     >
+      <div className="relative">
             <form
         action="https://app.kit.com/forms/8765360/subscriptions"
         className="seva-form formkit-form"
@@ -36,6 +89,18 @@ export function NewsletterForm() {
         data-uid="b123898ec9"
         data-format="inline"
         data-version="5"
+        noValidate
+        onSubmit={(e) => {
+          const value = inputRef.current?.value ?? ''
+          const result = validateEmail(value)
+          if (!result.valid) {
+            e.preventDefault()
+            setError(result.reason || 'Enter a valid email address.')
+            inputRef.current?.focus()
+            return
+          }
+          setError(null)
+        }}
       >
         {/* Error messages */}
         <ul
@@ -57,6 +122,11 @@ export function NewsletterForm() {
               placeholder="Enter your email to get updates on new articles and projects."
               required
               type="email"
+              ref={inputRef}
+              aria-invalid={error ? 'true' : 'false'}
+              onInput={() => {
+                if (error) setError(null)
+              }}
             />
           </div>
           <button
@@ -76,6 +146,24 @@ export function NewsletterForm() {
           </button>
         </div>
       </form>
+
+      {/* Minimal popup above the form (no layout shift) */}
+      <AnimatePresence>
+        {error ? (
+          <motion.div
+            role="alert"
+            aria-live="assertive"
+            className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[calc(100%+8px)] z-50 rounded border border-white/30 bg-black/90 px-3 py-1.5 text-sm text-white shadow-[0_2px_10px_rgba(0,0,0,0.4)]"
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.18, ease: 'easeOut' }}
+          >
+            {error}
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+      </div>
 
       <style>{`
         /* ConvertKit form specific styles */
