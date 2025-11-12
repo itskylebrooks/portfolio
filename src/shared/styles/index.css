@@ -9,10 +9,10 @@
 		--color-surface: rgba(18, 18, 18, 0.92);
 		--color-surface-hover: rgba(255, 255, 255, 0.04);
 		--color-surface-active: rgba(255, 255, 255, 0.06);
-		--color-border-muted: rgba(255, 255, 255, 0.1);
+		--color-border-muted: rgba(255, 255, 255, 0.12);
 		--color-border-subtle: rgba(255, 255, 255, 0.06);
 		--color-border-strong: rgba(255, 255, 255, 0.16);
-		--color-card-border: rgba(255, 255, 255, 0.1);
+		--color-card-border: rgba(255, 255, 255, 0.12);
 		--color-card-hover-border: rgba(255, 255, 255, 0.4);
 		--color-card-hover-bg: rgba(255, 255, 255, 0.05);
 		--color-tag-bg: rgba(255, 255, 255, 0.06);

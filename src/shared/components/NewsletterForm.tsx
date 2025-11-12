@@ -23,7 +23,7 @@ export function NewsletterForm() {
 
   return (
     <motion.div
-      className="mx-auto max-w-[820px] px-4 pt-10 pb-6 border-t border-[color:var(--color-border-subtle)]"
+      className="mx-auto max-w-[820px] px-4 pt-10 pb-6"
       initial={shouldReduceMotion ? undefined : 'initial'}
       animate={shouldReduceMotion ? undefined : 'enter'}
       variants={pageVariants}
@@ -51,7 +51,7 @@ export function NewsletterForm() {
         >
           <div className="formkit-field flex-1">
             <input
-              className="formkit-input w-full h-9 px-3 py-2 text-sm bg-[color:var(--color-surface)] text-[color:var(--color-text-primary)] border border-[color:var(--color-border-muted)] rounded focus:outline-none focus:ring-2 focus:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-bg)] placeholder:text-[color:var(--color-text-muted)] transition-colors"
+              className="formkit-input w-full h-9 px-3 py-2 text-sm bg-transparent text-[color:var(--color-text-primary)] border border-[color:var(--color-border-muted)] rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] focus-visible:ring-offset-3 focus-visible:ring-offset-[color:var(--color-bg)] placeholder:text-[color:var(--color-text-muted)] transition-[border-color,box-shadow] duration-200 ease-in-out"
               name="email_address"
               aria-label="Email Address"
               placeholder="Enter your email to get updates on new articles and projects."
@@ -61,7 +61,7 @@ export function NewsletterForm() {
           </div>
           <button
             data-element="submit"
-            className="formkit-submit h-9 px-5 py-2 text-sm bg-white text-black font-medium rounded hover:bg-[color:var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-bg)] transition-colors relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+          className="formkit-submit h-9 px-5 py-2 text-sm bg-neutral-200 text-neutral-900 font-medium rounded hover:bg-neutral-300 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-focus-ring)] ring-offset-2 ring-offset-[color:var(--color-bg)] transition-colors relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
             type="submit"
           >
             {/* Loading spinner */}
