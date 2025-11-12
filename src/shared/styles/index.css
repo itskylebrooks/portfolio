@@ -146,6 +146,14 @@
 	}
 }
 
+/* Global placeholder styles to match footer */
+input::placeholder,
+textarea::placeholder {
+	color: var(--color-text-tertiary);
+	opacity: 1; /* ensure consistent color intensity across browsers */
+	font-size: 0.875rem; /* align with footer text-sm */
+}
+
 /* Figure/caption styles for post images */
 .prose .post-figure {
 	margin-top: 0;
