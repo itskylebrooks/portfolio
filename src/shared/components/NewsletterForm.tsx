@@ -73,7 +73,7 @@ export function NewsletterForm() {
       if (!/^[A-Za-z0-9-]+$/.test(label)) return { valid: false, reason: 'Invalid domain.' }
       if (label.startsWith('-') || label.endsWith('-')) return { valid: false, reason: 'Invalid domain.' }
     }
-    const tld = labels[labels.length - 1]
+    const tld = labels[labels.length - 1] ?? ''
     if (tld.length < 2 || !/^[A-Za-z]{2,63}$/.test(tld)) return { valid: false, reason: 'Invalid top-level domain.' }
 
     return { valid: true }
