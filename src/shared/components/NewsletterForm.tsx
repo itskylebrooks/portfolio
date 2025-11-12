@@ -132,7 +132,7 @@ export function NewsletterForm() {
               className="formkit-input w-full h-9 px-3 py-2 text-sm bg-transparent text-[color:var(--color-text-primary)] border border-[color:var(--color-border-muted)] rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-focus-ring)] focus-visible:ring-offset-3 focus-visible:ring-offset-[color:var(--color-bg)] placeholder:text-[color:var(--color-text-tertiary)] transition-[border-color,box-shadow] duration-200 ease-in-out"
               name="email_address"
               aria-label="Email Address"
-              placeholder={isMobile ? "Enter your email to get my newsletter." : "Enter your email to get updates on new articles and projects."}
+              placeholder={isMobile ? "Enter your email to get my newsletter." : "Enter your email for new essays and projects."}
               required
               type="email"
               maxLength={254}
