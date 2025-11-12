@@ -122,6 +122,7 @@ export function NewsletterForm() {
               placeholder="Enter your email to get updates on new articles and projects."
               required
               type="email"
+              maxLength={254}
               ref={inputRef}
               aria-invalid={error ? 'true' : 'false'}
               onInput={() => {
@@ -153,7 +154,7 @@ export function NewsletterForm() {
           <motion.div
             role="alert"
             aria-live="assertive"
-            className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[calc(100%+8px)] z-50 rounded border border-white/30 bg-black/90 px-3 py-1.5 text-sm text-white shadow-[0_2px_10px_rgba(0,0,0,0.4)]"
+            className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[calc(100%+8px)] z-50 rounded-lg border border-[color:var(--color-card-border)] bg-[color:var(--color-bg)] px-3 py-2 text-sm text-[color:var(--color-text-primary)] shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
             initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
