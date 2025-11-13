@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Email</title>
+
+  <!-- Force pure black background and dark appearance -->
+  <meta name="color-scheme" content="only dark">
+  <meta name="supported-color-schemes" content="only dark">
+
+  <style>
+    /* Base styles */
+    html,body {
+      margin:0!important;
+      padding:0!important;
+      background:#000000!important;
+      color:#eaeaea!important;
+    }
+    table,td {
+      border-collapse:collapse!important;
+      mso-table-lspace:0pt!important;
+      mso-table-rspace:0pt!important;
+    }
+    img {
+      border:0;
+      line-height:100%;
+      outline:none;
+      text-decoration:none;
+    }
+    a {
+      color:inherit;
+      text-decoration:underline;
+    }
+    a.btn {
+      display:inline-block;
+      padding:14px 22px;
+      font-family:-apple-system,system-ui,'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+      font-size:16px;
+      font-weight:600;
+      color:#0b0b0b!important;
+      text-decoration:none;
+      border-radius:10px;
+      background:#ffffff;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:600px){
+      .wrapper{width:100%!important;}
+      .px{padding-left:24px!important;padding-right:24px!important;}
+      .stack td{display:block!important;width:100%!important;text-align:center!important;}
+      .stack td + td{padding-top:12px!important;} /* add extra vertical spacing between address and links */
+    }
+  </style>
+</head>
+
+<body style="margin:0; padding:0; background:#000000; color:#eaeaea;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#000000" style="background:#000000;">
+    <tr><td align="center" bgcolor="#000000" style="background:#000000;">
+
+      <table role="presentation" width="600" class="wrapper" cellpadding="0" cellspacing="0" bgcolor="#000000" style="max-width:100%;background:#000000;">
+
+        <!-- Spacer -->
+        <tr><td height="40" style="height:40px; line-height:0;">&nbsp;</td></tr>
+
+        <!-- Header -->
+        <tr>
+          <td class="px" style="padding:0 32px;">
+            <table role="presentation" width="100%">
+              <tr>
+                <td style="font-family:-apple-system,system-ui,'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+                           font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:#9aa0a6;">
+                  Kyle Brooks
+                </td>
+                <td align="right" style="font-family:-apple-system,system-ui,'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+                                        font-size:14px;color:#9aa0a6;">
+                  <a href="https://itskylebrooks.tech" style="color:#9aa0a6;text-decoration:none;">itskylebrooks.tech</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Divider -->
+        <tr>
+          <td class="px" style="padding:12px 32px 0;">
+            <hr style="border:none;border-top:1px solid #1a1a1a;margin:0;">
+          </td>
+        </tr>
+
+        <!-- Message / content -->
+        <tr>
+          <td class="px" style="padding:20px 32px 0;">
+            <div style="font-family:-apple-system,system-ui,'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+                        font-size:18px;line-height:1.6;color:#eaeaea;">
+              {{ message_content }}
+            </div>
+          </td>
+        </tr>
+
+        <!-- Divider above footer -->
+        <tr>
+          <td class="px" style="padding:24px 32px 0;">
+            <hr style="border:none;border-top:1px solid #1a1a1a;margin:0;">
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td class="px" style="padding:16px 32px 0;">
+            <table role="presentation" width="100%" class="stack">
+              <tr>
+                <!-- Address -->
+                <td style="font-family:-apple-system,system-ui,'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+                           font-size:13px;line-height:1.6;color:#8b8f94;">
+                  {{ address }}
+                </td>
+
+                <!-- Preferences / Unsubscribe -->
+                <td align="right" style="font-family:-apple-system,system-ui,'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+                                         font-size:13px;line-height:1.6;">
+                  <a href="{{ subscriber_preferences_url }}" style="color:#9aa0a6;text-decoration:underline;">Preferences</a>
+                  <span style="display:inline-block;color:#777;padding:0 3px;">•</span>
+                  <a href="{{ unsubscribe_url }}" style="color:#9aa0a6;text-decoration:underline;">Unsubscribe</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Bottom Spacer -->
+        <tr><td height="48" style="height:48px;">&nbsp;</td></tr>
+      </table>
+
+    </td></tr>
+  </table>
+</body>
+</html>
