@@ -95,11 +95,11 @@ export function NewsletterForm() {
     >
       <div className="relative">
             <form
-        action="https://app.kit.com/forms/8765360/subscriptions"
+        action="https://app.kit.com/forms/8769873/subscriptions"
         className="seva-form formkit-form"
         method="post"
-        data-sv-form="8765360"
-        data-uid="b123898ec9"
+        data-sv-form="8769873"
+        data-uid="353a85b827"
         data-format="inline"
         data-version="5"
         noValidate
@@ -181,29 +181,29 @@ export function NewsletterForm() {
 
       <style>{`
         /* ConvertKit form specific styles */
-        .formkit-form[data-uid="b123898ec9"] * {
+        .formkit-form[data-uid="353a85b827"] * {
           box-sizing: border-box;
         }
 
-        .formkit-form[data-uid="b123898ec9"] .formkit-alert:empty {
+        .formkit-form[data-uid="353a85b827"] .formkit-alert:empty {
           display: none;
         }
 
-        .formkit-form[data-uid="b123898ec9"] .formkit-alert:not(:empty) {
+        .formkit-form[data-uid="353a85b827"] .formkit-alert:not(:empty) {
           display: block !important;
         }
 
-        .formkit-form[data-uid="b123898ec9"] .formkit-alert-success {
+        .formkit-form[data-uid="353a85b827"] .formkit-alert-success {
           background-color: var(--accent-green-bg) !important;
           border-color: var(--accent-green-border) !important;
           color: var(--accent-green-text) !important;
         }
 
-        .formkit-form[data-uid="b123898ec9"] .formkit-submit[data-active] .formkit-spinner {
+        .formkit-form[data-uid="353a85b827"] .formkit-submit[data-active] .formkit-spinner {
           opacity: 1;
         }
 
-        .formkit-form[data-uid="b123898ec9"] .formkit-submit[data-active] .formkit-submit-text {
+        .formkit-form[data-uid="353a85b827"] .formkit-submit[data-active] .formkit-submit-text {
           opacity: 0;
         }
 
@@ -213,14 +213,14 @@ export function NewsletterForm() {
         }
 
         /* Prevent iOS zoom on focus by ensuring >=16px font size */
-        .formkit-form[data-uid="b123898ec9"] .formkit-input {
+        .formkit-form[data-uid="353a85b827"] .formkit-input {
           font-size: 16px; /* iOS no-zoom threshold */
           -webkit-text-size-adjust: 100%;
         }
 
         /* Center placeholder on small screens only */
         @media (max-width: 639px) {
-          .formkit-form[data-uid="b123898ec9"] .formkit-input::placeholder {
+          .formkit-form[data-uid="353a85b827"] .formkit-input::placeholder {
             text-align: center;
           }
         }
