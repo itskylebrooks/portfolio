@@ -93,7 +93,7 @@ export function NewsletterForm({ animationKey }: NewsletterFormProps) {
   return (
     <motion.div
       key={animationKey ?? 'newsletter-form'}
-      className="mx-auto max-w-[820px] px-4 pt-10 pb-6"
+      className="mx-auto max-w-[820px] px-4 pt-10 pb-3"
       initial={shouldReduceMotion ? undefined : 'initial'}
       animate={shouldReduceMotion ? undefined : 'enter'}
       variants={pageVariants}
