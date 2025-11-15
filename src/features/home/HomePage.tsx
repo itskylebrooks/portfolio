@@ -104,7 +104,7 @@ export function HomePage() {
           <div>
             <h3 className="text-[color:var(--color-text-primary)] font-medium">University of Hamburg — B.Sc. Software Systems Development (2024–present)</h3>
             <p className="mt-2 text-[color:var(--color-text-secondary)]">
-              At university, I’m grounding myself deeply in computer science, with a special focus on artificial intelligence, machine learning, distributed systems, and thoughtful software design. This journey is shaping how I approach complex problems and build meaningful solutions.
+              At university, I’m grounding myself deeply in computer science, with a focus on software design, distributed systems, and building practical tools. This journey is shaping how I approach complex problems and build meaningful solutions.
             </p>
           </div>
 
@@ -130,9 +130,15 @@ export function HomePage() {
           </div>
 
           <div>
-            <h3 className="text-[color:var(--color-text-primary)] font-medium">Personal development</h3>
+            <h3 className="text-[color:var(--color-text-primary)] font-medium">Beyond Work</h3>
             <p className="mt-2 text-[color:var(--color-text-secondary)]">
-              I see growth as more than study or code — it is about shaping the whole person. My compass has four directions: freedom, love, mastery, and faith. Freedom means living by my own choices; love means creating spaces of warmth and care; mastery means steady effort in study, coding, fitness, and aikidō; faith means holding onto hope and truth even in darkness. Together they keep me balanced — grounding me through discipline, mindfulness, and the simple practices of movement, reflection, and prayer.
+              I’ve always been drawn to making things — sometimes digital, sometimes physical, sometimes creative. Over the years I’ve explored drawing, music, writing, and small craft projects, not to master them, but to understand the act of creating itself.
+            </p>
+            <p className="mt-2 text-[color:var(--color-text-secondary)]">
+              Aikidō and fitness give my days structure and rhythm; reading gives my mind space; staying away from the modern attention economy lets me keep my focus sharp. I’m not interested in living in one narrow identity — I’d rather stay curious, learn widely, and bring different experiences into my work.
+            </p>
+            <p className="mt-2 text-[color:var(--color-text-secondary)]">
+              In the end, all of this influences how I build software. I aim for tools that are minimal but expressive, quiet but thoughtful — software that respects the user, solves real problems, and carries a bit of the calm and clarity I try to practice in my own life.
             </p>
           </div>
         </div>
