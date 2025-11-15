@@ -2,7 +2,11 @@ import React from 'react'
 import { motion, useReducedMotion, AnimatePresence } from 'framer-motion'
 import { pageVariants } from '@/shared/animations'
 
-export function NewsletterForm() {
+type NewsletterFormProps = {
+  animationKey?: React.Key
+}
+
+export function NewsletterForm({ animationKey }: NewsletterFormProps) {
   const shouldReduceMotion = useReducedMotion()
   const [isSubmitting, setIsSubmitting] = React.useState(false)
   const [error, setError] = React.useState<string | null>(null)
@@ -88,6 +92,7 @@ export function NewsletterForm() {
 
   return (
     <motion.div
+      key={animationKey ?? 'newsletter-form'}
       className="mx-auto max-w-[820px] px-4 pt-10 pb-6"
       initial={shouldReduceMotion ? undefined : 'initial'}
       animate={shouldReduceMotion ? undefined : 'enter'}

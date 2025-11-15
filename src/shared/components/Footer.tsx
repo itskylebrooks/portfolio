@@ -11,7 +11,7 @@ export function Footer() {
 
   return (
     <>
-      <NewsletterForm />
+      <NewsletterForm animationKey={pathname} />
       <motion.footer
         key={pathname}
         className="mx-auto max-w-[820px] px-4 pt-4 pb-10 text-sm text-[color:var(--color-text-tertiary)] flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-4"
