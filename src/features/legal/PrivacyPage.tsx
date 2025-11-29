@@ -36,7 +36,7 @@ export function PrivacyPage() {
               <p className="mt-2 text-[color:var(--color-text-secondary)]">Kirill Bobrov (auch: „Kyle Brooks")
                 <br />Volksdorfer Grenzweg 139
                 <br />22359 Hamburg, Deutschland
-                <br />E-Mail: <a href="mailto:itskylebrooks@icloud.com" className="underline hover:text-[color:var(--color-text-primary)]">itskylebrooks@icloud.com</a>
+                <br />E-Mail: <a href="mailto:desk@itskylebrooks.tech" className="underline hover:text-[color:var(--color-text-primary)]">desk@itskylebrooks.tech</a>
               </p>
             </section>
 

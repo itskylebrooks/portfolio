@@ -151,10 +151,10 @@ export function LicensePage() {
                 Für kommerzielle Nutzung meiner Texte, Diagramme, Screenshots oder anderer von mir erstellter Inhalte
                 kontaktiere mich bitte unter:{' '}
                 <a
-                  href="mailto:itskylebrooks@icloud.com"
+                  href="mailto:desk@itskylebrooks.tech"
                   className="underline hover:text-[color:var(--color-text-primary)]"
                 >
-                  itskylebrooks@icloud.com
+                  desk@itskylebrooks.tech
                 </a>
               </p>
             </section>
