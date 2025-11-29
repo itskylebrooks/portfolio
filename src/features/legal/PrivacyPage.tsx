@@ -92,6 +92,47 @@ export function PrivacyPage() {
             <hr className="my-6 border-[color:var(--color-border-muted)]" />
 
             <section>
+              <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold">6a) Newsletter via Kit (ehemals ConvertKit)</h3>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                Wenn du meinen E-Mail-Newsletter abonnierst, erfolgt die Verarbeitung deiner Daten über den E-Mail-Dienstleister{' '}
+                <strong>Kit (ehemals ConvertKit)</strong>. Dienstanbieter ist ConvertKit LLC / Kit, Inc., 750 W Bannock Street, Boise, Idaho, USA.
+              </p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                <strong>Verarbeitete Daten:</strong> Für den Versand verarbeite ich die im Formular eingegebenen Daten (in der Regel deine E-Mail-Adresse und —
+                falls angegeben — deinen Namen). Kit speichert außerdem technische Daten, die bei der Anmeldung sowie beim Öffnen oder Interagieren mit
+                E-Mails anfallen, z.&nbsp;B. IP-Adresse, Datum und Uhrzeit der Registrierung/Bestätigung (Double-Opt-In), Informationen zu Browser und
+                E-Mail-Client sowie, ob Links im Newsletter angeklickt wurden. Dadurch können Öffnungs- und Klickraten statistisch ausgewertet und Inhalte
+                sowie Zustellbarkeit des Newsletters verbessert werden.
+              </p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                <strong>Zwecke und Rechtsgrundlagen:</strong> Der Versand des Newsletters erfolgt auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a
+                DSGVO). Du kannst diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, z.&nbsp;B. über den Abmeldelink am Ende jeder
+                E-Mail oder durch direkte Kontaktaufnahme mit mir. Die Messung von Öffnungen, Klicks und grundlegenden technischen Daten erfolgt auf Basis
+                meines berechtigten Interesses an einem nutzerfreundlichen und technisch sicheren Newsletter-Angebot (Art. 6 Abs. 1 lit. f DSGVO).
+              </p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                <strong>Auftragsverarbeitung und Drittlandübermittlungen:</strong> Kit agiert als Auftragsverarbeiter. Hierfür besteht ein
+                Auftragsverarbeitungsvertrag (Data Processing Agreement, DPA), der Standardvertragsklauseln einbezieht und auf die Teilnahme von Kit am
+                EU–US Data Privacy Framework sowie vergleichbare Mechanismen für internationale Datenübermittlungen verweist. Eine Verarbeitung kann daher
+                in den USA und anderen Drittländern erfolgen, wobei durch diese Garantien ein angemessenes Datenschutzniveau sichergestellt wird.
+              </p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                <strong>Speicherung und Löschung:</strong> Deine Daten werden gespeichert, solange dein Newsletter-Abonnement aktiv ist. Wenn du dich
+                abmeldest, kann deine E-Mail-Adresse in einer separaten „Blockliste“ gespeichert werden, um sicherzustellen, dass keine weiteren
+                Newsletter versendet werden, sofern nicht gesetzliche Aufbewahrungspflichten oder Nachweispflichten einer Löschung entgegenstehen.
+              </p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                Weitere Informationen zur Datenverarbeitung durch Kit findest du in den eigenen Datenschutzinformationen und GDPR-Ressourcen von Kit:
+                <br />
+                – Kit Privacy Policy: <a href="https://kit.com/privacy" target="_blank" rel="noreferrer" className="underline hover:text-[color:var(--color-text-primary)]">kit.com/privacy</a>
+                <br />
+                – GDPR-Informationen: <a href="https://help.kit.com" target="_blank" rel="noreferrer" className="underline hover:text-[color:var(--color-text-primary)]">help.kit.com</a> (Bereich „GDPR and Privacy“)
+              </p>
+            </section>
+
+            <hr className="my-6 border-[color:var(--color-border-muted)]" />
+
+            <section>
               <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold">7) Feedback-Formulare → GitHub Issues (projektabhängig)</h3>
               <p className="mt-2 text-[color:var(--color-text-secondary)]">Wenn ein Projekt ein Feedback-Formular anbietet, werden die eingegebenen Inhalte serverseitig an <strong>GitHub</strong> übermittelt, um ein Issue im jeweiligen Repository zu erstellen.</p>
               <p className="mt-2 text-[color:var(--color-text-secondary)]">- <strong>Empfänger / Verantwortlicher:</strong> GitHub, Inc. / GitHub B.V. (eigenständiger Verantwortlicher).<br />
@@ -181,7 +222,7 @@ export function PrivacyPage() {
               <p className="mt-2 text-[color:var(--color-text-secondary)]">Kirill Bobrov (also: “Kyle Brooks”)
                 <br />Volksdorfer Grenzweg 139
                 <br />22359 Hamburg, Germany
-                <br />Email: <a href="mailto:itskylebrooks@icloud.com" className="underline hover:text-[color:var(--color-text-primary)]">itskylebrooks@icloud.com</a>
+                <br />Email: <a href="mailto:desk@itskylebrooks.tech" className="underline hover:text-[color:var(--color-text-primary)]">desk@itskylebrooks.tech</a>
               </p>
             </section>
 
@@ -232,6 +273,53 @@ export function PrivacyPage() {
             <section>
               <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold">6) Contact by Email</h3>
               <p className="mt-2 text-[color:var(--color-text-secondary)]">When contacting me by email, the provided data (address, content, metadata) is processed to handle your inquiry (Art. 6(1)(b/f) GDPR). The data will be deleted after the communication is completed unless legal retention obligations require otherwise.</p>
+            </section>
+
+            <hr className="my-6 border-[color:var(--color-border-muted)]" />
+
+            <section>
+              <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold">6a) Newsletter via Kit (formerly ConvertKit)</h3>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                If you subscribe to my email newsletter, your data is processed via the email service provider{' '}
+                <strong>Kit (formerly ConvertKit)</strong>. The service is operated by ConvertKit LLC / Kit, Inc., 750 W Bannock Street, Boise, Idaho, USA.
+              </p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                <strong>Data processed:</strong> For sending the newsletter I process the data you enter in the form (typically your email address and, if
+                provided, your name). Kit also stores technical data that is collected when you subscribe and when you open or interact with emails, such as
+                IP address, time and date of registration/confirmation (double opt-in), information about your browser and email client, and whether links in
+                the newsletter were clicked. This allows statistical evaluation of open and click rates and helps improve the newsletter content and delivery.
+              </p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                <strong>Purposes and legal basis:</strong> The newsletter is sent on the basis of your consent (Art. 6(1)(a) GDPR). You can withdraw this
+                consent at any time with effect for the future, for example via the unsubscribe link at the end of each email or by contacting me directly.
+                The measurement of opens, clicks, and basic technical data is carried out on the basis of my legitimate interest in a user-friendly and
+                technically secure newsletter offering (Art. 6(1)(f) GDPR).
+              </p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                <strong>Processor and third-country transfers:</strong> Kit acts as a processor on my behalf. For this purpose, I have concluded a Data
+                Processing Agreement (DPA) with Kit, which incorporates the Standard Contractual Clauses and refers to Kit’s participation in the EU–US Data
+                Privacy Framework and comparable mechanisms for international data transfers. Data may therefore be processed in the USA and other third
+                countries, where an adequate level of data protection is ensured through these safeguards.
+              </p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                <strong>Storage and deletion:</strong> Your data is stored for as long as your newsletter subscription is active. If you unsubscribe, your
+                email address may be stored in a separate “block list” to ensure that no further newsletters are sent, unless deletion conflicts with legal
+                retention obligations or evidence requirements.
+              </p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">
+                Further information on data processing by Kit can be found in Kit’s own privacy documentation and GDPR resources:
+                <br />
+                – Kit Privacy Policy:{' '}
+                <a href="https://kit.com/privacy" target="_blank" rel="noreferrer" className="underline hover:text-[color:var(--color-text-primary)]">
+                  kit.com/privacy
+                </a>
+                <br />
+                – GDPR information:{' '}
+                <a href="https://help.kit.com" target="_blank" rel="noreferrer" className="underline hover:text-[color:var(--color-text-primary)]">
+                  help.kit.com
+                </a>{' '}
+                (section “GDPR and Privacy”).
+              </p>
             </section>
 
             <hr className="my-6 border-[color:var(--color-border-muted)]" />
