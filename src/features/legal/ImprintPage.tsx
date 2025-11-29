@@ -56,7 +56,7 @@ export function ImprintPage() {
 
             <section>
               <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold">Geltungsbereich</h3>
-              <p className="mt-2 text-[color:var(--color-text-secondary)]">Dieses Impressum gilt für diesen Webauftritt sowie alle von mir betriebenen, öffentlich erreichbaren Projekte, Demos und Sub-Sites, insbesondere die von meiner Portfolio-Seite verlinkten Angebote (einschließlich, aber nicht abschließend: Enso unter enso-kb.vercel.app) sowie weitere von mir kontrollierte Domains/Subdomains und Vercel-Deployments, sofern von dort auf dieses Impressum verlinkt wird.</p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">Dieses Impressum gilt für diesen Webauftritt sowie alle von mir betriebenen, öffentlich erreichbaren Projekte, Demos und Sub-Sites, insbesondere die von meiner Portfolio-Seite verlinkten Angebote sowie weitere von mir kontrollierte Domains/Subdomains und Vercel-Deployments, sofern von dort auf dieses Impressum verlinkt wird.</p>
             </section>
 
             <hr className="my-6 border-[color:var(--color-border-muted)]" />
@@ -121,7 +121,7 @@ export function ImprintPage() {
 
             <section>
               <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold">Scope</h3>
-              <p className="mt-2 text-[color:var(--color-text-secondary)]">This imprint applies to this website as well as to all publicly accessible projects, demos, and sub-sites operated by me — in particular, the offerings linked from my portfolio website (including, but not limited to: Enso at enso-kb.vercel.app), as well as other domains, subdomains, and Vercel deployments under my control, provided they link to this imprint.</p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">This imprint applies to this website as well as to all publicly accessible projects, demos, and sub-sites operated by me — in particular, the offerings linked from my portfolio website, as well as other domains, subdomains, and Vercel deployments under my control, provided they link to this imprint.</p>
             </section>
 
             <hr className="my-6 border-[color:var(--color-border-muted)]" />
