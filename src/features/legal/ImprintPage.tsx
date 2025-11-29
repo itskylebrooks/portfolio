@@ -150,7 +150,7 @@ export function ImprintPage() {
               <p className="mt-2 text-[color:var(--color-text-secondary)]">Information on the processing of personal data, legal bases, and the rights of data subjects can be found in the <a href="/privacy" className="underline hover:text-[color:var(--color-text-primary)]">Privacy Policy</a>.</p>
 
               <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold mt-4">Consumer Dispute Resolution</h3>
-              <p className="mt-2 text-[color:var(--color-text-secondary)]">I am not obliged to participate in dispute resolution proceedings before a consumer arbitration board and do not participate in such proceedings. For inquiries, please contact: <a href="mailto:itskylebrooks@icloud.com" className="underline hover:text-[color:var(--color-text-primary)]">itskylebrooks@icloud.com</a></p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">I am not obliged to participate in dispute resolution proceedings before a consumer arbitration board and do not participate in such proceedings. For inquiries, please contact: <a href="mailto:desk@itskylebrooks.tech" className="underline hover:text-[color:var(--color-text-primary)]">desk@itskylebrooks.tech</a></p>
             </section>
 
             <hr className="my-6 border-[color:var(--color-border-muted)]" />

@@ -334,10 +334,10 @@ export function LicensePage() {
               <p className="mt-2 text-[color:var(--color-text-secondary)]">
                 For commercial use of my texts, diagrams, screenshots or other content created by me, please contact:{' '}
                 <a
-                  href="mailto:itskylebrooks@icloud.com"
+                  href="mailto:desk@itskylebrooks.tech"
                   className="underline hover:text-[color:var(--color-text-primary)]"
                 >
-                  itskylebrooks@icloud.com
+                  desk@itskylebrooks.tech
                 </a>
               </p>
             </section>

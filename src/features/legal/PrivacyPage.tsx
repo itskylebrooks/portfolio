@@ -161,7 +161,7 @@ export function PrivacyPage() {
               <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold">15) Betroffenenrechte (Art. 15–21 DSGVO)</h3>
               <p className="mt-2 text-[color:var(--color-text-secondary)]">Ihnen stehen insbesondere folgende Rechte zu:<br />
               - Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f.<br />
-              Zur Ausübung genügt eine formlose E-Mail an: <a href="mailto:itskylebrooks@icloud.com" className="underline hover:text-[color:var(--color-text-primary)]">itskylebrooks@icloud.com</a></p>
+              Zur Ausübung genügt eine formlose E-Mail an: <a href="mailto:desk@itskylebrooks.tech" className="underline hover:text-[color:var(--color-text-primary)]">desk@itskylebrooks.tech</a></p>
               <p className="mt-2 text-[color:var(--color-text-secondary)]"><strong>Beschwerderecht:</strong> Sie können sich bei einer Aufsichtsbehörde beschweren, z. B. beim <em>Hamburgischen Beauftragten für Datenschutz und Informationsfreiheit (HmbBfDI)</em>.</p>
             </section>
 
@@ -306,7 +306,7 @@ export function PrivacyPage() {
               <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold">15) Data Subject Rights (Art. 15–21 GDPR)</h3>
               <p className="mt-2 text-[color:var(--color-text-secondary)]">You have, in particular, the following rights:<br />
               - Access, rectification, erasure, restriction, data portability, and objection to processing based on Art. 6(1)(f).<br />
-              To exercise these rights, simply send an informal email to: <a href="mailto:itskylebrooks@icloud.com" className="underline hover:text-[color:var(--color-text-primary)]">itskylebrooks@icloud.com</a></p>
+              To exercise these rights, simply send an informal email to: <a href="mailto:desk@itskylebrooks.tech" className="underline hover:text-[color:var(--color-text-primary)]">desk@itskylebrooks.tech</a></p>
               <p className="mt-2 text-[color:var(--color-text-secondary)]"><strong>Right to lodge a complaint:</strong><br />You may contact a supervisory authority, for example, the <em>Hamburg Commissioner for Data Protection and Freedom of Information (HmbBfDI).</em></p>
             </section>
 
