@@ -43,7 +43,7 @@ export function ImprintPage() {
 
             <section className="mt-6">
               <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold">Kontakt</h3>
-              <p className="mt-2 text-[color:var(--color-text-secondary)]">E-Mail: <a href="mailto:itskylebrooks@icloud.com" className="underline hover:text-[color:var(--color-text-primary)]">itskylebrooks@icloud.com</a>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">E-Mail: <a href="mailto:desk@itskylebrooks.tech" className="underline hover:text-[color:var(--color-text-primary)]">desk@itskylebrooks.tech</a>
               </p>
             </section>
 
@@ -85,7 +85,7 @@ export function ImprintPage() {
               <p className="mt-2 text-[color:var(--color-text-secondary)]">Informationen zur Verarbeitung personenbezogener Daten, Rechtsgrundlagen und Betroffenenrechten finden Sie in der Datenschutzerklärung unter <a href="/privacy" className="underline hover:text-[color:var(--color-text-primary)]">Datenschutzerklärung</a>.</p>
 
               <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold mt-4">Verbraucherstreitbeilegung</h3>
-              <p className="mt-2 text-[color:var(--color-text-secondary)]">Ich bin nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen und nehme daran nicht teil. Anfragen richten Sie bitte an: <a href="mailto:itskylebrooks@icloud.com" className="underline hover:text-[color:var(--color-text-primary)]">itskylebrooks@icloud.com</a></p>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">Ich bin nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen und nehme daran nicht teil. Anfragen richten Sie bitte an: <a href="mailto:desk@itskylebrooks.tech" className="underline hover:text-[color:var(--color-text-primary)]">desk@itskylebrooks.tech</a></p>
             </section>
 
             <hr className="my-6 border-[color:var(--color-border-muted)]" />
@@ -108,7 +108,7 @@ export function ImprintPage() {
 
             <section className="mt-6">
               <h3 className="text-[color:var(--color-text-primary)] text-lg font-semibold">Contact</h3>
-              <p className="mt-2 text-[color:var(--color-text-secondary)]">Email: <a href="mailto:itskylebrooks@icloud.com" className="underline hover:text-[color:var(--color-text-primary)]">itskylebrooks@icloud.com</a>
+              <p className="mt-2 text-[color:var(--color-text-secondary)]">Email: <a href="mailto:desk@itskylebrooks.tech" className="underline hover:text-[color:var(--color-text-primary)]">desk@itskylebrooks.tech</a>
               </p>
             </section>
 
