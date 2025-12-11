@@ -1,4 +1,4 @@
-export type Accent = 'red' | 'green' | 'blue' | 'lilac' | 'orange' | 'amber' | 'teal' | 'pink' | 'cyan' | 'violet'
+export type Accent = 'red' | 'green' | 'blue' | 'lilac' | 'orange' | 'amber' | 'teal' | 'pink' | 'cyan' | 'violet' | 'grey'
 
 export type ProjectMeta = {
   title: string

@@ -18,6 +18,7 @@ const ACCENT: Record<Accent, { text: string; heading: string; hoverBorder: strin
   pink:  { text: 'text-[color:var(--accent-pink-text)]',   heading: 'prose-headings:text-[color:var(--accent-pink-text)]',   hoverBorder: 'hover:border-[color:var(--accent-pink-border)]',  hoverBg: 'hover:bg-[color:var(--accent-pink-bg)]',  hoverText: 'hover:text-[color:var(--accent-pink-text)]' },
   cyan:  { text: 'text-[color:var(--accent-cyan-text)]',   heading: 'prose-headings:text-[color:var(--accent-cyan-text)]',   hoverBorder: 'hover:border-[color:var(--accent-cyan-border)]',  hoverBg: 'hover:bg-[color:var(--accent-cyan-bg)]',  hoverText: 'hover:text-[color:var(--accent-cyan-text)]' },
   violet:{ text: 'text-[color:var(--accent-violet-text)]', heading: 'prose-headings:text-[color:var(--accent-violet-text)]', hoverBorder: 'hover:border-[color:var(--accent-violet-border)]',hoverBg: 'hover:bg-[color:var(--accent-violet-bg)]',hoverText: 'hover:text-[color:var(--accent-violet-text)]' },
+  grey:  { text: 'text-[color:var(--accent-grey-text)]',   heading: 'prose-headings:text-[color:var(--accent-grey-text)]',   hoverBorder: 'hover:border-[color:var(--accent-grey-border)]',  hoverBg: 'hover:bg-[color:var(--accent-grey-bg)]',  hoverText: 'hover:text-[color:var(--accent-grey-text)]' },
 }
 
 export function ProjectPage() {
