@@ -1,0 +1,42 @@
+export const meta = {
+  title: 'Haku',
+  date: '2025-12-11',
+  version: '0.7.0',
+  summary:
+    "A quiet planner that unifies calendar and todos into a single, simple activity view of your week.",
+  tags: ['Planner', 'Drag-And-Drop', 'Calendar', 'Tasks'],
+  accent: 'teal',
+  links: {repo: 'https://github.com/itskylebrooks/haku', live: 'https://haku.itskylebrooks.tech'},
+}
+
+
+### Overview
+
+Haku is a calm weekly planner built around one type of object: an activity. There’s no split between tasks and events, no projects, no tags, no color systems to maintain. An activity can live on a specific day (with or without time), sit in Inbox when it’s just a thought, or move to Later when you’re not ready to schedule it yet. The app stays small on purpose so that planning your week feels like arranging a clean table, not tending a dashboard.
+
+Haku is for people who feel exhausted by “serious” productivity tools — calendars full of slots, todo apps full of labels, and all-in-one systems that turn planning into a hobby. It gives you a simple surface for Today and This Week, and then gets out of the way.
+
+### Highlights
+
+* Day-first planning: A single “Today” column with Overdue items, so you see what actually competes for your attention.
+* Week at a glance: A quiet grid of days that helps you balance the week — shift a few activities, avoid overloading one day — without micromanaging every hour.
+* Three homes only: Inbox, specific days, and Later. No projects, tags, or priority fields. If it matters, it gets a day; if not, it stays parked.
+* Light “repeat” without a habit engine: Time-based activities (like classes or training) can be duplicated forward across days or weeks, but there’s no hidden recurrence logic. Habits live in Ritus; Haku stays about concrete days.
+* Local-first and installable: All data lives in local storage; Haku works offline and can be installed as a PWA on desktop and mobile for a native-like feel.
+* Calm by design: Minimal UI, no feeds, no gamification, no aggressive notifications — just a planner that tries not to shout.
+
+### Why I Built It
+
+For years I bounced between tools: Google Calendar, Microsoft To Do, Notion setups, niche indie apps, paper notebooks. The pattern was always the same: initial excitement, a burst of setup, a couple of “perfect” weeks, and then quiet abandonment. Apple Calendar and Reminders were my last hope: stable, native, integrated. Even there, I found myself ignoring events and reminders I had created.
+
+The problem wasn’t discipline; it was structure. Most tools expect you to think in time slots, projects, tags, and priorities. My brain doesn’t work that way. It thinks in “today,” “this week,” and “later,” plus a messy web of associations that no app can — or should — try to fully copy. I don’t need a second brain; I need thin handles into the one I already have.
+
+In December I had promised myself to focus on university and existing projects, not start anything new. Then one night I ended up designing Haku’s UI and core behavior in my sleep: the Day column, the Week grid, the way activities move between Today, Inbox, and Later. I woke up with the clear feeling that I’d go crazy if I didn’t at least try. Haku is the result: a planner that matches how my days actually feel, and that deliberately avoids the complexity that killed my previous systems.
+
+### What It Does Today
+
+Right now Haku has everything it needs to be my main planner: activities as the only object, Day/Week/Board views, Inbox and Later, local storage, PWA support, and keyboard shortcuts. It runs on my devices, opens fast, and is stable enough that I can plan a real week in it without keeping a second app as backup. From a checklist perspective, the core is there.
+
+I still don’t call it “finished,” because the work left isn’t adding more switches — it’s rounding edges. There are small bugs, awkward moments in the UI, and places where the interaction feels slightly heavier than it should. None of that is as glamorous as a new feature, but it’s what separates an app you test for a weekend from one you quietly trust every day.
+
+I’m very cautious about layering anything on top of the current model. Every “harmless” option invites the question: if this exists, why not also support that, and that, and that… That’s how a repeat toggle becomes a full recurrence engine, a tag field becomes a taxonomy, and a simple planner turns into the kind of system I originally wanted to escape. For now, I’m treating myself as the first beta user — using Haku in calm weeks and chaotic ones, watching where it helps and where it gets in the way. It’s built primarily for my own brain, but I still design it for anyone who thinks similarly: allergic to noise, wanting a planner that feels like a clean table, not a control room.
