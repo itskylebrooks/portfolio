@@ -1,0 +1,91 @@
+import { SmartImage } from '@/shared/components/SmartImage'
+
+export const meta = {
+  title: 'The Planner Category Is Overbuilt',
+  date: '2025-12-15',
+  summary: 'A good planner leaves you calmer and gets out of the way.',
+}
+
+### The Idea That Wouldn’t Quit
+
+December 2025 was supposed to be boring in a good way. I made a deal with myself to focus on university, smooth out what’s still rough in older projects, and avoid starting anything new. I wanted fewer moving parts and less tinkering disguised as progress, because that kind of “busy” is addictive and rarely pays back.
+
+I also tried to make peace with “good enough” planning. Not as a dramatic resignation, but as a philosophy. Pick something stable, integrated, and quiet, then stop shopping for the perfect system. The goal of a planner isn’t to become a hobby. It’s to reduce friction so attention can go back to the work.
+
+That plan lasted until my brain stopped cooperating. The calendar–to-do hybrid idea had been circling for a long time, returning every few months in different forms: a weekly view that doesn’t feel like a prison, a day view that doesn’t lie, and a place where “sometime today” and “6:30 PM” can live together without forcing fake precision. Then one night, while I was half-sick and half-asleep, the core shape snapped into place with annoying clarity. I woke up with the same feeling I get when an idea is no longer abstract: if I don’t build it, it won’t leave me alone.
+
+The timing was bad. I was tired, slightly behind, and not in the mood for a new repo. Still, I wanted something that gives energy instead of taking it, and building tends to do that for me in a way scrolling never does. I started the only way that felt responsible: notebook first, editor second. I wrote what the tool should be and, more importantly, what it should refuse to become. I forced myself to describe the model in plain language before touching the implementation. Only then did I break my December rule and begin.
+
+Haku didn’t start as a “cool app idea.” It started as a pressure point in my broader taste. I keep gravitating toward tools that are quiet, thin, and trustworthy, and I keep bouncing off tools that treat my attention like something to capture and manage.
+
+### Overbuilt by Default
+
+It’s tempting to frame this as a personal problem. I tried a bunch of tools, none of them worked, so I built my own. That story is clean, but it’s also shallow. The more honest version is that the planner category is overbuilt by default, and a lot of modern planning software quietly turns planning into a second job.
+
+Planning should reduce friction. After you look at your day, you should feel calmer, not more behind. Instead, many apps pull you into maintenance: organizing, labeling, correcting, rescheduling, and keeping the system consistent enough that it still makes sense next week. When life gets messy, the tool becomes a museum of unfinished promises. You open it, feel mild guilt, and close it, and your brain learns the association fast.
+
+A lot of this heaviness comes from personal planning tools borrowing the mindset of business tools. In a company, structure is coordination: shared projects, dependencies, deadlines, and a need for a common language. In personal life, the same machinery often becomes theater. You inherit the overhead without the payoff, and you end up managing your week like a low-budget project manager instead of using a planner to regain clarity.
+
+Underneath the emotional layer is a mechanical one: overhead. Every “better organization” feature adds decisions before you can act. Is this a task or an event? Does it need a time block or just a date? Should it have a priority, a project, a label, a recurrence rule? Each question looks harmless on its own, but stacked decisions feel expensive when you’re low on energy and only trying to see what matters today. The UI may look more powerful, but the experience becomes less humane.
+
+The calendar–to-do split makes this worse because it forces an early choice that doesn’t match real life. Calendars want clean time blocks, which is perfect for lectures, trains, and calls, but collapses for flexible intentions like “write the draft today” or “fix that bug this week.” To-do apps go to the opposite extreme: lists detached from time. They feel lightweight until you try to live inside them, and then you spend your day mentally stitching list and calendar together. Your brain becomes the integration layer, holding time, energy, and constraints in working memory while you guess what actually fits.
+
+That’s the real cost of an overbuilt category. It’s not just extra taps or extra features. It’s cognitive noise that shows up exactly when you need clarity the most.
+
+### Webs, Not Rows
+
+The deeper problem with tags, priorities, and planning metadata is not that it’s “too complex.” The problem is that it assumes the mind stores life like a spreadsheet. It assumes each intention is an object with clean fields, and the right combination of fields will produce clarity later.
+
+That isn’t how the brain works.
+
+The mind stores life as webs. A single intention is rarely just one thing. “Write the blog post” pulls in yesterday’s mood, a phrase you heard on the train, the embarrassment of procrastinating, the image you want to use as a cover, and the fear that the thing won’t be honest enough. Even “buy groceries” connects to what you ate this week, what your body feels like lately, what you promised yourself about health, and the fact that you have training in the evening. This is why the “project + tag + priority” model often feels wrong. It tries to flatten a web into a row.
+
+You can’t recreate that full structure in software, and you shouldn’t try. Your brain is already maintaining context, meaning, emotion, and memory, constantly, for free. The moment a tool asks you to rebuild your inner map inside its database, planning turns into a translation job. You spend energy describing the work instead of doing it.
+
+What you actually need from a planner is much smaller. You need doors into the web, not the web itself. You need a thin handle you can grab that reliably reactivates the right cluster in your mind at the right moment.
+
+### Calm by Design
+
+<figure className="post-figure">
+  <SmartImage
+    src="/media/the-planner-category-is-overbuilt.png"
+    alt="Week view of Haku, showing day columns with activities arranged in a simple layout."
+    width={3164}
+    height={2068}
+  />
+  <figcaption className="figure-caption">Screenshot of Haku’s week view.</figcaption>
+</figure>
+
+The alternative to overbuilt planning isn’t “no structure.” It’s a structure that respects how normal days actually work. Most days are not a clean schedule. They are a few fixed points, a handful of flexible intentions, and whatever reality adds on top. A planner should reduce the translation between those parts, not add a second layer of administration.
+
+That’s the design stance behind [Haku](https://haku.itskylebrooks.tech), and it’s also the standard I think planning tools should be held to. Keep the model thin, keep the surface calm, and make the tool usable on low-energy days. If a planner requires a good mood to keep it consistent, it stops being a tool and turns into another obligation.
+
+Haku’s core move is deliberately boring: one object, called an activity. Not “tasks” versus “events,” not two separate apps stitched together. An activity can be fixed or flexible without forcing fake precision. Give it a time and duration, and it behaves like “6:30 PM Aikido.” Give it only a day, and it becomes “sometime today, write the draft.” Leave it unplaced, and it can sit in a holding area until it earns a date. The point is honesty. The model should let real intentions exist in the form they actually have.
+
+Once the model is honest, the usage should feel almost boring. In the morning, you open the planner for a brief reality check, not a full planning ceremony. You look at what the day already contains, notice what carried over, and make one or two concrete choices that you’ll actually touch. During the day, capture should be frictionless. New intentions should be able to land somewhere without a debate about projects, priorities, or perfect wording. If the time is clear, you add it. If it’s not, you don’t force it.
+
+In the evening, you do a short cleanup that keeps the system trustworthy. You close loops, move the few real leftovers forward, delete what was never real, and glance at the week only to check the shape. The planner is something you return to briefly to regain clarity, then leave again. It should make the day more visible, not make you feel managed.
+
+### Why Products Drift
+
+Planning tools don’t usually become heavy because someone designed them badly. They become heavy because “just one more feature” feels harmless, and because growth rewards complexity. Even small indie teams feel pressure to keep shipping, keep proving the product is alive, and keep giving people something new to talk about. In practice, that often means adding surface area instead of deepening reliability.
+
+This is where the incentives get weird. The user doesn’t always need another capability. Often they need fewer surprises, fewer decisions, more polish, and long-term predictability. Stability is what makes a tool feel safe to trust on low-energy days, but “we fixed ten edge cases and made it calmer” doesn’t market well. Simplicity doesn’t screenshot well. A new feature does.
+
+Then the drift begins. A small repeat toggle becomes a recurrence engine. A simple label field becomes a taxonomy. A “project” checkbox grows into hierarchies, filters, dashboards, and settings screens to survive the complexity that was introduced. Each step is defensible, and that’s the trap. The added complexity is often rational, but the cumulative cost is paid in cognition. Every extra field is a decision you pay at the worst moment, when you’re tired and simply trying to see what matters today.
+
+The calmer approach is not purity. It’s respect. Keep the structure thin and visible. Prefer concrete instances over invisible rules. Prefer a small number of places where things can live over a thousand ways to categorize them. Choose predictability over novelty often enough that the tool stays trustworthy over time.
+
+### Protecting Attention
+
+If you zoom out far enough, this isn’t really about planning. It’s about attention.
+
+A planner is one of the few tools you open when your day is still undecided and your mind is still pliable. Whatever it does to you in that moment matters. If the app is loud, demanding, and full of tiny decisions, it doesn’t just waste time. It changes your internal state. It turns planning into a performance and quietly trains avoidance. You stop opening the tool not because you don’t care, but because your brain learns that opening it equals guilt, clutter, and more obligations to manage.
+
+Overloaded apps create a specific kind of noise. Not the obvious noise of notifications, but cognitive noise: too many fields, too many views, too many knobs to turn. You walk in wanting clarity and walk out feeling behind. The tool imports its own chaos into your head, and improvising from memory starts to feel lighter than dealing with the system.
+
+This connects directly to the philosophy I wrote about in The Joy of Boring Tools. I’ve learned the hard way that “powerful” tools often come with gravity. The moment a system becomes interesting enough to maintain, it becomes tempting enough to hide inside. You rearrange instead of creating. You clean the workshop instead of using the hammer.
+
+That’s why I keep coming back to the same standard. Good tools don’t perform; they vanish. _The work is hard enough. Let the software be quiet._
+
+If the idea works, the ending is simple. You open the planner, you see the day as it is, you place a few honest handles into the right spots, and you return to your life with less noise in your head. Not optimized. Not gamified. Just clearer.
